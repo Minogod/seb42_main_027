@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @RequestMapping("/test")
 public class Test {
-    @Value("${spring.datasource.username")
+    @Value("${test.test}")
     private String username;
 
     @GetMapping
