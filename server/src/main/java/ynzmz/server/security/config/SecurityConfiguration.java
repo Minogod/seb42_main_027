@@ -1,7 +1,7 @@
 package ynzmz.server.security.config;
 
 import lombok.RequiredArgsConstructor;
-import org.apache.catalina.filters.CorsFilter;
+import org.springframework.web.filter.CorsFilter;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.authentication.AuthenticationManager;
@@ -28,7 +28,7 @@ public class SecurityConfiguration {
 
     private final JwtTokenizer jwtTokenizer;
     private final CustomAuthorityUtils authorityUtils;
-//    private final CorsFilter corsFilter;
+    private final CorsFilter corsFilter;
 
 
 
@@ -81,7 +81,7 @@ public class SecurityConfiguration {
             JwtVerificationFilter jwtVerificationFilter = new JwtVerificationFilter(jwtTokenizer, authorityUtils);
 
             builder
-//                    .addFilter(corsFilter)
+                    .addFilter(corsFilter)
                     .addFilter(jwtAuthenticationFilter) //Authentication 이후에 verification 동작.
                     .addFilterAfter(jwtVerificationFilter, JwtAuthenticationFilter.class);
 
