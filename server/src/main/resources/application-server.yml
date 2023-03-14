@@ -1,10 +1,11 @@
 server:
   port: 8080
 spring:
-#  datasource:
+  datasource:
 #    url: jdbc:mysql://mainproject27team.c16y5acx5nnq.ap-northeast-2.rds.amazonaws.com:3306/mainproject?serverTimezone=Asia/Seoul
 #    username: admin
 #    password: TZJrQnSUmZGHc2Fm0Vjw
+    initialization-mode: always
   jpa:
     hibernate:
       ddl-auto: update
