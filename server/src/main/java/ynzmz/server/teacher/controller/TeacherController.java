@@ -3,6 +3,7 @@ package ynzmz.server.teacher.controller;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageImpl;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -23,6 +24,7 @@ import java.util.List;
 @RequestMapping("/teachers")
 @RequiredArgsConstructor
 @Slf4j
+@CrossOrigin
 public class TeacherController {
     private final TeacherService teacherService;
     private final TeacherMapper teacherMapper;
@@ -74,6 +76,7 @@ public class TeacherController {
                                                 @RequestParam(required = false) String subject,
                                                 @RequestParam(required = false) String name,
                                                 @RequestParam(required = false) String sort,
+                                                @RequestParam(required = false) String reverse,
                                                 @RequestParam int page,
                                                 @RequestParam int size){
 
@@ -91,7 +94,14 @@ public class TeacherController {
             subjectTag = tagService.findSubjectTag(subject);
         } else subjectTag = null;
 
-        Page<Teacher> teacherPage = teacherService.findTeachers(gradeTag,platformTag,subjectTag,name,sort,page -1, size);
+        Page<Teacher> teacherPage;
+
+        if(reverse != null) {
+            teacherPage = teacherService.findTeachers(gradeTag, platformTag, subjectTag, name, sort, reverse,page - 1, size);
+
+        } else {
+            teacherPage = teacherService.findTeachers(gradeTag, platformTag, subjectTag, name, sort,page - 1, size);
+        }
         List<Teacher> teachers = teacherPage.getContent();
         List<TeacherDto.ListPageResponse> responses = teacherMapper.teacherListPageResponsesToTeachers(teachers);
         return new ResponseEntity<>(new MultiResponseDto<>(responses, teacherPage), HttpStatus.OK);
