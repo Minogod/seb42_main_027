@@ -20,6 +20,7 @@ import javax.validation.constraints.Positive;
 @RestController
 @Slf4j
 @RequiredArgsConstructor
+@RequestMapping("/members")
 public class MemberController {
 
     private final MemberMapper memberMapper;
