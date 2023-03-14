@@ -27,4 +27,6 @@ public class LectureReviewComment implements VoteCount {
     @JoinColumn(name = "member_id")
     @JsonBackReference
     private Member member;
+
+
 }
