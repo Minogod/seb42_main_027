@@ -1,4 +1,4 @@
-package ynzmz.server.board.entity;
+package ynzmz.server.Board.entity;
 
 
 import lombok.Getter;
@@ -10,7 +10,6 @@ import java.time.LocalDateTime;
 @Entity
 @Getter
 @Setter
-@Table(name = "boards")
 public class Board {
 
     @Id @GeneratedValue
