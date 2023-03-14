@@ -14,8 +14,8 @@ public class SecurityCorsConfig {
     public CorsFilter corsFilter(){
         UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();
         CorsConfiguration config = new CorsConfiguration();
-        config.setAllowCredentials(true);
-        config.addAllowedOrigin("*");
+//        config.setAllowCredentials(true);
+        config.addAllowedOrigin("*"); // 이거 위에꺼랑 겹치면안됨
         config.addExposedHeader("Authorization");
         config.addAllowedHeader("*");
         config.addAllowedMethod("GET");
