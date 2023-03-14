@@ -17,13 +17,9 @@ public enum ExceptionCode {
 
     POST_NOT_FOUND(404, "Post not found"),
     POST_EXISTS(404, "Post not found"),
-
     //추후 추가 가능 --> 기능 봐서
-
     NOT_IMPLEMENTATION(501, "No Implementation"),
-
     NOT_AUTHORIZED(401, "본인만 회원탈퇴 할수있습니다"),
-
     INVALID_MEMBER_STATUS(400, "Invalid member status"),
     LECTURE_REVIEW_NOT_FOUND(404, "해당 고유번호 강의 리뷰글이 없습니다."),
     LECTURE_NOT_FOUND(404, "해당 고유번호 강의가 없습니다."),
