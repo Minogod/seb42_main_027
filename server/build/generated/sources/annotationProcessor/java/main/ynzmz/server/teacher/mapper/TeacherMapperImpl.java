@@ -6,7 +6,7 @@ import javax.annotation.processing.Generated;
 import org.springframework.stereotype.Component;
 import ynzmz.server.lecture.dto.LectureDto;
 import ynzmz.server.lecture.entity.Lecture;
-import ynzmz.server.lecturereview.entity.LectureReview;
+import ynzmz.server.review.lecture.entity.LectureReview;
 import ynzmz.server.tag.dto.TeacherGradeTagDto;
 import ynzmz.server.tag.dto.TeacherPlatformTagDto;
 import ynzmz.server.tag.dto.TeacherSubjectTagDto;
@@ -18,7 +18,7 @@ import ynzmz.server.teacher.entity.Teacher;
 
 @Generated(
     value = "org.mapstruct.ap.MappingProcessor",
-    date = "2023-03-14T23:23:36+0900",
+    date = "2023-03-15T12:10:15+0900",
     comments = "version: 1.5.2.Final, compiler: IncrementalProcessingEnvironment from gradle-language-java-7.6.1.jar, environment: Java 11.0.17 (Azul Systems, Inc.)"
 )
 @Component
