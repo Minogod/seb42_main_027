@@ -6,8 +6,9 @@ public enum ExceptionCode {
     MEMBER_NOT_FOUND(404, "Member not found"),
     MEMBER_EXISTS(409, "Member exists"),
 
-    TEACHER_NOT_FOUND(404, "Teacher not found"),
     TEACHER_EXISTS(409, "Teacher exists"),
+
+    TEACHER_NOT_FOUND(404, "TEACHER_NOT_FOUND"),
 
     QUESTION_NOT_FOUND(404, "Question not found"),
     QUESTION_EXISTS(409, "Question exists"),

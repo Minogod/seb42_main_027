@@ -1,10 +1,13 @@
 package ynzmz.server.review.lecture.dto;
 
 import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Getter;
 import lombok.Setter;
+import ynzmz.server.comment.review.lecture.dto.LectureReviewCommentDto;
 import ynzmz.server.comment.review.lecture.entity.LectureReviewComment;
 import ynzmz.server.lecture.dto.LectureDto;
+import ynzmz.server.member.dto.MemberDto;
 import ynzmz.server.member.entity.Member;
 import ynzmz.server.teacher.dto.TeacherDto;
 
@@ -13,6 +16,7 @@ import java.util.List;
 public class LectureReviewDto {
     @Getter
     @AllArgsConstructor
+    @Builder
     public static class Post{
         private String title;
         private long starPoint;
@@ -23,6 +27,7 @@ public class LectureReviewDto {
     }
     @Getter
     @AllArgsConstructor
+    @Builder
     public static class Patch{
         private String title;
         private long starPoint;
@@ -59,7 +64,7 @@ public class LectureReviewDto {
         private TeacherDto.SimpleInfoResponse teacher;
         private LectureDto.SimpleInfoResponse lecture;
         private Member member;
-        private List<LectureReviewComment> comments;
+        private List<LectureReviewCommentDto.Response> comments;
     }
     @Getter @Setter
     public static class InfoResponse{

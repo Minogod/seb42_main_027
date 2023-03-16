@@ -2,7 +2,6 @@ package ynzmz.server.member.controller;
 
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
-import org.hibernate.annotations.Parameter;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -12,7 +11,6 @@ import ynzmz.server.member.dto.MemberPatchDto;
 import ynzmz.server.member.dto.MemberPostDto;
 import ynzmz.server.member.entity.Member;
 import ynzmz.server.member.mapper.MemberMapper;
-import ynzmz.server.member.repository.MemberRepository;
 
 import javax.validation.Valid;
 import javax.validation.constraints.Positive;
