@@ -1,0 +1,400 @@
+Index: .idea/libraries/Gradle__antlr_antlr_2_7_7.xml
+===================================================================
+diff --git a/.idea/libraries/Gradle__antlr_antlr_2_7_7.xml b/.idea/libraries/Gradle__antlr_antlr_2_7_7.xml
+deleted file mode 100644
+--- a/.idea/libraries/Gradle__antlr_antlr_2_7_7.xml	(revision 53f86617a8df3c62fb2c4d29ada7cf75d5539580)
++++ /dev/null	(revision 53f86617a8df3c62fb2c4d29ada7cf75d5539580)
+@@ -1,9 +0,0 @@
+-<component name="libraryTable">
+-  <library name="Gradle: antlr:antlr:2.7.7">
+-    <CLASSES>
+-      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/antlr/antlr/2.7.7/83cd2cd674a217ade95a4bb83a8a14f351f48bd0/antlr-2.7.7.jar!/" />
+-    </CLASSES>
+-    <JAVADOC />
+-    <SOURCES />
+-  </library>
+-</component>
+\ No newline at end of file
+Index: .idea/libraries/Gradle__com_fasterxml_classmate_1_5_1.xml
+===================================================================
+diff --git a/.idea/libraries/Gradle__com_fasterxml_classmate_1_5_1.xml b/.idea/libraries/Gradle__com_fasterxml_classmate_1_5_1.xml
+deleted file mode 100644
+--- a/.idea/libraries/Gradle__com_fasterxml_classmate_1_5_1.xml	(revision 53f86617a8df3c62fb2c4d29ada7cf75d5539580)
++++ /dev/null	(revision 53f86617a8df3c62fb2c4d29ada7cf75d5539580)
+@@ -1,11 +0,0 @@
+-<component name="libraryTable">
+-  <library name="Gradle: com.fasterxml:classmate:1.5.1">
+-    <CLASSES>
+-      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.fasterxml/classmate/1.5.1/3fe0bed568c62df5e89f4f174c101eab25345b6c/classmate-1.5.1.jar!/" />
+-    </CLASSES>
+-    <JAVADOC />
+-    <SOURCES>
+-      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.fasterxml/classmate/1.5.1/504edac38ff03cc5ce1d0391abb1416ffad58a99/classmate-1.5.1-sources.jar!/" />
+-    </SOURCES>
+-  </library>
+-</component>
+\ No newline at end of file
+Index: .idea/libraries/Gradle__jakarta_xml_bind_jakarta_xml_bind_api_2_3_3.xml
+===================================================================
+diff --git a/.idea/libraries/Gradle__jakarta_xml_bind_jakarta_xml_bind_api_2_3_3.xml b/.idea/libraries/Gradle__jakarta_xml_bind_jakarta_xml_bind_api_2_3_3.xml
+deleted file mode 100644
+--- a/.idea/libraries/Gradle__jakarta_xml_bind_jakarta_xml_bind_api_2_3_3.xml	(revision 53f86617a8df3c62fb2c4d29ada7cf75d5539580)
++++ /dev/null	(revision 53f86617a8df3c62fb2c4d29ada7cf75d5539580)
+@@ -1,11 +0,0 @@
+-<component name="libraryTable">
+-  <library name="Gradle: jakarta.xml.bind:jakarta.xml.bind-api:2.3.3">
+-    <CLASSES>
+-      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/jakarta.xml.bind/jakarta.xml.bind-api/2.3.3/48e3b9cfc10752fba3521d6511f4165bea951801/jakarta.xml.bind-api-2.3.3.jar!/" />
+-    </CLASSES>
+-    <JAVADOC />
+-    <SOURCES>
+-      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/jakarta.xml.bind/jakarta.xml.bind-api/2.3.3/d83744bae211a4072c39f007000a13f501a88395/jakarta.xml.bind-api-2.3.3-sources.jar!/" />
+-    </SOURCES>
+-  </library>
+-</component>
+\ No newline at end of file
+Index: .idea/libraries/Gradle__jakarta_annotation_jakarta_annotation_api_1_3_5.xml
+===================================================================
+diff --git a/.idea/libraries/Gradle__jakarta_annotation_jakarta_annotation_api_1_3_5.xml b/.idea/libraries/Gradle__jakarta_annotation_jakarta_annotation_api_1_3_5.xml
+deleted file mode 100644
+--- a/.idea/libraries/Gradle__jakarta_annotation_jakarta_annotation_api_1_3_5.xml	(revision 53f86617a8df3c62fb2c4d29ada7cf75d5539580)
++++ /dev/null	(revision 53f86617a8df3c62fb2c4d29ada7cf75d5539580)
+@@ -1,11 +0,0 @@
+-<component name="libraryTable">
+-  <library name="Gradle: jakarta.annotation:jakarta.annotation-api:1.3.5">
+-    <CLASSES>
+-      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/jakarta.annotation/jakarta.annotation-api/1.3.5/59eb84ee0d616332ff44aba065f3888cf002cd2d/jakarta.annotation-api-1.3.5.jar!/" />
+-    </CLASSES>
+-    <JAVADOC />
+-    <SOURCES>
+-      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/jakarta.annotation/jakarta.annotation-api/1.3.5/1ad35f11d17abb52426bfe15ea7b4c583795012/jakarta.annotation-api-1.3.5-sources.jar!/" />
+-    </SOURCES>
+-  </library>
+-</component>
+\ No newline at end of file
+Index: .idea/libraries/Gradle__jakarta_persistence_jakarta_persistence_api_2_2_3.xml
+===================================================================
+diff --git a/.idea/libraries/Gradle__jakarta_persistence_jakarta_persistence_api_2_2_3.xml b/.idea/libraries/Gradle__jakarta_persistence_jakarta_persistence_api_2_2_3.xml
+deleted file mode 100644
+--- a/.idea/libraries/Gradle__jakarta_persistence_jakarta_persistence_api_2_2_3.xml	(revision 53f86617a8df3c62fb2c4d29ada7cf75d5539580)
++++ /dev/null	(revision 53f86617a8df3c62fb2c4d29ada7cf75d5539580)
+@@ -1,11 +0,0 @@
+-<component name="libraryTable">
+-  <library name="Gradle: jakarta.persistence:jakarta.persistence-api:2.2.3">
+-    <CLASSES>
+-      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/jakarta.persistence/jakarta.persistence-api/2.2.3/8f6ea5daedc614f07a3654a455660145286f024e/jakarta.persistence-api-2.2.3.jar!/" />
+-    </CLASSES>
+-    <JAVADOC />
+-    <SOURCES>
+-      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/jakarta.persistence/jakarta.persistence-api/2.2.3/f9671636b64baca8130e3fcf516894d40173b47f/jakarta.persistence-api-2.2.3-sources.jar!/" />
+-    </SOURCES>
+-  </library>
+-</component>
+\ No newline at end of file
+Index: .idea/libraries/Gradle__jakarta_activation_jakarta_activation_api_1_2_2.xml
+===================================================================
+diff --git a/.idea/libraries/Gradle__jakarta_activation_jakarta_activation_api_1_2_2.xml b/.idea/libraries/Gradle__jakarta_activation_jakarta_activation_api_1_2_2.xml
+deleted file mode 100644
+--- a/.idea/libraries/Gradle__jakarta_activation_jakarta_activation_api_1_2_2.xml	(revision 53f86617a8df3c62fb2c4d29ada7cf75d5539580)
++++ /dev/null	(revision 53f86617a8df3c62fb2c4d29ada7cf75d5539580)
+@@ -1,11 +0,0 @@
+-<component name="libraryTable">
+-  <library name="Gradle: jakarta.activation:jakarta.activation-api:1.2.2">
+-    <CLASSES>
+-      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/jakarta.activation/jakarta.activation-api/1.2.2/99f53adba383cb1bf7c3862844488574b559621f/jakarta.activation-api-1.2.2.jar!/" />
+-    </CLASSES>
+-    <JAVADOC />
+-    <SOURCES>
+-      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/jakarta.activation/jakarta.activation-api/1.2.2/c45b5962230be8a5f93759203870c98917bb8b31/jakarta.activation-api-1.2.2-sources.jar!/" />
+-    </SOURCES>
+-  </library>
+-</component>
+\ No newline at end of file
+Index: .idea/libraries/Gradle__org_hibernate_common_hibernate_commons_annotations_5_1_2_Final.xml
+===================================================================
+diff --git a/.idea/libraries/Gradle__org_hibernate_common_hibernate_commons_annotations_5_1_2_Final.xml b/.idea/libraries/Gradle__org_hibernate_common_hibernate_commons_annotations_5_1_2_Final.xml
+deleted file mode 100644
+--- a/.idea/libraries/Gradle__org_hibernate_common_hibernate_commons_annotations_5_1_2_Final.xml	(revision 53f86617a8df3c62fb2c4d29ada7cf75d5539580)
++++ /dev/null	(revision 53f86617a8df3c62fb2c4d29ada7cf75d5539580)
+@@ -1,11 +0,0 @@
+-<component name="libraryTable">
+-  <library name="Gradle: org.hibernate.common:hibernate-commons-annotations:5.1.2.Final">
+-    <CLASSES>
+-      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.hibernate.common/hibernate-commons-annotations/5.1.2.Final/e59ffdbc6ad09eeb33507b39ffcf287679a498c8/hibernate-commons-annotations-5.1.2.Final.jar!/" />
+-    </CLASSES>
+-    <JAVADOC />
+-    <SOURCES>
+-      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.hibernate.common/hibernate-commons-annotations/5.1.2.Final/f61bcf5c598d45f10dc79688ebce6b4d1c2c5bd5/hibernate-commons-annotations-5.1.2.Final-sources.jar!/" />
+-    </SOURCES>
+-  </library>
+-</component>
+\ No newline at end of file
+Index: .idea/libraries/Gradle__jakarta_transaction_jakarta_transaction_api_1_3_3.xml
+===================================================================
+diff --git a/.idea/libraries/Gradle__jakarta_transaction_jakarta_transaction_api_1_3_3.xml b/.idea/libraries/Gradle__jakarta_transaction_jakarta_transaction_api_1_3_3.xml
+deleted file mode 100644
+--- a/.idea/libraries/Gradle__jakarta_transaction_jakarta_transaction_api_1_3_3.xml	(revision 53f86617a8df3c62fb2c4d29ada7cf75d5539580)
++++ /dev/null	(revision 53f86617a8df3c62fb2c4d29ada7cf75d5539580)
+@@ -1,11 +0,0 @@
+-<component name="libraryTable">
+-  <library name="Gradle: jakarta.transaction:jakarta.transaction-api:1.3.3">
+-    <CLASSES>
+-      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/jakarta.transaction/jakarta.transaction-api/1.3.3/c4179d48720a1e87202115fbed6089bdc4195405/jakarta.transaction-api-1.3.3.jar!/" />
+-    </CLASSES>
+-    <JAVADOC />
+-    <SOURCES>
+-      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/jakarta.transaction/jakarta.transaction-api/1.3.3/4ea5dba7d38f64e274bd3b0f0314383f009583ec/jakarta.transaction-api-1.3.3-sources.jar!/" />
+-    </SOURCES>
+-  </library>
+-</component>
+\ No newline at end of file
+Index: .idea/libraries/Gradle__com_vaadin_external_google_android_json_0_0_20131108_vaadin1.xml
+===================================================================
+diff --git a/.idea/libraries/Gradle__com_vaadin_external_google_android_json_0_0_20131108_vaadin1.xml b/.idea/libraries/Gradle__com_vaadin_external_google_android_json_0_0_20131108_vaadin1.xml
+deleted file mode 100644
+--- a/.idea/libraries/Gradle__com_vaadin_external_google_android_json_0_0_20131108_vaadin1.xml	(revision 53f86617a8df3c62fb2c4d29ada7cf75d5539580)
++++ /dev/null	(revision 53f86617a8df3c62fb2c4d29ada7cf75d5539580)
+@@ -1,11 +0,0 @@
+-<component name="libraryTable">
+-  <library name="Gradle: com.vaadin.external.google:android-json:0.0.20131108.vaadin1">
+-    <CLASSES>
+-      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.vaadin.external.google/android-json/0.0.20131108.vaadin1/fa26d351fe62a6a17f5cda1287c1c6110dec413f/android-json-0.0.20131108.vaadin1.jar!/" />
+-    </CLASSES>
+-    <JAVADOC />
+-    <SOURCES>
+-      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.vaadin.external.google/android-json/0.0.20131108.vaadin1/bf42d7e47a3228513b626dd7d37ac6f072aeca4f/android-json-0.0.20131108.vaadin1-sources.jar!/" />
+-    </SOURCES>
+-  </library>
+-</component>
+\ No newline at end of file
+Index: .idea/libraries/Gradle__com_mysql_mysql_connector_j_8_0_32.xml
+===================================================================
+diff --git a/.idea/libraries/Gradle__com_mysql_mysql_connector_j_8_0_32.xml b/.idea/libraries/Gradle__com_mysql_mysql_connector_j_8_0_32.xml
+deleted file mode 100644
+--- a/.idea/libraries/Gradle__com_mysql_mysql_connector_j_8_0_32.xml	(revision 53f86617a8df3c62fb2c4d29ada7cf75d5539580)
++++ /dev/null	(revision 53f86617a8df3c62fb2c4d29ada7cf75d5539580)
+@@ -1,11 +0,0 @@
+-<component name="libraryTable">
+-  <library name="Gradle: com.mysql:mysql-connector-j:8.0.32">
+-    <CLASSES>
+-      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.mysql/mysql-connector-j/8.0.32/41ec3f8cdaccf6c46a47d7cd628eeb59a926d9d4/mysql-connector-j-8.0.32.jar!/" />
+-    </CLASSES>
+-    <JAVADOC />
+-    <SOURCES>
+-      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.mysql/mysql-connector-j/8.0.32/24758bdd537b4b6cb31859062b79301c7d82216c/mysql-connector-j-8.0.32-sources.jar!/" />
+-    </SOURCES>
+-  </library>
+-</component>
+\ No newline at end of file
+Index: .idea/libraries/Gradle__com_sun_istack_istack_commons_runtime_3_0_12.xml
+===================================================================
+diff --git a/.idea/libraries/Gradle__com_sun_istack_istack_commons_runtime_3_0_12.xml b/.idea/libraries/Gradle__com_sun_istack_istack_commons_runtime_3_0_12.xml
+deleted file mode 100644
+--- a/.idea/libraries/Gradle__com_sun_istack_istack_commons_runtime_3_0_12.xml	(revision 53f86617a8df3c62fb2c4d29ada7cf75d5539580)
++++ /dev/null	(revision 53f86617a8df3c62fb2c4d29ada7cf75d5539580)
+@@ -1,11 +0,0 @@
+-<component name="libraryTable">
+-  <library name="Gradle: com.sun.istack:istack-commons-runtime:3.0.12">
+-    <CLASSES>
+-      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.sun.istack/istack-commons-runtime/3.0.12/cbbe1a62b0cc6c85972e99d52aaee350153dc530/istack-commons-runtime-3.0.12.jar!/" />
+-    </CLASSES>
+-    <JAVADOC />
+-    <SOURCES>
+-      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.sun.istack/istack-commons-runtime/3.0.12/472b862e0850fddfd912b7de2fd52139c91a8b6f/istack-commons-runtime-3.0.12-sources.jar!/" />
+-    </SOURCES>
+-  </library>
+-</component>
+\ No newline at end of file
+Index: .idea/libraries/Gradle__org_opentest4j_opentest4j_1_2_0.xml
+===================================================================
+diff --git a/.idea/libraries/Gradle__org_opentest4j_opentest4j_1_2_0.xml b/.idea/libraries/Gradle__org_opentest4j_opentest4j_1_2_0.xml
+deleted file mode 100644
+--- a/.idea/libraries/Gradle__org_opentest4j_opentest4j_1_2_0.xml	(revision 53f86617a8df3c62fb2c4d29ada7cf75d5539580)
++++ /dev/null	(revision 53f86617a8df3c62fb2c4d29ada7cf75d5539580)
+@@ -1,11 +0,0 @@
+-<component name="libraryTable">
+-  <library name="Gradle: org.opentest4j:opentest4j:1.2.0">
+-    <CLASSES>
+-      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.opentest4j/opentest4j/1.2.0/28c11eb91f9b6d8e200631d46e20a7f407f2a046/opentest4j-1.2.0.jar!/" />
+-    </CLASSES>
+-    <JAVADOC />
+-    <SOURCES>
+-      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.opentest4j/opentest4j/1.2.0/41d55b3c2254de9837b4ec8923cbd371b8a7eab5/opentest4j-1.2.0-sources.jar!/" />
+-    </SOURCES>
+-  </library>
+-</component>
+\ No newline at end of file
+Index: .idea/libraries/Gradle__org_hamcrest_hamcrest_2_2.xml
+===================================================================
+diff --git a/.idea/libraries/Gradle__org_hamcrest_hamcrest_2_2.xml b/.idea/libraries/Gradle__org_hamcrest_hamcrest_2_2.xml
+deleted file mode 100644
+--- a/.idea/libraries/Gradle__org_hamcrest_hamcrest_2_2.xml	(revision 53f86617a8df3c62fb2c4d29ada7cf75d5539580)
++++ /dev/null	(revision 53f86617a8df3c62fb2c4d29ada7cf75d5539580)
+@@ -1,11 +0,0 @@
+-<component name="libraryTable">
+-  <library name="Gradle: org.hamcrest:hamcrest:2.2">
+-    <CLASSES>
+-      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.hamcrest/hamcrest/2.2/1820c0968dba3a11a1b30669bb1f01978a91dedc/hamcrest-2.2.jar!/" />
+-    </CLASSES>
+-    <JAVADOC />
+-    <SOURCES>
+-      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.hamcrest/hamcrest/2.2/a0a13cfc629420efb587d954f982c4c6a100da25/hamcrest-2.2-sources.jar!/" />
+-    </SOURCES>
+-  </library>
+-</component>
+\ No newline at end of file
+Index: .idea/libraries/Gradle__com_sun_activation_jakarta_activation_1_2_2.xml
+===================================================================
+diff --git a/.idea/libraries/Gradle__com_sun_activation_jakarta_activation_1_2_2.xml b/.idea/libraries/Gradle__com_sun_activation_jakarta_activation_1_2_2.xml
+deleted file mode 100644
+--- a/.idea/libraries/Gradle__com_sun_activation_jakarta_activation_1_2_2.xml	(revision 53f86617a8df3c62fb2c4d29ada7cf75d5539580)
++++ /dev/null	(revision 53f86617a8df3c62fb2c4d29ada7cf75d5539580)
+@@ -1,11 +0,0 @@
+-<component name="libraryTable">
+-  <library name="Gradle: com.sun.activation:jakarta.activation:1.2.2">
+-    <CLASSES>
+-      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.sun.activation/jakarta.activation/1.2.2/74548703f9851017ce2f556066659438019e7eb5/jakarta.activation-1.2.2.jar!/" />
+-    </CLASSES>
+-    <JAVADOC />
+-    <SOURCES>
+-      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.sun.activation/jakarta.activation/1.2.2/fa3c25fb842cbe9eaa126a007475297f8bf35abe/jakarta.activation-1.2.2-sources.jar!/" />
+-    </SOURCES>
+-  </library>
+-</component>
+\ No newline at end of file
+Index: .idea/misc.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<project version=\"4\">\n  <component name=\"ExternalStorageConfigurationManager\" enabled=\"true\" />\n  <component name=\"FrameworkDetectionExcludesConfiguration\">\n    <file type=\"web\" url=\"file://$PROJECT_DIR$/server\" />\n  </component>\n  <component name=\"ProjectRootManager\" version=\"2\" project-jdk-name=\"11\" project-jdk-type=\"JavaSDK\" />\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/misc.xml b/.idea/misc.xml
+--- a/.idea/misc.xml	(revision 53f86617a8df3c62fb2c4d29ada7cf75d5539580)
++++ b/.idea/misc.xml	(date 1678845543094)
+@@ -5,4 +5,7 @@
+     <file type="web" url="file://$PROJECT_DIR$/server" />
+   </component>
+   <component name="ProjectRootManager" version="2" project-jdk-name="11" project-jdk-type="JavaSDK" />
++  <component name="ProjectType">
++    <option name="id" value="jpab" />
++  </component>
+ </project>
+\ No newline at end of file
+Index: server/src/main/java/ynzmz/server/security/auths/filter/JwtAuthenticationFilter.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package ynzmz.server.security.auths.filter;\n\nimport com.fasterxml.jackson.databind.ObjectMapper;\nimport io.jsonwebtoken.Claims;\nimport io.jsonwebtoken.Jwt;\nimport lombok.Getter;\nimport lombok.SneakyThrows;\nimport org.springframework.security.authentication.AuthenticationManager;\nimport org.springframework.security.authentication.UsernamePasswordAuthenticationToken;\nimport org.springframework.security.core.Authentication;\nimport org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;\nimport ynzmz.server.member.entity.Member;\nimport ynzmz.server.security.auths.dto.LoginDto;\nimport ynzmz.server.security.auths.jwt.JwtTokenizer;\n\nimport javax.servlet.FilterChain;\nimport javax.servlet.ServletException;\nimport javax.servlet.http.HttpServletRequest;\nimport javax.servlet.http.HttpServletResponse;\nimport java.io.IOException;\nimport java.util.Date;\nimport java.util.HashMap;\nimport java.util.Map;\n\npublic class JwtAuthenticationFilter extends UsernamePasswordAuthenticationFilter {\n    private final AuthenticationManager authenticationManager;\n    private final JwtTokenizer jwtTokenizer;\n\n    public JwtAuthenticationFilter(AuthenticationManager authenticationManager, JwtTokenizer jwtTokenizer){\n        this.authenticationManager = authenticationManager;\n        this.jwtTokenizer = jwtTokenizer;\n    }\n\n\n    @SneakyThrows\n    @Override\n    public Authentication attemptAuthentication(HttpServletRequest request, HttpServletResponse response){\n        ObjectMapper objectMapper = new ObjectMapper(); //DTO 클래스로 역직렬화하기 위해 ObjectMapper 인스턴스를 생성\n        LoginDto loginDto = objectMapper.readValue(request.getInputStream(), LoginDto.class);\n\n        UsernamePasswordAuthenticationToken authenticationToken =\n                new UsernamePasswordAuthenticationToken(loginDto.getUsername(),loginDto.getPassword());\n        //UsernamePasswordAuthenticationToken 생성\n\n        return authenticationManager.authenticate(authenticationToken); //AuthenticationManager에 전달, 인증 처리 위임\n    }\n\n    @Override\n    protected void successfulAuthentication(HttpServletRequest request, //클라이언트의 인증 정보를 이용해 인증에 성공할 경우 호출\n                                            HttpServletResponse response,\n                                            FilterChain chain,\n                                            Authentication authResult) throws ServletException, IOException {\n        Member member = (Member) authResult.getPrincipal(); //member 엔티티 클래스 객체 얻음\n\n        String accessToken = delegateAccessToken(member); //AccessToken 생성\n        String refreshToken = delegateRefreshToken(member); //RefreshToken생성\n\n        response.setHeader(\"Authorization\", \"Bearer\" + accessToken); //클라이언트측에서 요청할때마다 requestHeader에 추가\n        response.setHeader(\"Refresh\", refreshToken);\n\n        this.getSuccessHandler().onAuthenticationSuccess(request,response,authResult);\n\n\n    }\n\n    private String delegateAccessToken(Member member) {\n        Map<String, Object> claims = new HashMap<>();\n        claims.put(\"username\", member.getEmail());\n        claims.put(\"roles\", member.getRoles());\n\n        String subject = member.getEmail();\n        Date expiration = jwtTokenizer.getTokenExpiration(jwtTokenizer.getAccessTokenExpirationMinutes());\n        String base64EncodedSecretKey = jwtTokenizer.encodeBase64SecretKey(jwtTokenizer.getSecretKey());\n\n        String accessToken = jwtTokenizer.generateAccessToken(claims, subject, expiration, base64EncodedSecretKey);\n\n        return accessToken;\n    }\n\n    private String delegateRefreshToken(Member member){\n        String subject = member.getEmail();\n\n        Date expiration = jwtTokenizer.getTokenExpiration(jwtTokenizer.getRefreshTokenExpirationMinutes());\n\n        String base64EncodedSecretKey = jwtTokenizer.encodeBase64SecretKey(jwtTokenizer.getSecretKey());\n        String refreshToken = jwtTokenizer.generateRefreshToken(subject, expiration, base64EncodedSecretKey);\n\n        return refreshToken;\n    }\n\n}\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/server/src/main/java/ynzmz/server/security/auths/filter/JwtAuthenticationFilter.java b/server/src/main/java/ynzmz/server/security/auths/filter/JwtAuthenticationFilter.java
+--- a/server/src/main/java/ynzmz/server/security/auths/filter/JwtAuthenticationFilter.java	(revision 53f86617a8df3c62fb2c4d29ada7cf75d5539580)
++++ b/server/src/main/java/ynzmz/server/security/auths/filter/JwtAuthenticationFilter.java	(date 1678807581094)
+@@ -55,7 +55,7 @@
+         String accessToken = delegateAccessToken(member); //AccessToken 생성
+         String refreshToken = delegateRefreshToken(member); //RefreshToken생성
+ 
+-        response.setHeader("Authorization", "Bearer" + accessToken); //클라이언트측에서 요청할때마다 requestHeader에 추가
++        response.setHeader("Authorization", "Bearer " + accessToken); //클라이언트측에서 요청할때마다 requestHeader에 추가
+         response.setHeader("Refresh", refreshToken);
+ 
+         this.getSuccessHandler().onAuthenticationSuccess(request,response,authResult);
+Index: server/src/main/java/ynzmz/server/security/auths/filter/JwtVerificationFilter.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package ynzmz.server.security.auths.filter;\n\n\nimport io.jsonwebtoken.ExpiredJwtException;\nimport io.jsonwebtoken.security.SignatureException;\nimport org.springframework.security.authentication.UsernamePasswordAuthenticationToken;\nimport org.springframework.security.config.annotation.web.configurers.SecurityContextConfigurer;\nimport org.springframework.security.core.Authentication;\nimport org.springframework.security.core.GrantedAuthority;\nimport org.springframework.security.core.context.SecurityContextHolder;\nimport org.springframework.web.filter.OncePerRequestFilter;\nimport ynzmz.server.security.auths.jwt.JwtTokenizer;\nimport ynzmz.server.security.auths.utils.CustomAuthorityUtils;\n\nimport javax.servlet.FilterChain;\nimport javax.servlet.ServletException;\nimport javax.servlet.http.HttpServletRequest;\nimport javax.servlet.http.HttpServletResponse;\nimport java.io.IOException;\nimport java.util.List;\nimport java.util.Map;\n\npublic class JwtVerificationFilter extends OncePerRequestFilter {\n    private final JwtTokenizer jwtTokenizer;\n    private final CustomAuthorityUtils authorityUtils;\n\n    public JwtVerificationFilter(JwtTokenizer jwtTokenizer,\n                                 CustomAuthorityUtils authorityUtils) {\n        this.jwtTokenizer = jwtTokenizer;\n        this.authorityUtils = authorityUtils;\n    }\n\n    @Override\n    protected void doFilterInternal(HttpServletRequest request, HttpServletResponse response, FilterChain filterChain) throws ServletException, IOException {\n        try {\n            Map<String, Object> claims = verifyJws(request);\n            setAuthenticationToContext(claims);\n        } catch (SignatureException se) {\n            request.setAttribute(\"exception\", se);\n        } catch (ExpiredJwtException ee) {\n            request.setAttribute(\"exception\", ee);\n        } catch (Exception e) {\n            request.setAttribute(\"exception\", e);\n        }\n\n        filterChain.doFilter(request,response);\n    }\n\n    @Override\n    protected boolean shouldNotFilter(HttpServletRequest request)throws ServletException {\n        String authorization = request.getHeader(\"Authorization\");\n\n        return authorization == null || !authorization.startsWith(\"Bearer\");\n    }\n\n    private Map<String, Object> verifyJws(HttpServletRequest request) {\n        String jws = request.getHeader(\"Authorization\");\n        String base64EncodedSecretKey = jwtTokenizer.encodeBase64SecretKey(jwtTokenizer.getSecretKey());\n        Map<String,Object> claims = jwtTokenizer.getClaims(jws, base64EncodedSecretKey).getBody();\n\n        return claims;\n    }\n\n    private void setAuthenticationToContext(Map<String, Object> claims) {\n        String username = (String) claims.get(\"username\");\n        List<GrantedAuthority> authorities = authorityUtils.createdAuthorities((List)claims.get(\"roles\"));\n        Authentication authentication = new UsernamePasswordAuthenticationToken(username,null, authorities);\n        SecurityContextHolder.getContext().setAuthentication(authentication);\n    }\n}\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/server/src/main/java/ynzmz/server/security/auths/filter/JwtVerificationFilter.java b/server/src/main/java/ynzmz/server/security/auths/filter/JwtVerificationFilter.java
+--- a/server/src/main/java/ynzmz/server/security/auths/filter/JwtVerificationFilter.java	(revision 53f86617a8df3c62fb2c4d29ada7cf75d5539580)
++++ b/server/src/main/java/ynzmz/server/security/auths/filter/JwtVerificationFilter.java	(date 1678807581089)
+@@ -50,11 +50,11 @@
+     protected boolean shouldNotFilter(HttpServletRequest request)throws ServletException {
+         String authorization = request.getHeader("Authorization");
+ 
+-        return authorization == null || !authorization.startsWith("Bearer");
++        return authorization == null || !authorization.startsWith("Bearer ");
+     }
+ 
+     private Map<String, Object> verifyJws(HttpServletRequest request) {
+-        String jws = request.getHeader("Authorization");
++        String jws = request.getHeader("Authorization").replace("Bearer", "");
+         String base64EncodedSecretKey = jwtTokenizer.encodeBase64SecretKey(jwtTokenizer.getSecretKey());
+         Map<String,Object> claims = jwtTokenizer.getClaims(jws, base64EncodedSecretKey).getBody();
+ 
+Index: .idea/compiler.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<project version=\"4\">\n  <component name=\"CompilerConfiguration\">\n    <annotationProcessing>\n      <profile name=\"Gradle Imported\" enabled=\"true\">\n        <outputRelativeToContentRoot value=\"true\" />\n        <processorPath useClasspath=\"false\">\n          <entry name=\"$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.projectlombok/lombok/1.18.20/18bcea7d5df4d49227b4a0743a536208ce4825bb/lombok-1.18.20.jar\" />\n        </processorPath>\n        <module name=\"server.main\" />\n      </profile>\n    </annotationProcessing>\n  </component>\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/compiler.xml b/.idea/compiler.xml
+--- a/.idea/compiler.xml	(revision 53f86617a8df3c62fb2c4d29ada7cf75d5539580)
++++ b/.idea/compiler.xml	(date 1678845543096)
+@@ -5,7 +5,16 @@
+       <profile name="Gradle Imported" enabled="true">
+         <outputRelativeToContentRoot value="true" />
+         <processorPath useClasspath="false">
+-          <entry name="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.projectlombok/lombok/1.18.20/18bcea7d5df4d49227b4a0743a536208ce4825bb/lombok-1.18.20.jar" />
++          <entry name="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.projectlombok/lombok/1.18.26/8f8cf0372abf564913e9796623aac4c8ea44025a/lombok-1.18.26.jar" />
++        </processorPath>
++        <module name="server.test" />
++      </profile>
++      <profile name="Gradle Imported" enabled="true">
++        <outputRelativeToContentRoot value="true" />
++        <processorPath useClasspath="false">
++          <entry name="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.projectlombok/lombok/1.18.26/8f8cf0372abf564913e9796623aac4c8ea44025a/lombok-1.18.26.jar" />
++          <entry name="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.mapstruct/mapstruct-processor/1.5.2.Final/74a21679400fceb1f98987926cea1786c0e39e77/mapstruct-processor-1.5.2.Final.jar" />
++          <entry name="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.projectlombok/lombok-mapstruct-binding/0.2.0/2f1cf9ced7b720ba4996c942b816669e63f0fa4f/lombok-mapstruct-binding-0.2.0.jar" />
+         </processorPath>
+         <module name="server.main" />
+       </profile>
+Index: .idea/aws.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/aws.xml b/.idea/aws.xml
+new file mode 100644
+--- /dev/null	(date 1678849668667)
++++ b/.idea/aws.xml	(date 1678849668667)
+@@ -0,0 +1,17 @@
++<?xml version="1.0" encoding="UTF-8"?>
++<project version="4">
++  <component name="accountSettings">
++    <option name="activeProfile" value="profile:default" />
++    <option name="activeRegion" value="ap-northeast-2" />
++    <option name="recentlyUsedProfiles">
++      <list>
++        <option value="profile:default" />
++      </list>
++    </option>
++    <option name="recentlyUsedRegions">
++      <list>
++        <option value="ap-northeast-2" />
++      </list>
++    </option>
++  </component>
++</project>
+\ No newline at end of file
+Index: .idea/jpa-buddy.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/jpa-buddy.xml b/.idea/jpa-buddy.xml
+new file mode 100644
+--- /dev/null	(date 1678845543104)
++++ b/.idea/jpa-buddy.xml	(date 1678845543104)
+@@ -0,0 +1,7 @@
++<?xml version="1.0" encoding="UTF-8"?>
++<project version="4">
++  <component name="JpaBuddyIdeaProjectConfig">
++    <option name="defaultUnitInitialized" value="true" />
++    <option name="renamerInitialized" value="true" />
++  </component>
++</project>
+\ No newline at end of file
