@@ -9,14 +9,14 @@ import ynzmz.server.comment.review.lecture.entity.LectureReviewComment;
 
 @Generated(
     value = "org.mapstruct.ap.MappingProcessor",
-    date = "2023-03-16T15:37:01+0900",
+    date = "2023-03-17T14:08:15+0900",
     comments = "version: 1.5.2.Final, compiler: IncrementalProcessingEnvironment from gradle-language-java-7.6.1.jar, environment: Java 11.0.17 (Azul Systems, Inc.)"
 )
 @Component
 public class LectureReviewPostCommentMapperImpl implements LectureReviewPostCommentMapper {
 
     @Override
-    public LectureReviewComment lectureReviewCommentToLectureReviewCommentPost(LectureReviewCommentDto.Post lectureReviewPostCommentPostDto) {
+    public LectureReviewComment lectureReviewCommentPostToLectureReviewComment(LectureReviewCommentDto.Post lectureReviewPostCommentPostDto) {
         if ( lectureReviewPostCommentPostDto == null ) {
             return null;
         }
@@ -30,7 +30,7 @@ public class LectureReviewPostCommentMapperImpl implements LectureReviewPostComm
     }
 
     @Override
-    public LectureReviewComment lectureReviewCommentToLectureReviewCommentPatch(LectureReviewCommentDto.Patch lectureReviewPostCommentPatchDto) {
+    public LectureReviewComment lectureReviewCommentPatchToLectureReviewComment(LectureReviewCommentDto.Patch lectureReviewPostCommentPatchDto) {
         if ( lectureReviewPostCommentPatchDto == null ) {
             return null;
         }
@@ -44,7 +44,7 @@ public class LectureReviewPostCommentMapperImpl implements LectureReviewPostComm
     }
 
     @Override
-    public LectureReviewCommentDto.Response lectureReviewCommentResponseToLectureReviewComment(LectureReviewComment lectureReviewComment) {
+    public LectureReviewCommentDto.Response lectureReviewCommentToLectureReviewCommentResponse(LectureReviewComment lectureReviewComment) {
         if ( lectureReviewComment == null ) {
             return null;
         }
@@ -62,14 +62,14 @@ public class LectureReviewPostCommentMapperImpl implements LectureReviewPostComm
     }
 
     @Override
-    public List<LectureReviewCommentDto.Response> lectureReviewCommentResponsesToLectureReviewComments(List<LectureReviewComment> lectureReviewComments) {
+    public List<LectureReviewCommentDto.Response> lectureReviewCommentsToLectureReviewCommentResponses(List<LectureReviewComment> lectureReviewComments) {
         if ( lectureReviewComments == null ) {
             return null;
         }
 
         List<LectureReviewCommentDto.Response> list = new ArrayList<LectureReviewCommentDto.Response>( lectureReviewComments.size() );
         for ( LectureReviewComment lectureReviewComment : lectureReviewComments ) {
-            list.add( lectureReviewCommentResponseToLectureReviewComment( lectureReviewComment ) );
+            list.add( lectureReviewCommentToLectureReviewCommentResponse( lectureReviewComment ) );
         }
 
         return list;

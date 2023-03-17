@@ -13,14 +13,14 @@ import ynzmz.server.review.lecture.entity.LectureReview;
 
 @Generated(
     value = "org.mapstruct.ap.MappingProcessor",
-    date = "2023-03-16T15:37:01+0900",
+    date = "2023-03-17T14:08:15+0900",
     comments = "version: 1.5.2.Final, compiler: IncrementalProcessingEnvironment from gradle-language-java-7.6.1.jar, environment: Java 11.0.17 (Azul Systems, Inc.)"
 )
 @Component
 public class LectureReviewMapperImpl implements LectureReviewMapper {
 
     @Override
-    public LectureReview lectureReviewToLectureReviewPost(LectureReviewDto.Post reviewPostPost) {
+    public LectureReview lectureReviewPostToLectureReview(LectureReviewDto.Post reviewPostPost) {
         if ( reviewPostPost == null ) {
             return null;
         }
@@ -36,7 +36,7 @@ public class LectureReviewMapperImpl implements LectureReviewMapper {
     }
 
     @Override
-    public LectureReview lectureReviewToLectureReviewPatch(LectureReviewDto.Patch reviewPostPatch) {
+    public LectureReview lectureReviewPatchToLectureReview(LectureReviewDto.Patch reviewPostPatch) {
         if ( reviewPostPatch == null ) {
             return null;
         }
@@ -52,7 +52,7 @@ public class LectureReviewMapperImpl implements LectureReviewMapper {
     }
 
     @Override
-    public LectureReviewDto.ListPageResponse lectureReviewListPageResponseToLectureReview(LectureReview lectureReview) {
+    public LectureReviewDto.ListPageResponse lectureReviewToLectureReviewListPageResponse(LectureReview lectureReview) {
         if ( lectureReview == null ) {
             return null;
         }
@@ -76,21 +76,21 @@ public class LectureReviewMapperImpl implements LectureReviewMapper {
     }
 
     @Override
-    public List<LectureReviewDto.ListPageResponse> lectureReviewListPageResponsesToLectureReviews(List<LectureReview> lectureReviews) {
+    public List<LectureReviewDto.ListPageResponse> lectureReviewsToLectureReviewListPageResponses(List<LectureReview> lectureReviews) {
         if ( lectureReviews == null ) {
             return null;
         }
 
         List<LectureReviewDto.ListPageResponse> list = new ArrayList<LectureReviewDto.ListPageResponse>( lectureReviews.size() );
         for ( LectureReview lectureReview : lectureReviews ) {
-            list.add( lectureReviewListPageResponseToLectureReview( lectureReview ) );
+            list.add( lectureReviewToLectureReviewListPageResponse( lectureReview ) );
         }
 
         return list;
     }
 
     @Override
-    public LectureReviewDto.DetailPageResponse lectureReviewDetailPageResponseToLectureReview(LectureReview lectureReview) {
+    public LectureReviewDto.DetailPageResponse lectureReviewToLectureReviewDetailPageResponse(LectureReview lectureReview) {
         if ( lectureReview == null ) {
             return null;
         }
@@ -115,21 +115,7 @@ public class LectureReviewMapperImpl implements LectureReviewMapper {
     }
 
     @Override
-    public List<LectureReviewDto.DetailPageResponse> lectureReviewDetailPageResponsesToLectureReviews(List<LectureReview> lectureReviews) {
-        if ( lectureReviews == null ) {
-            return null;
-        }
-
-        List<LectureReviewDto.DetailPageResponse> list = new ArrayList<LectureReviewDto.DetailPageResponse>( lectureReviews.size() );
-        for ( LectureReview lectureReview : lectureReviews ) {
-            list.add( lectureReviewDetailPageResponseToLectureReview( lectureReview ) );
-        }
-
-        return list;
-    }
-
-    @Override
-    public LectureReviewDto.InfoResponse lectureReviewInfoResponseToLectureReview(LectureReview lectureReview) {
+    public LectureReviewDto.InfoResponse lectureReviewToLectureReviewInfoResponse(LectureReview lectureReview) {
         if ( lectureReview == null ) {
             return null;
         }
@@ -150,20 +136,6 @@ public class LectureReviewMapperImpl implements LectureReviewMapper {
         infoResponse.setMember( lectureReview.getMember() );
 
         return infoResponse;
-    }
-
-    @Override
-    public List<LectureReviewDto.InfoResponse> lectureReviewInfoResponsesToLectureReviews(List<LectureReview> lectureReviews) {
-        if ( lectureReviews == null ) {
-            return null;
-        }
-
-        List<LectureReviewDto.InfoResponse> list = new ArrayList<LectureReviewDto.InfoResponse>( lectureReviews.size() );
-        for ( LectureReview lectureReview : lectureReviews ) {
-            list.add( lectureReviewInfoResponseToLectureReview( lectureReview ) );
-        }
-
-        return list;
     }
 
     protected LectureDto.SimpleInfoResponse lectureToSimpleInfoResponse(Lecture lecture) {

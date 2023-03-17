@@ -22,14 +22,14 @@ import ynzmz.server.teacher.entity.Teacher;
 
 @Generated(
     value = "org.mapstruct.ap.MappingProcessor",
-    date = "2023-03-16T15:37:01+0900",
+    date = "2023-03-17T14:08:15+0900",
     comments = "version: 1.5.2.Final, compiler: IncrementalProcessingEnvironment from gradle-language-java-7.6.1.jar, environment: Java 11.0.17 (Azul Systems, Inc.)"
 )
 @Component
 public class TeacherMapperImpl implements TeacherMapper {
 
     @Override
-    public Teacher teacherToTeacherPost(TeacherDto.Post teacherPost) {
+    public Teacher teacherPostToTeacher(TeacherDto.Post teacherPost) {
         if ( teacherPost == null ) {
             return null;
         }
@@ -52,7 +52,7 @@ public class TeacherMapperImpl implements TeacherMapper {
     }
 
     @Override
-    public Teacher teacherToTeacherPatch(TeacherDto.Patch teacherPatch) {
+    public Teacher teacherPatchToTeacher(TeacherDto.Patch teacherPatch) {
         if ( teacherPatch == null ) {
             return null;
         }
@@ -75,7 +75,7 @@ public class TeacherMapperImpl implements TeacherMapper {
     }
 
     @Override
-    public TeacherDto.SimpleInfoResponse teacherInfoResponseToTeacher(Teacher teacher) {
+    public TeacherDto.SimpleInfoResponse teacherToTeacherSimpleInfoResponse(Teacher teacher) {
         if ( teacher == null ) {
             return null;
         }
@@ -90,21 +90,7 @@ public class TeacherMapperImpl implements TeacherMapper {
     }
 
     @Override
-    public List<TeacherDto.SimpleInfoResponse> teacherInfoResponsesToTeachers(List<Teacher> teachers) {
-        if ( teachers == null ) {
-            return null;
-        }
-
-        List<TeacherDto.SimpleInfoResponse> list = new ArrayList<TeacherDto.SimpleInfoResponse>( teachers.size() );
-        for ( Teacher teacher : teachers ) {
-            list.add( teacherInfoResponseToTeacher( teacher ) );
-        }
-
-        return list;
-    }
-
-    @Override
-    public TeacherDto.ListPageResponse teacherListPageResponseToTeacher(Teacher teacher) {
+    public TeacherDto.ListPageResponse teacherToTeacherListPageResponse(Teacher teacher) {
         if ( teacher == null ) {
             return null;
         }
@@ -125,21 +111,21 @@ public class TeacherMapperImpl implements TeacherMapper {
     }
 
     @Override
-    public List<TeacherDto.ListPageResponse> teacherListPageResponsesToTeachers(List<Teacher> teachers) {
+    public List<TeacherDto.ListPageResponse> teachersToTeacherListPageResponses(List<Teacher> teachers) {
         if ( teachers == null ) {
             return null;
         }
 
         List<TeacherDto.ListPageResponse> list = new ArrayList<TeacherDto.ListPageResponse>( teachers.size() );
         for ( Teacher teacher : teachers ) {
-            list.add( teacherListPageResponseToTeacher( teacher ) );
+            list.add( teacherToTeacherListPageResponse( teacher ) );
         }
 
         return list;
     }
 
     @Override
-    public TeacherDto.DetailPageResponse teacherDetailPageResponseToTeacher(Teacher teacher) {
+    public TeacherDto.DetailPageResponse teacherToTeacherDetailPageResponse(Teacher teacher) {
         if ( teacher == null ) {
             return null;
         }
@@ -169,7 +155,7 @@ public class TeacherMapperImpl implements TeacherMapper {
     }
 
     @Override
-    public TeacherDto.ReviewDetailPageResponse teacherReviewDetailPageResponseToTeacher(Teacher teacher) {
+    public TeacherDto.ReviewDetailPageResponse teacherToTeacherReviewDetailPageResponse(Teacher teacher) {
         if ( teacher == null ) {
             return null;
         }
@@ -205,7 +191,7 @@ public class TeacherMapperImpl implements TeacherMapper {
 
         List<GradeTagDto.Response> list1 = new ArrayList<GradeTagDto.Response>( list.size() );
         for ( TeacherGradeTag teacherGradeTag : list ) {
-            list1.add( gradeTagResponseToTeacherGradeTag( teacherGradeTag ) );
+            list1.add( teacherGradeTagToGradeTagResponse( teacherGradeTag ) );
         }
 
         return list1;
@@ -218,7 +204,7 @@ public class TeacherMapperImpl implements TeacherMapper {
 
         List<SubjectTagDto.Response> list1 = new ArrayList<SubjectTagDto.Response>( list.size() );
         for ( TeacherSubjectTag teacherSubjectTag : list ) {
-            list1.add( subjectTagResponseToTeacherSubjectTag( teacherSubjectTag ) );
+            list1.add( teacherSubjectTagToSubjectTagResponse( teacherSubjectTag ) );
         }
 
         return list1;
@@ -231,7 +217,7 @@ public class TeacherMapperImpl implements TeacherMapper {
 
         List<PlatformTagDto.Response> list1 = new ArrayList<PlatformTagDto.Response>( list.size() );
         for ( TeacherPlatformTag teacherPlatformTag : list ) {
-            list1.add( platformTagResponseToTeacherPlatformTag( teacherPlatformTag ) );
+            list1.add( teacherPlatformTagToPlatformTagResponse( teacherPlatformTag ) );
         }
 
         return list1;
@@ -330,7 +316,7 @@ public class TeacherMapperImpl implements TeacherMapper {
         listPageResponse.setGradeTags( lectureGradeTagListToResponseList( lecture.getGradeTags() ) );
         listPageResponse.setSubjectTags( lectureSubjectTagListToResponseList( lecture.getSubjectTags() ) );
         listPageResponse.setPlatformTags( lecturePlatformTagListToResponseList( lecture.getPlatformTags() ) );
-        listPageResponse.setTeacher( teacherInfoResponseToTeacher( lecture.getTeacher() ) );
+        listPageResponse.setTeacher( teacherToTeacherSimpleInfoResponse( lecture.getTeacher() ) );
 
         return listPageResponse;
     }

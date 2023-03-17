@@ -19,14 +19,14 @@ import ynzmz.server.teacher.entity.Teacher;
 
 @Generated(
     value = "org.mapstruct.ap.MappingProcessor",
-    date = "2023-03-16T15:37:01+0900",
+    date = "2023-03-17T14:08:15+0900",
     comments = "version: 1.5.2.Final, compiler: IncrementalProcessingEnvironment from gradle-language-java-7.6.1.jar, environment: Java 11.0.17 (Azul Systems, Inc.)"
 )
 @Component
 public class LectureMapperImpl implements LectureMapper {
 
     @Override
-    public Lecture lectureToLecturePost(LectureDto.Post lecturePost) {
+    public Lecture lecturePostToLecture(LectureDto.Post lecturePost) {
         if ( lecturePost == null ) {
             return null;
         }
@@ -43,7 +43,7 @@ public class LectureMapperImpl implements LectureMapper {
     }
 
     @Override
-    public Lecture lectureToLecturePatch(LectureDto.Patch lecurePatch) {
+    public Lecture lecturePatchToLecture(LectureDto.Patch lecurePatch) {
         if ( lecurePatch == null ) {
             return null;
         }
@@ -60,7 +60,7 @@ public class LectureMapperImpl implements LectureMapper {
     }
 
     @Override
-    public LectureDto.SimpleInfoResponse lectureInfoResponseToLecture(Lecture lecture) {
+    public LectureDto.SimpleInfoResponse lectureToLectureInfoResponse(Lecture lecture) {
         if ( lecture == null ) {
             return null;
         }
@@ -77,7 +77,7 @@ public class LectureMapperImpl implements LectureMapper {
     }
 
     @Override
-    public LectureDto.ListPageResponse lectureListPageResponseToLecture(Lecture lecture) {
+    public LectureDto.ListPageResponse lectureToLectureListPageResponse(Lecture lecture) {
         if ( lecture == null ) {
             return null;
         }
@@ -101,21 +101,21 @@ public class LectureMapperImpl implements LectureMapper {
     }
 
     @Override
-    public List<LectureDto.ListPageResponse> lectureListPageResponsesToLectures(List<Lecture> lectures) {
+    public List<LectureDto.ListPageResponse> lecturesToLectureListPageResponses(List<Lecture> lectures) {
         if ( lectures == null ) {
             return null;
         }
 
         List<LectureDto.ListPageResponse> list = new ArrayList<LectureDto.ListPageResponse>( lectures.size() );
         for ( Lecture lecture : lectures ) {
-            list.add( lectureListPageResponseToLecture( lecture ) );
+            list.add( lectureToLectureListPageResponse( lecture ) );
         }
 
         return list;
     }
 
     @Override
-    public LectureDto.DetailPageResponse lectureDetailPageResponseToLecture(Lecture lecture) {
+    public LectureDto.DetailPageResponse lectureToLectureDetailPageResponse(Lecture lecture) {
         if ( lecture == null ) {
             return null;
         }
@@ -139,24 +139,6 @@ public class LectureMapperImpl implements LectureMapper {
         return detailPageResponse;
     }
 
-    @Override
-    public LectureDto.TeacherReviewDetailPageResponse lectureTeacherReviewDetailPageResponseToLecture(Lecture lecture) {
-        if ( lecture == null ) {
-            return null;
-        }
-
-        LectureDto.TeacherReviewDetailPageResponse teacherReviewDetailPageResponse = new LectureDto.TeacherReviewDetailPageResponse();
-
-        if ( lecture.getLectureId() != null ) {
-            teacherReviewDetailPageResponse.setLectureId( lecture.getLectureId() );
-        }
-        teacherReviewDetailPageResponse.setTitle( lecture.getTitle() );
-        teacherReviewDetailPageResponse.setStatus( lecture.getStatus() );
-        teacherReviewDetailPageResponse.setLectureReviews( lectureReviewListToListPageResponseList( lecture.getLectureReviews() ) );
-
-        return teacherReviewDetailPageResponse;
-    }
-
     protected List<GradeTagDto.Response> lectureGradeTagListToResponseList(List<LectureGradeTag> list) {
         if ( list == null ) {
             return null;
@@ -164,7 +146,7 @@ public class LectureMapperImpl implements LectureMapper {
 
         List<GradeTagDto.Response> list1 = new ArrayList<GradeTagDto.Response>( list.size() );
         for ( LectureGradeTag lectureGradeTag : list ) {
-            list1.add( LectureGradeTagResponseToLectureGradeTag( lectureGradeTag ) );
+            list1.add( lectureGradeTagToGradeTagResponse( lectureGradeTag ) );
         }
 
         return list1;
@@ -177,7 +159,7 @@ public class LectureMapperImpl implements LectureMapper {
 
         List<SubjectTagDto.Response> list1 = new ArrayList<SubjectTagDto.Response>( list.size() );
         for ( LectureSubjectTag lectureSubjectTag : list ) {
-            list1.add( LectureSubjectTagResponseToLectureSubjectTag( lectureSubjectTag ) );
+            list1.add( lectureSubjectTagToSubjectTagResponse( lectureSubjectTag ) );
         }
 
         return list1;
@@ -190,7 +172,7 @@ public class LectureMapperImpl implements LectureMapper {
 
         List<PlatformTagDto.Response> list1 = new ArrayList<PlatformTagDto.Response>( list.size() );
         for ( LecturePlatformTag lecturePlatformTag : list ) {
-            list1.add( LecturePlatformTagResponseToLecturePlatformTag( lecturePlatformTag ) );
+            list1.add( lecturePlatformTagToPlatformTagResponse( lecturePlatformTag ) );
         }
 
         return list1;
@@ -227,7 +209,7 @@ public class LectureMapperImpl implements LectureMapper {
         listPageResponse.setModifiedAt( lectureReview.getModifiedAt() );
         listPageResponse.setViewCount( lectureReview.getViewCount() );
         listPageResponse.setVoteCount( lectureReview.getVoteCount() );
-        listPageResponse.setLecture( lectureInfoResponseToLecture( lectureReview.getLecture() ) );
+        listPageResponse.setLecture( lectureToLectureInfoResponse( lectureReview.getLecture() ) );
         listPageResponse.setMember( lectureReview.getMember() );
 
         return listPageResponse;
