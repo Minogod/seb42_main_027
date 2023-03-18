@@ -5,10 +5,9 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
-import ynzmz.server.review.lecture.dto.LectureReviewDto;
-import ynzmz.server.review.lecture.entity.LectureReview;
-import ynzmz.server.vote.question.answer.dto.LoginUserAnswerVoteResponseDto;
-import ynzmz.server.vote.question.question.entity.QuestionVote;
+import ynzmz.server.board.review.lecture.dto.LectureReviewDto;
+import ynzmz.server.vote.Vote;
+import ynzmz.server.vote.qna.dto.LoginUserAnswerVoteResponseDto;
 
 import javax.validation.constraints.AssertTrue;
 import javax.validation.constraints.Email;
@@ -43,6 +42,11 @@ public class MemberDto{
         private String displayName;
         private String State;
         private String createdAt;
+
+        public Post() {
+            this.createdAt = LocalDateTime.now().toString();
+        }
+
         @AssertTrue(message = "패스워드가 일치하지 않습니다.")
         private boolean isPasswordConfirmed() {
             return password.equals(confirmPassword);
@@ -82,7 +86,7 @@ public class MemberDto{
         private String displayName;
         private String IconImageUrl;
         private String state;
-        private LocalDateTime createdAt;
+        private String createdAt;
     }
 
     @Getter
@@ -93,7 +97,7 @@ public class MemberDto{
         private Long memberId;
         private String email;
         private Long questionId;
-        private QuestionVote.VoteStatus questionvoteStatus;
+        private Vote.Status questionvoteStatus;
         private List<LoginUserAnswerVoteResponseDto> answerVoteStatus = new ArrayList<>();
 
     }
