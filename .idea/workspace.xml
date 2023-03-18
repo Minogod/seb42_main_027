@@ -4,7 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="45d9a31d-0999-411e-9128-8c3b5aa2b4a5" name="변경" comment="feat: MemberDto 수정 및 SimpleInfoResponse 추가">
+    <list default="true" id="45d9a31d-0999-411e-9128-8c3b5aa2b4a5" name="변경" comment="fix: 강의등록시 강사연결 수정">
+      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules/server.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules/server.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules/server.main.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules/server.main.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules/server.test.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules/server.test.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/server/.gradle/7.6.1/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/server/.gradle/7.6.1/executionHistory/executionHistory.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/server/.gradle/7.6.1/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/server/.gradle/7.6.1/executionHistory/executionHistory.lock" afterDir="false" />
@@ -12,167 +16,370 @@
       <change beforePath="$PROJECT_DIR$/server/.gradle/7.6.1/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/server/.gradle/7.6.1/fileHashes/fileHashes.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/server/.gradle/7.6.1/fileHashes/resourceHashesCache.bin" beforeDir="false" afterPath="$PROJECT_DIR$/server/.gradle/7.6.1/fileHashes/resourceHashesCache.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/server/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/server/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/build/classes/java/main/ynzmz/server/lecture/controller/LectureController.class" beforeDir="false" afterPath="$PROJECT_DIR$/server/build/classes/java/main/ynzmz/server/lecture/controller/LectureController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/build/tmp/compileJava/compileTransaction/stash-dir/Answer$AdoptStatus.class.uniqueId16" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/build/tmp/compileJava/compileTransaction/stash-dir/Answer.class.uniqueId53" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/build/tmp/compileJava/compileTransaction/stash-dir/AnswerController.class.uniqueId117" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/build/tmp/compileJava/compileTransaction/stash-dir/AnswerDto$InfoResponse.class.uniqueId54" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/build/tmp/compileJava/compileTransaction/stash-dir/AnswerDto$Patch.class.uniqueId56" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/build/tmp/compileJava/compileTransaction/stash-dir/AnswerDto$Post$PostBuilder.class.uniqueId149" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/build/tmp/compileJava/compileTransaction/stash-dir/AnswerDto$Post.class.uniqueId111" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/build/tmp/compileJava/compileTransaction/stash-dir/AnswerDto$Response.class.uniqueId157" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/build/tmp/compileJava/compileTransaction/stash-dir/AnswerDto.class.uniqueId0" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/build/tmp/compileJava/compileTransaction/stash-dir/AnswerMapper.class.uniqueId131" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/build/tmp/compileJava/compileTransaction/stash-dir/AnswerMapperImpl.class.uniqueId97" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/build/tmp/compileJava/compileTransaction/stash-dir/AnswerMapperImpl.java.uniqueId102" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/build/tmp/compileJava/compileTransaction/stash-dir/AnswerRepository.class.uniqueId77" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/build/tmp/compileJava/compileTransaction/stash-dir/AnswerService.class.uniqueId135" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/build/tmp/compileJava/compileTransaction/stash-dir/AnswerVote$VoteStatus.class.uniqueId122" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/build/tmp/compileJava/compileTransaction/stash-dir/AnswerVote.class.uniqueId84" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/build/tmp/compileJava/compileTransaction/stash-dir/AnswerVoteController.class.uniqueId62" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/build/tmp/compileJava/compileTransaction/stash-dir/AnswerVoteMapper.class.uniqueId155" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/build/tmp/compileJava/compileTransaction/stash-dir/AnswerVoteMapperImpl.class.uniqueId145" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/build/tmp/compileJava/compileTransaction/stash-dir/AnswerVoteMapperImpl.java.uniqueId33" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/build/tmp/compileJava/compileTransaction/stash-dir/AnswerVoteRepository.class.uniqueId89" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/build/tmp/compileJava/compileTransaction/stash-dir/AnswerVoteResponseDto.class.uniqueId115" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/build/tmp/compileJava/compileTransaction/stash-dir/AnswerVoteService.class.uniqueId112" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/build/tmp/compileJava/compileTransaction/stash-dir/JwtAuthenticationFilter.class.uniqueId25" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/build/tmp/compileJava/compileTransaction/stash-dir/Lecture$Status.class.uniqueId128" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/build/tmp/compileJava/compileTransaction/stash-dir/Lecture.class.uniqueId7" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/build/tmp/compileJava/compileTransaction/stash-dir/LectureController.class.uniqueId99" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/build/tmp/compileJava/compileTransaction/stash-dir/LectureDto$DetailPageResponse.class.uniqueId2" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/build/tmp/compileJava/compileTransaction/stash-dir/LectureDto$ListPageResponse.class.uniqueId96" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/build/tmp/compileJava/compileTransaction/stash-dir/LectureDto$Patch$PatchBuilder.class.uniqueId144" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/build/tmp/compileJava/compileTransaction/stash-dir/LectureDto$Patch.class.uniqueId30" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/build/tmp/compileJava/compileTransaction/stash-dir/LectureDto$Post$PostBuilder.class.uniqueId141" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/build/tmp/compileJava/compileTransaction/stash-dir/LectureDto$Post.class.uniqueId64" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/build/tmp/compileJava/compileTransaction/stash-dir/LectureDto$SimpleInfoResponse.class.uniqueId66" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/build/tmp/compileJava/compileTransaction/stash-dir/LectureDto$TeacherReviewDetailPageResponse.class.uniqueId39" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/build/tmp/compileJava/compileTransaction/stash-dir/LectureDto.class.uniqueId17" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/build/tmp/compileJava/compileTransaction/stash-dir/LectureGradeTag$LectureGradeTagBuilder.class.uniqueId88" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/build/tmp/compileJava/compileTransaction/stash-dir/LectureGradeTag.class.uniqueId58" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/build/tmp/compileJava/compileTransaction/stash-dir/LectureGradeTagRepository.class.uniqueId78" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/build/tmp/compileJava/compileTransaction/stash-dir/LectureMapper.class.uniqueId41" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/build/tmp/compileJava/compileTransaction/stash-dir/LectureMapperImpl.class.uniqueId36" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/build/tmp/compileJava/compileTransaction/stash-dir/LectureMapperImpl.java.uniqueId11" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/build/tmp/compileJava/compileTransaction/stash-dir/LecturePlatformTag$LecturePlatformTagBuilder.class.uniqueId116" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/build/tmp/compileJava/compileTransaction/stash-dir/LecturePlatformTag.class.uniqueId50" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/build/tmp/compileJava/compileTransaction/stash-dir/LecturePlatformTagRepository.class.uniqueId104" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/build/tmp/compileJava/compileTransaction/stash-dir/LectureRepository.class.uniqueId133" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/build/tmp/compileJava/compileTransaction/stash-dir/LectureReview.class.uniqueId52" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/build/tmp/compileJava/compileTransaction/stash-dir/LectureReviewComment.class.uniqueId80" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/build/tmp/compileJava/compileTransaction/stash-dir/LectureReviewCommentController.class.uniqueId110" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/build/tmp/compileJava/compileTransaction/stash-dir/LectureReviewCommentDto$Patch.class.uniqueId143" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/build/tmp/compileJava/compileTransaction/stash-dir/LectureReviewCommentDto$Post.class.uniqueId114" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/build/tmp/compileJava/compileTransaction/stash-dir/LectureReviewCommentDto$Response.class.uniqueId103" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/build/tmp/compileJava/compileTransaction/stash-dir/LectureReviewCommentDto.class.uniqueId23" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/build/tmp/compileJava/compileTransaction/stash-dir/LectureReviewCommentRepository.class.uniqueId4" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/build/tmp/compileJava/compileTransaction/stash-dir/LectureReviewCommentService.class.uniqueId124" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/build/tmp/compileJava/compileTransaction/stash-dir/LectureReviewController.class.uniqueId86" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/build/tmp/compileJava/compileTransaction/stash-dir/LectureReviewDto$DetailPageResponse.class.uniqueId38" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/build/tmp/compileJava/compileTransaction/stash-dir/LectureReviewDto$InfoResponse.class.uniqueId118" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/build/tmp/compileJava/compileTransaction/stash-dir/LectureReviewDto$ListPageResponse.class.uniqueId27" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/build/tmp/compileJava/compileTransaction/stash-dir/LectureReviewDto$Patch$PatchBuilder.class.uniqueId125" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/build/tmp/compileJava/compileTransaction/stash-dir/LectureReviewDto$Patch.class.uniqueId87" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/build/tmp/compileJava/compileTransaction/stash-dir/LectureReviewDto$Post$PostBuilder.class.uniqueId129" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/build/tmp/compileJava/compileTransaction/stash-dir/LectureReviewDto$Post.class.uniqueId9" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/build/tmp/compileJava/compileTransaction/stash-dir/LectureReviewDto.class.uniqueId91" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/build/tmp/compileJava/compileTransaction/stash-dir/LectureReviewMapper.class.uniqueId44" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/build/tmp/compileJava/compileTransaction/stash-dir/LectureReviewMapperImpl.class.uniqueId106" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/build/tmp/compileJava/compileTransaction/stash-dir/LectureReviewMapperImpl.java.uniqueId48" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/build/tmp/compileJava/compileTransaction/stash-dir/LectureReviewPostCommentMapper.class.uniqueId31" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/build/tmp/compileJava/compileTransaction/stash-dir/LectureReviewPostCommentMapperImpl.class.uniqueId26" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/build/tmp/compileJava/compileTransaction/stash-dir/LectureReviewPostCommentMapperImpl.java.uniqueId146" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/build/tmp/compileJava/compileTransaction/stash-dir/LectureReviewRepository.class.uniqueId19" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/build/tmp/compileJava/compileTransaction/stash-dir/LectureReviewService.class.uniqueId138" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/build/tmp/compileJava/compileTransaction/stash-dir/LectureReviewVote$Target.class.uniqueId46" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/build/tmp/compileJava/compileTransaction/stash-dir/LectureReviewVote$VoteStatus.class.uniqueId121" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/build/tmp/compileJava/compileTransaction/stash-dir/LectureReviewVote.class.uniqueId18" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/build/tmp/compileJava/compileTransaction/stash-dir/LectureReviewVoteController.class.uniqueId136" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/build/tmp/compileJava/compileTransaction/stash-dir/LectureReviewVoteDto$Response.class.uniqueId147" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/build/tmp/compileJava/compileTransaction/stash-dir/LectureReviewVoteDto.class.uniqueId93" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/build/tmp/compileJava/compileTransaction/stash-dir/LectureReviewVoteMapper.class.uniqueId34" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/build/tmp/compileJava/compileTransaction/stash-dir/LectureReviewVoteMapperImpl.class.uniqueId20" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/build/tmp/compileJava/compileTransaction/stash-dir/LectureReviewVoteMapperImpl.java.uniqueId98" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/build/tmp/compileJava/compileTransaction/stash-dir/LectureReviewVoteRepository.class.uniqueId49" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/build/tmp/compileJava/compileTransaction/stash-dir/LectureReviewVoteService.class.uniqueId109" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/build/tmp/compileJava/compileTransaction/stash-dir/LectureService.class.uniqueId137" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/build/tmp/compileJava/compileTransaction/stash-dir/LectureSubjectTag$LectureSubjectTagBuilder.class.uniqueId74" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/build/tmp/compileJava/compileTransaction/stash-dir/LectureSubjectTag.class.uniqueId132" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/build/tmp/compileJava/compileTransaction/stash-dir/LectureSubjectTagRepository.class.uniqueId154" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/build/tmp/compileJava/compileTransaction/stash-dir/LoginUserAnswerVoteResponseDto.class.uniqueId45" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/build/tmp/compileJava/compileTransaction/stash-dir/Member$MemberStatus.class.uniqueId8" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/build/tmp/compileJava/compileTransaction/stash-dir/Member$State.class.uniqueId29" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/build/tmp/compileJava/compileTransaction/stash-dir/Member.class.uniqueId130" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/build/tmp/compileJava/compileTransaction/stash-dir/MemberController.class.uniqueId81" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/build/tmp/compileJava/compileTransaction/stash-dir/MemberDetailsService$MemberDetails.class.uniqueId28" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/build/tmp/compileJava/compileTransaction/stash-dir/MemberDetailsService.class.uniqueId22" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/build/tmp/compileJava/compileTransaction/stash-dir/MemberDto$MyLectureReview.class.uniqueId60" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/build/tmp/compileJava/compileTransaction/stash-dir/MemberDto$Patch.class.uniqueId148" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/build/tmp/compileJava/compileTransaction/stash-dir/MemberDto$Post.class.uniqueId13" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/build/tmp/compileJava/compileTransaction/stash-dir/MemberDto$Response.class.uniqueId59" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/build/tmp/compileJava/compileTransaction/stash-dir/MemberDto$VoteInfo.class.uniqueId83" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/build/tmp/compileJava/compileTransaction/stash-dir/MemberDto.class.uniqueId21" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/build/tmp/compileJava/compileTransaction/stash-dir/MemberMapper.class.uniqueId42" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/build/tmp/compileJava/compileTransaction/stash-dir/MemberMapperImpl.class.uniqueId156" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/build/tmp/compileJava/compileTransaction/stash-dir/MemberMapperImpl.java.uniqueId123" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/build/tmp/compileJava/compileTransaction/stash-dir/MemberRepository.class.uniqueId119" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/build/tmp/compileJava/compileTransaction/stash-dir/MemberService.class.uniqueId6" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/build/tmp/compileJava/compileTransaction/stash-dir/Question.class.uniqueId95" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/build/tmp/compileJava/compileTransaction/stash-dir/QuestionController.class.uniqueId55" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/build/tmp/compileJava/compileTransaction/stash-dir/QuestionDto$DetailPageResponse.class.uniqueId1" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/build/tmp/compileJava/compileTransaction/stash-dir/QuestionDto$InfoResponse.class.uniqueId24" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/build/tmp/compileJava/compileTransaction/stash-dir/QuestionDto$ListPageResponse.class.uniqueId142" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/build/tmp/compileJava/compileTransaction/stash-dir/QuestionDto$Patch$PatchBuilder.class.uniqueId10" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/build/tmp/compileJava/compileTransaction/stash-dir/QuestionDto$Patch.class.uniqueId47" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/build/tmp/compileJava/compileTransaction/stash-dir/QuestionDto$Post$PostBuilder.class.uniqueId101" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/build/tmp/compileJava/compileTransaction/stash-dir/QuestionDto$Post.class.uniqueId37" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/build/tmp/compileJava/compileTransaction/stash-dir/QuestionDto.class.uniqueId5" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/build/tmp/compileJava/compileTransaction/stash-dir/QuestionMapper.class.uniqueId61" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/build/tmp/compileJava/compileTransaction/stash-dir/QuestionMapperImpl.class.uniqueId15" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/build/tmp/compileJava/compileTransaction/stash-dir/QuestionMapperImpl.java.uniqueId79" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/build/tmp/compileJava/compileTransaction/stash-dir/QuestionRepository.class.uniqueId150" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/build/tmp/compileJava/compileTransaction/stash-dir/QuestionService.class.uniqueId40" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/build/tmp/compileJava/compileTransaction/stash-dir/QuestionSubjectTag$QuestionSubjectTagBuilder.class.uniqueId82" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/build/tmp/compileJava/compileTransaction/stash-dir/QuestionSubjectTag.class.uniqueId51" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/build/tmp/compileJava/compileTransaction/stash-dir/QuestionSubjectTagRepository.class.uniqueId63" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/build/tmp/compileJava/compileTransaction/stash-dir/QuestionVote$VoteStatus.class.uniqueId139" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/build/tmp/compileJava/compileTransaction/stash-dir/QuestionVote.class.uniqueId68" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/build/tmp/compileJava/compileTransaction/stash-dir/QuestionVoteController.class.uniqueId151" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/build/tmp/compileJava/compileTransaction/stash-dir/QuestionVoteMapper.class.uniqueId69" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/build/tmp/compileJava/compileTransaction/stash-dir/QuestionVoteMapperImpl.class.uniqueId3" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/build/tmp/compileJava/compileTransaction/stash-dir/QuestionVoteMapperImpl.java.uniqueId113" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/build/tmp/compileJava/compileTransaction/stash-dir/QuestionVoteRepository.class.uniqueId76" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/build/tmp/compileJava/compileTransaction/stash-dir/QuestionVoteResponseDto.class.uniqueId75" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/build/tmp/compileJava/compileTransaction/stash-dir/QuestionVoteService.class.uniqueId32" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/build/tmp/compileJava/compileTransaction/stash-dir/TagService.class.uniqueId73" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/build/tmp/compileJava/compileTransaction/stash-dir/Teacher.class.uniqueId71" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/build/tmp/compileJava/compileTransaction/stash-dir/TeacherController.class.uniqueId94" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/build/tmp/compileJava/compileTransaction/stash-dir/TeacherDto$DetailPageResponse.class.uniqueId140" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/build/tmp/compileJava/compileTransaction/stash-dir/TeacherDto$ListPageResponse.class.uniqueId100" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/build/tmp/compileJava/compileTransaction/stash-dir/TeacherDto$Patch$PatchBuilder.class.uniqueId12" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/build/tmp/compileJava/compileTransaction/stash-dir/TeacherDto$Patch.class.uniqueId85" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/build/tmp/compileJava/compileTransaction/stash-dir/TeacherDto$Post$PostBuilder.class.uniqueId108" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/build/tmp/compileJava/compileTransaction/stash-dir/TeacherDto$Post.class.uniqueId134" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/build/tmp/compileJava/compileTransaction/stash-dir/TeacherDto$ReviewDetailPageResponse.class.uniqueId70" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/build/tmp/compileJava/compileTransaction/stash-dir/TeacherDto$SimpleInfoResponse.class.uniqueId126" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/build/tmp/compileJava/compileTransaction/stash-dir/TeacherDto.class.uniqueId14" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/build/tmp/compileJava/compileTransaction/stash-dir/TeacherGradeTag$TeacherGradeTagBuilder.class.uniqueId107" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/build/tmp/compileJava/compileTransaction/stash-dir/TeacherGradeTag.class.uniqueId65" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/build/tmp/compileJava/compileTransaction/stash-dir/TeacherGradeTagRepository.class.uniqueId105" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/build/tmp/compileJava/compileTransaction/stash-dir/TeacherMapper.class.uniqueId43" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/build/tmp/compileJava/compileTransaction/stash-dir/TeacherMapperImpl.class.uniqueId72" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/build/tmp/compileJava/compileTransaction/stash-dir/TeacherMapperImpl.java.uniqueId153" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/build/tmp/compileJava/compileTransaction/stash-dir/TeacherPlatformTag$TeacherPlatformTagBuilder.class.uniqueId90" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/build/tmp/compileJava/compileTransaction/stash-dir/TeacherPlatformTag.class.uniqueId92" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/build/tmp/compileJava/compileTransaction/stash-dir/TeacherPlatformTagRepository.class.uniqueId35" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/build/tmp/compileJava/compileTransaction/stash-dir/TeacherRepository.class.uniqueId120" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/build/tmp/compileJava/compileTransaction/stash-dir/TeacherService.class.uniqueId57" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/build/tmp/compileJava/compileTransaction/stash-dir/TeacherSubjectTag$TeacherSubjectTagBuilder.class.uniqueId152" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/build/tmp/compileJava/compileTransaction/stash-dir/TeacherSubjectTag.class.uniqueId127" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/build/tmp/compileJava/compileTransaction/stash-dir/TeacherSubjectTagRepository.class.uniqueId67" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/.gradle/file-system.probe" beforeDir="false" afterPath="$PROJECT_DIR$/server/.gradle/file-system.probe" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/build/bootRunMainClassName" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/build/classes/java/main/ynzmz/server/lecture/entity/Lecture$Status.class" beforeDir="false" afterPath="$PROJECT_DIR$/server/build/classes/java/main/ynzmz/server/lecture/entity/Lecture$Status.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/build/classes/java/main/ynzmz/server/question/answer/dto/AnswerPatchDto.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/build/classes/java/main/ynzmz/server/question/answer/dto/AnswerPostDto.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/build/classes/java/test/ynzmz/server/ServerApplicationTests.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/build/classes/java/test/ynzmz/server/comment/review/lecture/controller/LectureReviewCommentControllerTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/build/classes/java/test/ynzmz/server/helper/StubData.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/build/classes/java/test/ynzmz/server/lecture/controller/LectureControllerTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/build/classes/java/test/ynzmz/server/review/lecture/controller/LectureReviewControllerTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/build/classes/java/test/ynzmz/server/teacher/controller/TeacherControllerTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/build/classes/java/test/ynzmz/server/utils/ApiDocumentUtils.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/build/classes/java/test/ynzmz/server/utils/SecurityTestConfig.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/build/classes/java/test/ynzmz/server/vote/review/lecture/controller/LectureReviewVoteControllerTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/build/generated-snippets/delete-lecture-review-comment/curl-request.adoc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/build/generated-snippets/delete-lecture-review-comment/http-request.adoc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/build/generated-snippets/delete-lecture-review-comment/http-response.adoc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/build/generated-snippets/delete-lecture-review-comment/httpie-request.adoc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/build/generated-snippets/delete-lecture-review-comment/path-parameters.adoc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/build/generated-snippets/delete-lecture-review-comment/request-body.adoc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/build/generated-snippets/delete-lecture-review-comment/response-body.adoc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/build/generated-snippets/delete-lecture-review/curl-request.adoc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/build/generated-snippets/delete-lecture-review/http-request.adoc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/build/generated-snippets/delete-lecture-review/http-response.adoc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/build/generated-snippets/delete-lecture-review/httpie-request.adoc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/build/generated-snippets/delete-lecture-review/path-parameters.adoc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/build/generated-snippets/delete-lecture-review/request-body.adoc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/build/generated-snippets/delete-lecture-review/response-body.adoc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/build/generated-snippets/delete-lecture/curl-request.adoc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/build/generated-snippets/delete-lecture/http-request.adoc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/build/generated-snippets/delete-lecture/http-response.adoc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/build/generated-snippets/delete-lecture/httpie-request.adoc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/build/generated-snippets/delete-lecture/path-parameters.adoc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/build/generated-snippets/delete-lecture/request-body.adoc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/build/generated-snippets/delete-lecture/response-body.adoc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/build/generated-snippets/delete-teacher/curl-request.adoc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/build/generated-snippets/delete-teacher/http-request.adoc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/build/generated-snippets/delete-teacher/http-response.adoc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/build/generated-snippets/delete-teacher/httpie-request.adoc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/build/generated-snippets/delete-teacher/path-parameters.adoc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/build/generated-snippets/delete-teacher/request-body.adoc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/build/generated-snippets/delete-teacher/response-body.adoc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/build/generated-snippets/get-all-lectures/curl-request.adoc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/build/generated-snippets/get-all-lectures/http-request.adoc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/build/generated-snippets/get-all-lectures/http-response.adoc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/build/generated-snippets/get-all-lectures/httpie-request.adoc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/build/generated-snippets/get-all-lectures/request-body.adoc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/build/generated-snippets/get-all-lectures/request-parameters.adoc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/build/generated-snippets/get-all-lectures/response-body.adoc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/build/generated-snippets/get-all-lectures/response-fields.adoc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/build/generated-snippets/get-all-teachers/curl-request.adoc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/build/generated-snippets/get-all-teachers/http-request.adoc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/build/generated-snippets/get-all-teachers/http-response.adoc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/build/generated-snippets/get-all-teachers/httpie-request.adoc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/build/generated-snippets/get-all-teachers/request-body.adoc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/build/generated-snippets/get-all-teachers/request-parameters.adoc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/build/generated-snippets/get-all-teachers/response-body.adoc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/build/generated-snippets/get-all-teachers/response-fields.adoc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/build/generated-snippets/get-lecture-review-comments/curl-request.adoc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/build/generated-snippets/get-lecture-review-comments/http-request.adoc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/build/generated-snippets/get-lecture-review-comments/http-response.adoc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/build/generated-snippets/get-lecture-review-comments/httpie-request.adoc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/build/generated-snippets/get-lecture-review-comments/request-body.adoc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/build/generated-snippets/get-lecture-review-comments/request-parameters.adoc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/build/generated-snippets/get-lecture-review-comments/response-body.adoc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/build/generated-snippets/get-lecture-review-comments/response-fields.adoc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/build/generated-snippets/get-lecture-review/curl-request.adoc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/build/generated-snippets/get-lecture-review/http-request.adoc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/build/generated-snippets/get-lecture-review/http-response.adoc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/build/generated-snippets/get-lecture-review/httpie-request.adoc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/build/generated-snippets/get-lecture-review/path-parameters.adoc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/build/generated-snippets/get-lecture-review/request-body.adoc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/build/generated-snippets/get-lecture-review/response-body.adoc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/build/generated-snippets/get-lecture-review/response-fields.adoc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/build/generated-snippets/get-lecture/curl-request.adoc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/build/generated-snippets/get-lecture/http-request.adoc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/build/generated-snippets/get-lecture/http-response.adoc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/build/generated-snippets/get-lecture/httpie-request.adoc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/build/generated-snippets/get-lecture/path-parameters.adoc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/build/generated-snippets/get-lecture/request-body.adoc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/build/generated-snippets/get-lecture/response-body.adoc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/build/generated-snippets/get-lecture/response-fields.adoc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/build/generated-snippets/get-teacher-review/curl-request.adoc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/build/generated-snippets/get-teacher-review/http-request.adoc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/build/generated-snippets/get-teacher-review/http-response.adoc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/build/generated-snippets/get-teacher-review/httpie-request.adoc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/build/generated-snippets/get-teacher-review/path-parameters.adoc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/build/generated-snippets/get-teacher-review/request-body.adoc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/build/generated-snippets/get-teacher-review/response-body.adoc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/build/generated-snippets/get-teacher-review/response-fields.adoc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/build/generated-snippets/get-teacher/curl-request.adoc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/build/generated-snippets/get-teacher/http-request.adoc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/build/generated-snippets/get-teacher/http-response.adoc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/build/generated-snippets/get-teacher/httpie-request.adoc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/build/generated-snippets/get-teacher/path-parameters.adoc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/build/generated-snippets/get-teacher/request-body.adoc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/build/generated-snippets/get-teacher/response-body.adoc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/build/generated-snippets/get-teacher/response-fields.adoc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/build/generated-snippets/lecture-review-comment-vote-down/curl-request.adoc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/build/generated-snippets/lecture-review-comment-vote-down/http-request.adoc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/build/generated-snippets/lecture-review-comment-vote-down/http-response.adoc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/build/generated-snippets/lecture-review-comment-vote-down/httpie-request.adoc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/build/generated-snippets/lecture-review-comment-vote-down/path-parameters.adoc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/build/generated-snippets/lecture-review-comment-vote-down/request-body.adoc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/build/generated-snippets/lecture-review-comment-vote-down/response-body.adoc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/build/generated-snippets/lecture-review-comment-vote-down/response-fields.adoc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/build/generated-snippets/lecture-review-comment-vote-up/curl-request.adoc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/build/generated-snippets/lecture-review-comment-vote-up/http-request.adoc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/build/generated-snippets/lecture-review-comment-vote-up/http-response.adoc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/build/generated-snippets/lecture-review-comment-vote-up/httpie-request.adoc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/build/generated-snippets/lecture-review-comment-vote-up/path-parameters.adoc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/build/generated-snippets/lecture-review-comment-vote-up/request-body.adoc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/build/generated-snippets/lecture-review-comment-vote-up/response-body.adoc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/build/generated-snippets/lecture-review-comment-vote-up/response-fields.adoc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/build/generated-snippets/lecture-review-vote-down/curl-request.adoc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/build/generated-snippets/lecture-review-vote-down/http-request.adoc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/build/generated-snippets/lecture-review-vote-down/http-response.adoc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/build/generated-snippets/lecture-review-vote-down/httpie-request.adoc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/build/generated-snippets/lecture-review-vote-down/path-parameters.adoc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/build/generated-snippets/lecture-review-vote-down/request-body.adoc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/build/generated-snippets/lecture-review-vote-down/response-body.adoc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/build/generated-snippets/lecture-review-vote-down/response-fields.adoc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/build/generated-snippets/lecture-review-vote-up/curl-request.adoc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/build/generated-snippets/lecture-review-vote-up/http-request.adoc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/build/generated-snippets/lecture-review-vote-up/http-response.adoc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/build/generated-snippets/lecture-review-vote-up/httpie-request.adoc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/build/generated-snippets/lecture-review-vote-up/path-parameters.adoc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/build/generated-snippets/lecture-review-vote-up/request-body.adoc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/build/generated-snippets/lecture-review-vote-up/response-body.adoc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/build/generated-snippets/lecture-review-vote-up/response-fields.adoc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/build/generated-snippets/patch-lecture-review-comment/curl-request.adoc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/build/generated-snippets/patch-lecture-review-comment/http-request.adoc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/build/generated-snippets/patch-lecture-review-comment/http-response.adoc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/build/generated-snippets/patch-lecture-review-comment/httpie-request.adoc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/build/generated-snippets/patch-lecture-review-comment/path-parameters.adoc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/build/generated-snippets/patch-lecture-review-comment/request-body.adoc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/build/generated-snippets/patch-lecture-review-comment/request-fields.adoc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/build/generated-snippets/patch-lecture-review-comment/response-body.adoc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/build/generated-snippets/patch-lecture-review-comment/response-fields.adoc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/build/generated-snippets/patch-lecture-review/curl-request.adoc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/build/generated-snippets/patch-lecture-review/http-request.adoc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/build/generated-snippets/patch-lecture-review/http-response.adoc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/build/generated-snippets/patch-lecture-review/httpie-request.adoc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/build/generated-snippets/patch-lecture-review/path-parameters.adoc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/build/generated-snippets/patch-lecture-review/request-body.adoc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/build/generated-snippets/patch-lecture-review/request-fields.adoc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/build/generated-snippets/patch-lecture-review/response-body.adoc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/build/generated-snippets/patch-lecture-review/response-fields.adoc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/build/generated-snippets/patch-lectures/curl-request.adoc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/build/generated-snippets/patch-lectures/http-request.adoc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/build/generated-snippets/patch-lectures/http-response.adoc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/build/generated-snippets/patch-lectures/httpie-request.adoc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/build/generated-snippets/patch-lectures/path-parameters.adoc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/build/generated-snippets/patch-lectures/request-body.adoc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/build/generated-snippets/patch-lectures/request-fields.adoc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/build/generated-snippets/patch-lectures/response-body.adoc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/build/generated-snippets/patch-lectures/response-fields.adoc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/build/generated-snippets/patch-teacher/curl-request.adoc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/build/generated-snippets/patch-teacher/http-request.adoc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/build/generated-snippets/patch-teacher/http-response.adoc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/build/generated-snippets/patch-teacher/httpie-request.adoc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/build/generated-snippets/patch-teacher/path-parameters.adoc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/build/generated-snippets/patch-teacher/request-body.adoc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/build/generated-snippets/patch-teacher/request-fields.adoc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/build/generated-snippets/patch-teacher/response-body.adoc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/build/generated-snippets/patch-teacher/response-fields.adoc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/build/generated-snippets/post-lecture-review-comment/curl-request.adoc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/build/generated-snippets/post-lecture-review-comment/http-request.adoc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/build/generated-snippets/post-lecture-review-comment/http-response.adoc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/build/generated-snippets/post-lecture-review-comment/httpie-request.adoc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/build/generated-snippets/post-lecture-review-comment/request-body.adoc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/build/generated-snippets/post-lecture-review-comment/request-fields.adoc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/build/generated-snippets/post-lecture-review-comment/response-body.adoc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/build/generated-snippets/post-lecture-review-comment/response-fields.adoc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/build/generated-snippets/post-lecture-review/curl-request.adoc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/build/generated-snippets/post-lecture-review/http-request.adoc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/build/generated-snippets/post-lecture-review/http-response.adoc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/build/generated-snippets/post-lecture-review/httpie-request.adoc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/build/generated-snippets/post-lecture-review/request-body.adoc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/build/generated-snippets/post-lecture-review/request-fields.adoc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/build/generated-snippets/post-lecture-review/response-body.adoc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/build/generated-snippets/post-lecture-review/response-fields.adoc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/build/generated-snippets/post-lecture/curl-request.adoc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/build/generated-snippets/post-lecture/http-request.adoc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/build/generated-snippets/post-lecture/http-response.adoc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/build/generated-snippets/post-lecture/httpie-request.adoc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/build/generated-snippets/post-lecture/request-body.adoc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/build/generated-snippets/post-lecture/request-fields.adoc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/build/generated-snippets/post-lecture/response-body.adoc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/build/generated-snippets/post-lecture/response-fields.adoc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/build/generated-snippets/post-teacher/curl-request.adoc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/build/generated-snippets/post-teacher/http-request.adoc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/build/generated-snippets/post-teacher/http-response.adoc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/build/generated-snippets/post-teacher/httpie-request.adoc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/build/generated-snippets/post-teacher/request-body.adoc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/build/generated-snippets/post-teacher/request-fields.adoc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/build/generated-snippets/post-teacher/response-body.adoc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/build/generated-snippets/post-teacher/response-fields.adoc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/build/generated/sources/annotationProcessor/java/main/ynzmz/server/comment/review/lecture/mapper/LectureReviewPostCommentMapperImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/server/build/generated/sources/annotationProcessor/java/main/ynzmz/server/comment/review/lecture/mapper/LectureReviewPostCommentMapperImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/build/generated/sources/annotationProcessor/java/main/ynzmz/server/event/inner/mapper/YjEventMapperImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/server/build/generated/sources/annotationProcessor/java/main/ynzmz/server/event/inner/mapper/YjEventMapperImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/build/generated/sources/annotationProcessor/java/main/ynzmz/server/event/outer/mapper/EventMapperImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/server/build/generated/sources/annotationProcessor/java/main/ynzmz/server/event/outer/mapper/EventMapperImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/build/generated/sources/annotationProcessor/java/main/ynzmz/server/lecture/mapper/LectureMapperImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/server/build/generated/sources/annotationProcessor/java/main/ynzmz/server/lecture/mapper/LectureMapperImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/build/generated/sources/annotationProcessor/java/main/ynzmz/server/member/mapper/MemberMapperImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/server/build/generated/sources/annotationProcessor/java/main/ynzmz/server/member/mapper/MemberMapperImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/build/generated/sources/annotationProcessor/java/main/ynzmz/server/question/answer/mapper/AnswerMapperImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/server/build/generated/sources/annotationProcessor/java/main/ynzmz/server/question/answer/mapper/AnswerMapperImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/build/generated/sources/annotationProcessor/java/main/ynzmz/server/question/question/mapper/QuestionMapperImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/server/build/generated/sources/annotationProcessor/java/main/ynzmz/server/question/question/mapper/QuestionMapperImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/build/generated/sources/annotationProcessor/java/main/ynzmz/server/review/lecture/mapper/LectureReviewMapperImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/server/build/generated/sources/annotationProcessor/java/main/ynzmz/server/review/lecture/mapper/LectureReviewMapperImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/build/generated/sources/annotationProcessor/java/main/ynzmz/server/teacher/mapper/TeacherMapperImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/server/build/generated/sources/annotationProcessor/java/main/ynzmz/server/teacher/mapper/TeacherMapperImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/build/generated/sources/annotationProcessor/java/main/ynzmz/server/vote/question/answer/mapper/AnswerVoteMapperImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/server/build/generated/sources/annotationProcessor/java/main/ynzmz/server/vote/question/answer/mapper/AnswerVoteMapperImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/build/generated/sources/annotationProcessor/java/main/ynzmz/server/vote/question/question/mapper/QuestionVoteMapperImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/server/build/generated/sources/annotationProcessor/java/main/ynzmz/server/vote/question/question/mapper/QuestionVoteMapperImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/build/generated/sources/annotationProcessor/java/main/ynzmz/server/vote/review/lecture/mapper/LectureReviewVoteMapperImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/server/build/generated/sources/annotationProcessor/java/main/ynzmz/server/vote/review/lecture/mapper/LectureReviewVoteMapperImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/build/libs/server-0.0.1-SNAPSHOT-plain.jar" beforeDir="false" afterPath="$PROJECT_DIR$/server/build/libs/server-0.0.1-SNAPSHOT-plain.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/build/libs/server-0.0.1-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/server/build/libs/server-0.0.1-SNAPSHOT.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/build/reports/tests/test/classes/ynzmz.server.ServerApplicationTests.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/build/reports/tests/test/classes/ynzmz.server.comment.review.lecture.controller.LectureReviewCommentControllerTest.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/build/reports/tests/test/classes/ynzmz.server.lecture.controller.LectureControllerTest.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/build/reports/tests/test/classes/ynzmz.server.review.lecture.controller.LectureReviewControllerTest.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/build/reports/tests/test/classes/ynzmz.server.teacher.controller.TeacherControllerTest.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/build/reports/tests/test/classes/ynzmz.server.vote.review.lecture.controller.LectureReviewVoteControllerTest.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/build/reports/tests/test/css/base-style.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/build/reports/tests/test/css/style.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/build/reports/tests/test/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/build/reports/tests/test/js/report.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/build/reports/tests/test/packages/ynzmz.server.comment.review.lecture.controller.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/build/reports/tests/test/packages/ynzmz.server.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/build/reports/tests/test/packages/ynzmz.server.lecture.controller.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/build/reports/tests/test/packages/ynzmz.server.review.lecture.controller.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/build/reports/tests/test/packages/ynzmz.server.teacher.controller.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/build/reports/tests/test/packages/ynzmz.server.vote.review.lecture.controller.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/build/test-results/test/TEST-ynzmz.server.ServerApplicationTests.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/build/test-results/test/TEST-ynzmz.server.comment.review.lecture.controller.LectureReviewCommentControllerTest.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/build/test-results/test/TEST-ynzmz.server.lecture.controller.LectureControllerTest.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/build/test-results/test/TEST-ynzmz.server.review.lecture.controller.LectureReviewControllerTest.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/build/test-results/test/TEST-ynzmz.server.teacher.controller.TeacherControllerTest.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/build/test-results/test/TEST-ynzmz.server.vote.review.lecture.controller.LectureReviewVoteControllerTest.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/build/test-results/test/binary/output.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/build/test-results/test/binary/output.bin.idx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/build/test-results/test/binary/results.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/build/tmp/bootJar/MANIFEST.MF" beforeDir="false" afterPath="$PROJECT_DIR$/server/build/tmp/bootJar/MANIFEST.MF" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/build/tmp/compileJava/compileTransaction/stash-dir/BusinessLogicException.class.uniqueId111" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/build/tmp/compileJava/compileTransaction/stash-dir/DataCrawlingTest.class.uniqueId85" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/build/tmp/compileJava/compileTransaction/stash-dir/ErrorResponder.class.uniqueId56" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/build/tmp/compileJava/compileTransaction/stash-dir/ErrorResponse$ConstraintViolationError.class.uniqueId16" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/build/tmp/compileJava/compileTransaction/stash-dir/ErrorResponse$FieldError.class.uniqueId33" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/build/tmp/compileJava/compileTransaction/stash-dir/ErrorResponse.class.uniqueId82" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/build/tmp/compileJava/compileTransaction/stash-dir/Event.class.uniqueId47" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/build/tmp/compileJava/compileTransaction/stash-dir/Event.class.uniqueId59" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/build/tmp/compileJava/compileTransaction/stash-dir/EventController.class.uniqueId62" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/build/tmp/compileJava/compileTransaction/stash-dir/EventDto$Post.class.uniqueId4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/build/tmp/compileJava/compileTransaction/stash-dir/EventDto$Response.class.uniqueId17" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/build/tmp/compileJava/compileTransaction/stash-dir/EventDto.class.uniqueId9" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/build/tmp/compileJava/compileTransaction/stash-dir/EventMapper.class.uniqueId57" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/build/tmp/compileJava/compileTransaction/stash-dir/EventMapperImpl.class.uniqueId12" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/build/tmp/compileJava/compileTransaction/stash-dir/EventMapperImpl.java.uniqueId115" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/build/tmp/compileJava/compileTransaction/stash-dir/EventRepository.class.uniqueId95" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/build/tmp/compileJava/compileTransaction/stash-dir/EventService.class.uniqueId98" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/build/tmp/compileJava/compileTransaction/stash-dir/ExceptionCode.class.uniqueId29" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/build/tmp/compileJava/compileTransaction/stash-dir/GlobalExceptionAdvice.class.uniqueId65" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/build/tmp/compileJava/compileTransaction/stash-dir/Lecture$Status.class.uniqueId27" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/build/tmp/compileJava/compileTransaction/stash-dir/Lecture.class.uniqueId107" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/build/tmp/compileJava/compileTransaction/stash-dir/LectureController.class.uniqueId0" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/build/tmp/compileJava/compileTransaction/stash-dir/LectureController.class.uniqueId101" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/build/tmp/compileJava/compileTransaction/stash-dir/LectureDto$DetailPageResponse.class.uniqueId60" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/build/tmp/compileJava/compileTransaction/stash-dir/LectureDto$ListPageResponse.class.uniqueId7" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/build/tmp/compileJava/compileTransaction/stash-dir/LectureDto$Patch.class.uniqueId68" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/build/tmp/compileJava/compileTransaction/stash-dir/LectureDto$Post.class.uniqueId19" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/build/tmp/compileJava/compileTransaction/stash-dir/LectureDto$SimpleInfoResponse.class.uniqueId74" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/build/tmp/compileJava/compileTransaction/stash-dir/LectureDto$TeacherReviewDetailPageResponse.class.uniqueId3" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/build/tmp/compileJava/compileTransaction/stash-dir/LectureDto.class.uniqueId1" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/build/tmp/compileJava/compileTransaction/stash-dir/LectureGradeTag$LectureGradeTagBuilder.class.uniqueId78" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/build/tmp/compileJava/compileTransaction/stash-dir/LectureGradeTag.class.uniqueId18" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/build/tmp/compileJava/compileTransaction/stash-dir/LectureGradeTagRepository.class.uniqueId70" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/build/tmp/compileJava/compileTransaction/stash-dir/LectureMapper.class.uniqueId110" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/build/tmp/compileJava/compileTransaction/stash-dir/LectureMapperImpl.class.uniqueId23" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/build/tmp/compileJava/compileTransaction/stash-dir/LectureMapperImpl.java.uniqueId93" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/build/tmp/compileJava/compileTransaction/stash-dir/LecturePlatformTag$LecturePlatformTagBuilder.class.uniqueId32" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/build/tmp/compileJava/compileTransaction/stash-dir/LecturePlatformTag.class.uniqueId25" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/build/tmp/compileJava/compileTransaction/stash-dir/LecturePlatformTagRepository.class.uniqueId66" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/build/tmp/compileJava/compileTransaction/stash-dir/LectureRepository.class.uniqueId94" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/build/tmp/compileJava/compileTransaction/stash-dir/LectureReview.class.uniqueId40" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/build/tmp/compileJava/compileTransaction/stash-dir/LectureReviewComment.class.uniqueId86" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/build/tmp/compileJava/compileTransaction/stash-dir/LectureReviewCommentController.class.uniqueId108" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/build/tmp/compileJava/compileTransaction/stash-dir/LectureReviewCommentDto$Patch.class.uniqueId31" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/build/tmp/compileJava/compileTransaction/stash-dir/LectureReviewCommentDto$Post.class.uniqueId63" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/build/tmp/compileJava/compileTransaction/stash-dir/LectureReviewCommentDto$Response.class.uniqueId22" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/build/tmp/compileJava/compileTransaction/stash-dir/LectureReviewCommentDto.class.uniqueId13" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/build/tmp/compileJava/compileTransaction/stash-dir/LectureReviewCommentRepository.class.uniqueId11" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/build/tmp/compileJava/compileTransaction/stash-dir/LectureReviewCommentService.class.uniqueId14" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/build/tmp/compileJava/compileTransaction/stash-dir/LectureReviewController.class.uniqueId34" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/build/tmp/compileJava/compileTransaction/stash-dir/LectureReviewDto$DetailPageResponse.class.uniqueId30" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/build/tmp/compileJava/compileTransaction/stash-dir/LectureReviewDto$InfoResponse.class.uniqueId71" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/build/tmp/compileJava/compileTransaction/stash-dir/LectureReviewDto$ListPageResponse.class.uniqueId113" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/build/tmp/compileJava/compileTransaction/stash-dir/LectureReviewDto$Patch.class.uniqueId53" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/build/tmp/compileJava/compileTransaction/stash-dir/LectureReviewDto$Post.class.uniqueId5" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/build/tmp/compileJava/compileTransaction/stash-dir/LectureReviewDto.class.uniqueId109" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/build/tmp/compileJava/compileTransaction/stash-dir/LectureReviewMapper.class.uniqueId64" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/build/tmp/compileJava/compileTransaction/stash-dir/LectureReviewMapperImpl.class.uniqueId44" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/build/tmp/compileJava/compileTransaction/stash-dir/LectureReviewMapperImpl.java.uniqueId79" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/build/tmp/compileJava/compileTransaction/stash-dir/LectureReviewPostCommentMapper.class.uniqueId38" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/build/tmp/compileJava/compileTransaction/stash-dir/LectureReviewPostCommentMapperImpl.class.uniqueId51" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/build/tmp/compileJava/compileTransaction/stash-dir/LectureReviewPostCommentMapperImpl.java.uniqueId58" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/build/tmp/compileJava/compileTransaction/stash-dir/LectureReviewRepository.class.uniqueId97" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/build/tmp/compileJava/compileTransaction/stash-dir/LectureReviewService.class.uniqueId21" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/build/tmp/compileJava/compileTransaction/stash-dir/LectureReviewVote$Target.class.uniqueId41" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/build/tmp/compileJava/compileTransaction/stash-dir/LectureReviewVote$VoteStatus.class.uniqueId102" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/build/tmp/compileJava/compileTransaction/stash-dir/LectureReviewVote.class.uniqueId37" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/build/tmp/compileJava/compileTransaction/stash-dir/LectureReviewVoteController.class.uniqueId54" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/build/tmp/compileJava/compileTransaction/stash-dir/LectureReviewVoteDto$Response.class.uniqueId89" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/build/tmp/compileJava/compileTransaction/stash-dir/LectureReviewVoteDto.class.uniqueId49" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/build/tmp/compileJava/compileTransaction/stash-dir/LectureReviewVoteMapper.class.uniqueId45" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/build/tmp/compileJava/compileTransaction/stash-dir/LectureReviewVoteMapperImpl.class.uniqueId90" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/build/tmp/compileJava/compileTransaction/stash-dir/LectureReviewVoteMapperImpl.java.uniqueId46" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/build/tmp/compileJava/compileTransaction/stash-dir/LectureReviewVoteRepository.class.uniqueId105" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/build/tmp/compileJava/compileTransaction/stash-dir/LectureReviewVoteService.class.uniqueId2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/build/tmp/compileJava/compileTransaction/stash-dir/LectureService.class.uniqueId91" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/build/tmp/compileJava/compileTransaction/stash-dir/LectureSubjectTag$LectureSubjectTagBuilder.class.uniqueId8" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/build/tmp/compileJava/compileTransaction/stash-dir/LectureSubjectTag.class.uniqueId26" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/build/tmp/compileJava/compileTransaction/stash-dir/LectureSubjectTagRepository.class.uniqueId83" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/build/tmp/compileJava/compileTransaction/stash-dir/MemberAuthenticationFailureHandler.class.uniqueId67" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/build/tmp/compileJava/compileTransaction/stash-dir/MemberController.class.uniqueId103" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/build/tmp/compileJava/compileTransaction/stash-dir/MemberDetailsService$MemberDetails.class.uniqueId76" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/build/tmp/compileJava/compileTransaction/stash-dir/MemberDetailsService.class.uniqueId50" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/build/tmp/compileJava/compileTransaction/stash-dir/MemberService.class.uniqueId43" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/build/tmp/compileJava/compileTransaction/stash-dir/SecurityConfiguration$CustomFilterConfigurer.class.uniqueId15" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/build/tmp/compileJava/compileTransaction/stash-dir/SecurityConfiguration.class.uniqueId75" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/build/tmp/compileJava/compileTransaction/stash-dir/TagService.class.uniqueId77" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/build/tmp/compileJava/compileTransaction/stash-dir/Teacher.class.uniqueId69" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/build/tmp/compileJava/compileTransaction/stash-dir/TeacherController.class.uniqueId114" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/build/tmp/compileJava/compileTransaction/stash-dir/TeacherDto$DetailPageResponse.class.uniqueId80" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/build/tmp/compileJava/compileTransaction/stash-dir/TeacherDto$ListPageResponse.class.uniqueId116" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/build/tmp/compileJava/compileTransaction/stash-dir/TeacherDto$Patch.class.uniqueId55" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/build/tmp/compileJava/compileTransaction/stash-dir/TeacherDto$Post.class.uniqueId20" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/build/tmp/compileJava/compileTransaction/stash-dir/TeacherDto$ReviewDetailPageResponse.class.uniqueId92" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/build/tmp/compileJava/compileTransaction/stash-dir/TeacherDto$SimpleInfoResponse.class.uniqueId87" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/build/tmp/compileJava/compileTransaction/stash-dir/TeacherDto.class.uniqueId99" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/build/tmp/compileJava/compileTransaction/stash-dir/TeacherGradeTag$TeacherGradeTagBuilder.class.uniqueId36" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/build/tmp/compileJava/compileTransaction/stash-dir/TeacherGradeTag.class.uniqueId88" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/build/tmp/compileJava/compileTransaction/stash-dir/TeacherGradeTagRepository.class.uniqueId72" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/build/tmp/compileJava/compileTransaction/stash-dir/TeacherMapper.class.uniqueId112" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/build/tmp/compileJava/compileTransaction/stash-dir/TeacherMapperImpl.class.uniqueId52" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/build/tmp/compileJava/compileTransaction/stash-dir/TeacherMapperImpl.java.uniqueId6" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/build/tmp/compileJava/compileTransaction/stash-dir/TeacherPlatformTag$TeacherPlatformTagBuilder.class.uniqueId42" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/build/tmp/compileJava/compileTransaction/stash-dir/TeacherPlatformTag.class.uniqueId48" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/build/tmp/compileJava/compileTransaction/stash-dir/TeacherPlatformTagRepository.class.uniqueId61" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/build/tmp/compileJava/compileTransaction/stash-dir/TeacherRepository.class.uniqueId96" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/build/tmp/compileJava/compileTransaction/stash-dir/TeacherService.class.uniqueId81" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/build/tmp/compileJava/compileTransaction/stash-dir/TeacherSubjectTag$TeacherSubjectTagBuilder.class.uniqueId35" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/build/tmp/compileJava/compileTransaction/stash-dir/TeacherSubjectTag.class.uniqueId28" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/build/tmp/compileJava/compileTransaction/stash-dir/TeacherSubjectTagRepository.class.uniqueId100" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/build/tmp/compileJava/compileTransaction/stash-dir/YjEvent.class.uniqueId84" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/build/tmp/compileJava/compileTransaction/stash-dir/YjEventDto.class.uniqueId39" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/build/tmp/compileJava/compileTransaction/stash-dir/YjEventMapper.class.uniqueId24" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/build/tmp/compileJava/compileTransaction/stash-dir/YjEventMapperImpl.class.uniqueId106" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/build/tmp/compileJava/compileTransaction/stash-dir/YjEventMapperImpl.java.uniqueId73" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/build/tmp/compileJava/compileTransaction/stash-dir/YjEventRepository.class.uniqueId10" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/build/tmp/compileJava/compileTransaction/stash-dir/YjEventService.class.uniqueId104" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/build/tmp/compileJava/compileTransaction/stash-dir/dataCrawler.class.uniqueId0" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/server/build/tmp/compileJava/previous-compilation-data.bin" beforeDir="false" afterPath="$PROJECT_DIR$/server/build/tmp/compileJava/previous-compilation-data.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/main/java/ynzmz/server/lecture/controller/LectureController.java" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/main/java/ynzmz/server/lecture/controller/LectureController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/build/tmp/compileTestJava/compileTransaction/stash-dir/LectureControllerTest.class.uniqueId3" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/build/tmp/compileTestJava/compileTransaction/stash-dir/LectureReviewCommentControllerTest.class.uniqueId2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/build/tmp/compileTestJava/compileTransaction/stash-dir/LectureReviewControllerTest.class.uniqueId1" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/build/tmp/compileTestJava/compileTransaction/stash-dir/LectureReviewVoteControllerTest.class.uniqueId4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/build/tmp/compileTestJava/compileTransaction/stash-dir/StubData.class.uniqueId5" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/build/tmp/compileTestJava/compileTransaction/stash-dir/TeacherControllerTest.class.uniqueId0" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/build/tmp/compileTestJava/previous-compilation-data.bin" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -197,6 +404,17 @@
                 <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
                 <item name="server" type="f1a62948:ProjectNode" />
               </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="server" type="f1a62948:ProjectNode" />
+                <item name="Tasks" type="e4a08cd1:TasksNode" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="server" type="f1a62948:ProjectNode" />
+                <item name="Tasks" type="e4a08cd1:TasksNode" />
+                <item name="build" type="c8890929:TasksNode$1" />
+              </path>
             </expand>
             <select />
           </tree_state>
@@ -219,6 +437,9 @@
     <option name="stateVersion" value="1" />
   </component>
   <component name="ProjectId" id="2N7i5BqJ5pvKFOgA9qz1IRGyJ1i" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="compactDirectories" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -239,11 +460,12 @@
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
     &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;reference.settingsdialog.project.gradle&quot;,
     &quot;spring.configuration.checksum&quot;: &quot;f388e2a0991e057a0316947c380806f0&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>
-  <component name="RunManager" selected="Spring Boot.ServerApplication">
+  <component name="RunManager" selected="Gradle.server [build]">
     <configuration name="server [build]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
@@ -256,6 +478,27 @@
         <option name="taskNames">
           <list>
             <option value="build" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <method v="2" />
+    </configuration>
+    <configuration name="server [clean]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$/server" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value="clean" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -288,6 +531,7 @@
     <recent_temporary>
       <list>
         <item itemvalue="Gradle.server [build]" />
+        <item itemvalue="Gradle.server [clean]" />
       </list>
     </recent_temporary>
   </component>
@@ -350,7 +594,14 @@
       <option name="project" value="LOCAL" />
       <updated>1679029742519</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="fix: 강의등록시 강사연결 수정">
+      <created>1679033337613</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1679033337613</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -399,6 +650,7 @@
     <MESSAGE value="fix: 3/17 BeDev+ 민호 코드" />
     <MESSAGE value="fix: memberState Response 반영 수정" />
     <MESSAGE value="feat: MemberDto 수정 및 SimpleInfoResponse 추가" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat: MemberDto 수정 및 SimpleInfoResponse 추가" />
+    <MESSAGE value="fix: 강의등록시 강사연결 수정" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix: 강의등록시 강사연결 수정" />
   </component>
 </project>
