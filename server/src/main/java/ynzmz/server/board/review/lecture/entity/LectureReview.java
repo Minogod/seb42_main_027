@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
 import lombok.Getter;
 import lombok.Setter;
+import org.hibernate.annotations.ColumnDefault;
 import ynzmz.server.comment.review.lecture.entity.LectureReviewComment;
 import ynzmz.server.lecture.entity.Lecture;
 import ynzmz.server.member.entity.Member;
@@ -18,13 +19,16 @@ import java.util.List;
 public class LectureReview implements Vote {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long LectureReviewId;
+    private Long lectureReviewId;
     private String title;
     private int starPoint;
     private String content;
     private String createdAt;
     private String modifiedAt;
     private long viewCount;
+
+    @Column
+    @ColumnDefault("0")
     private long voteCount;
     @ManyToOne
     @JoinColumn(name = "lecture_id")

@@ -2,12 +2,15 @@ package ynzmz.server.member.mapper;
 
 
 import org.mapstruct.Mapper;
+import org.mapstruct.ReportingPolicy;
+import ynzmz.server.board.qna.question.dto.QuestionDto;
+import ynzmz.server.board.qna.question.entity.Question;
 import ynzmz.server.member.dto.*;
 import ynzmz.server.member.entity.Member;
 
 import java.util.List;
 
-@Mapper(componentModel = "spring")
+@Mapper(componentModel = "spring", unmappedTargetPolicy = ReportingPolicy.IGNORE)
 public interface MemberMapper {
 
     Member memberPostToMember(MemberDto.Post memberPostDto);
@@ -15,7 +18,8 @@ public interface MemberMapper {
     MemberDto.Response memberToMemberResponse (Member member);
     MemberDto.SimpleInfoResponse memberToMemberSimpleInfoResponse(MemberDto.SimpleInfoResponse simpleInfoResponse);
     List<MemberDto.Response> memberToMemberResponses(List<Member> members);
-    MemberDto.MyLectureReview memberToMemberMyLectureReview(Member member);
+//    MemberDto.MyLectureReview memberToMemberMyLectureReview(Member member);
 //    MemberQuestionResponseDto memberToMemberQuestionResponse(Member member);
+//    List<QuestionDto.SimpleInfoResponse> memberToMemberMyQuestions(List<Question> questions);
 
 }
