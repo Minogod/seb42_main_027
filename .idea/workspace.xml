@@ -4,7 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="45d9a31d-0999-411e-9128-8c3b5aa2b4a5" name="변경" comment="fix: 3/18 병합준비" />
+    <list default="true" id="45d9a31d-0999-411e-9128-8c3b5aa2b4a5" name="변경" comment="fix: 3/18 병합버전 [ 질문답변게시판 댓글,대댓글추가 ]">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/asciidoc/review-board-review.html" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/asciidoc/review-board-review.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/main/java/ynzmz/server/board/review/lecture/dto/LectureReviewDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/main/java/ynzmz/server/board/review/lecture/dto/LectureReviewDto.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -99,7 +103,7 @@
       <recent name="$PROJECT_DIR$/server/src/main/java/ynzmz/server/comment" />
     </key>
   </component>
-  <component name="RunManager" selected="Spring Boot.ServerApplication">
+  <component name="RunManager" selected="Gradle.server [build]">
     <configuration name="server [build]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
@@ -164,8 +168,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Gradle.server [clean]" />
         <item itemvalue="Gradle.server [build]" />
+        <item itemvalue="Gradle.server [clean]" />
       </list>
     </recent_temporary>
   </component>
@@ -305,7 +309,21 @@
       <option name="project" value="LOCAL" />
       <updated>1679118537244</updated>
     </task>
-    <option name="localTasksCounter" value="19" />
+    <task id="LOCAL-00019" summary="fix: 3/18 병합버전">
+      <created>1679122393645</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1679122393645</updated>
+    </task>
+    <task id="LOCAL-00020" summary="fix: 3/18 병합버전 [ 질문답변게시판 댓글,대댓글추가 ]">
+      <created>1679122432125</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1679122432125</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -363,7 +381,9 @@
     <MESSAGE value="feat: 질문답변게시판 대댓글 CURD 추가" />
     <MESSAGE value="feat: 리뷰등록시 토큰에서 memberId 찾기" />
     <MESSAGE value="feat: 질문답변게시판 댓글/대댓글 추천기능 추가" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat: 질문답변게시판 댓글/대댓글 추천기능 추가" />
+    <MESSAGE value="fix: 3/18 병합버전" />
+    <MESSAGE value="fix: 3/18 병합버전 [ 질문답변게시판 댓글,대댓글추가 ]" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix: 3/18 병합버전 [ 질문답변게시판 댓글,대댓글추가 ]" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
