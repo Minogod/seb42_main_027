@@ -1,0 +1,34 @@
+Index: server/build/generated/sources/annotationProcessor/java/main/ynzmz/server/board/event/our/mapper/YjEventMapperImpl.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package ynzmz.server.board.event.our.mapper;\n\nimport javax.annotation.processing.Generated;\nimport org.springframework.stereotype.Component;\nimport ynzmz.server.board.event.our.dto.YjEventDto;\nimport ynzmz.server.board.event.our.entity.YjEvent;\n\n@Generated(\n    value = \"org.mapstruct.ap.MappingProcessor\",\n    date = \"2023-03-19T01:16:27+0900\",\n    comments = \"version: 1.5.2.Final, compiler: IncrementalProcessingEnvironment from gradle-language-java-7.5.1.jar, environment: Java 11.0.17 (Azul Systems, Inc.)\"\n)\n@Component\npublic class YjEventMapperImpl implements YjEventMapper {\n\n    @Override\n    public YjEvent yjEventPostToYjEvent(YjEventDto.Post p) {\n        if ( p == null ) {\n            return null;\n        }\n\n        YjEvent yjEvent = new YjEvent();\n\n        return yjEvent;\n    }\n\n    @Override\n    public YjEvent yjEventPatchToYjEvent(YjEventDto.Patch p) {\n        if ( p == null ) {\n            return null;\n        }\n\n        YjEvent yjEvent = new YjEvent();\n\n        return yjEvent;\n    }\n\n    @Override\n    public YjEvent YjEventResponseToyjEvent(YjEventDto.Response r) {\n        if ( r == null ) {\n            return null;\n        }\n\n        YjEvent yjEvent = new YjEvent();\n\n        return yjEvent;\n    }\n}\n
+===================================================================
+diff --git a/server/build/generated/sources/annotationProcessor/java/main/ynzmz/server/board/event/our/mapper/YjEventMapperImpl.java b/server/build/generated/sources/annotationProcessor/java/main/ynzmz/server/board/event/our/mapper/YjEventMapperImpl.java
+--- a/server/build/generated/sources/annotationProcessor/java/main/ynzmz/server/board/event/our/mapper/YjEventMapperImpl.java	
++++ b/server/build/generated/sources/annotationProcessor/java/main/ynzmz/server/board/event/our/mapper/YjEventMapperImpl.java	
+@@ -7,7 +7,7 @@
+ 
+ @Generated(
+     value = "org.mapstruct.ap.MappingProcessor",
+-    date = "2023-03-19T01:16:27+0900",
++    date = "2023-03-19T18:10:06+0900",
+     comments = "version: 1.5.2.Final, compiler: IncrementalProcessingEnvironment from gradle-language-java-7.5.1.jar, environment: Java 11.0.17 (Azul Systems, Inc.)"
+ )
+ @Component
+Index: server/build/generated/sources/annotationProcessor/java/main/ynzmz/server/comment/free/mapper/FreePostCommentMapperImpl.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package ynzmz.server.comment.free.mapper;\n\nimport java.util.ArrayList;\nimport java.util.List;\nimport javax.annotation.processing.Generated;\nimport org.springframework.stereotype.Component;\nimport ynzmz.server.comment.free.dto.FreeCommentDto;\nimport ynzmz.server.comment.free.entity.FreeComment;\n\n@Generated(\n    value = \"org.mapstruct.ap.MappingProcessor\",\n    date = \"2023-03-19T01:16:27+0900\",\n    comments = \"version: 1.5.2.Final, compiler: IncrementalProcessingEnvironment from gradle-language-java-7.5.1.jar, environment: Java 11.0.17 (Azul Systems, Inc.)\"\n)\n@Component\npublic class FreePostCommentMapperImpl implements FreePostCommentMapper {\n\n    @Override\n    public FreeComment FreeCommentToFreeCommentPost(FreeCommentDto.Post FreeCommentPostDto) {\n        if ( FreeCommentPostDto == null ) {\n            return null;\n        }\n\n        FreeComment freeComment = new FreeComment();\n\n        freeComment.setFreeCommentId( FreeCommentPostDto.getFreeCommentId() );\n        freeComment.setContent( FreeCommentPostDto.getContent() );\n        freeComment.setCreatedAt( FreeCommentPostDto.getCreatedAt() );\n\n        return freeComment;\n    }\n\n    @Override\n    public FreeComment FreeCommentToFreeCommentPatch(FreeCommentDto.Patch FreeCommentPatchDto) {\n        if ( FreeCommentPatchDto == null ) {\n            return null;\n        }\n\n        FreeComment freeComment = new FreeComment();\n\n        freeComment.setContent( FreeCommentPatchDto.getContent() );\n        freeComment.setModifiedAt( FreeCommentPatchDto.getModifiedAt() );\n\n        return freeComment;\n    }\n\n    @Override\n    public FreeCommentDto.Response FreeCommentResponseToFreeComment(FreeComment freeComment) {\n        if ( freeComment == null ) {\n            return null;\n        }\n\n        FreeCommentDto.Response response = new FreeCommentDto.Response();\n\n        response.setFreeCommentId( freeComment.getFreeCommentId() );\n        response.setContent( freeComment.getContent() );\n        response.setCreatedAt( freeComment.getCreatedAt() );\n        response.setModifiedAt( freeComment.getModifiedAt() );\n        response.setVoteCount( freeComment.getVoteCount() );\n        response.setMember( freeComment.getMember() );\n\n        return response;\n    }\n\n    @Override\n    public List<FreeCommentDto.Response> FreeCommentResponsesToFreeComments(List<FreeComment> freeComments) {\n        if ( freeComments == null ) {\n            return null;\n        }\n\n        List<FreeCommentDto.Response> list = new ArrayList<FreeCommentDto.Response>( freeComments.size() );\n        for ( FreeComment freeComment : freeComments ) {\n            list.add( FreeCommentResponseToFreeComment( freeComment ) );\n        }\n\n        return list;\n    }\n}\n
+===================================================================
+diff --git a/server/build/generated/sources/annotationProcessor/java/main/ynzmz/server/comment/free/mapper/FreePostCommentMapperImpl.java b/server/build/generated/sources/annotationProcessor/java/main/ynzmz/server/comment/free/mapper/FreePostCommentMapperImpl.java
+--- a/server/build/generated/sources/annotationProcessor/java/main/ynzmz/server/comment/free/mapper/FreePostCommentMapperImpl.java	
++++ b/server/build/generated/sources/annotationProcessor/java/main/ynzmz/server/comment/free/mapper/FreePostCommentMapperImpl.java	
+@@ -9,7 +9,7 @@
+ 
+ @Generated(
+     value = "org.mapstruct.ap.MappingProcessor",
+-    date = "2023-03-19T01:16:27+0900",
++    date = "2023-03-19T18:10:06+0900",
+     comments = "version: 1.5.2.Final, compiler: IncrementalProcessingEnvironment from gradle-language-java-7.5.1.jar, environment: Java 11.0.17 (Azul Systems, Inc.)"
+ )
+ @Component
