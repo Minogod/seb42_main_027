@@ -12,6 +12,7 @@ import ynzmz.server.error.exception.BusinessLogicException;
 import ynzmz.server.error.exception.ExceptionCode;
 import ynzmz.server.board.free.entity.Free;
 
+import java.util.List;
 import java.util.Optional;
 
 @Service
@@ -30,29 +31,29 @@ public class FreeService {
 
     }
 
-    public Page<Free> findFreeByMemberId(long memberId, int page, int size) {
-        return repository.findByMemberId(memberId,PageRequest.of(page,size,Sort.by("Id")));
+    public List<Free> findFreesByMemberId(long memberId) {
+        return repository.findByMemberId(memberId);
     }
 
     public Page<Free> findAllFree(int page){
-        return repository.findAll(PageRequest.of(page,15, Sort.by("freeId")));
+        return repository.findAll(PageRequest.of(page,15, Sort.by("freeId").descending()));
     }
     //-------------------------------------------UPDATE---------------------------------------------------------
     public Free updateFree(Free free){
         Free findFree = findFreeById(free.getFreeId());
-        Optional.ofNullable(findFree.getTitle()).ifPresent(findFree::setTitle);
-        Optional.ofNullable(findFree.getContent()).ifPresent(findFree::setContent);
-        Optional.ofNullable(findFree.getViewCount()).ifPresent(findFree::setViewCount);
-        Optional.ofNullable(findFree.getModifiedAt()).ifPresent(findFree::setModifiedAt);
-        Optional.ofNullable(findFree.getTitle()).ifPresent(findFree::setTitle);
+        Optional.ofNullable(free.getTitle()).ifPresent(findFree::setTitle);
+        Optional.ofNullable(free.getContent()).ifPresent(findFree::setContent);
+        Optional.ofNullable(free.getViewCount()).ifPresent(findFree::setViewCount);
+        Optional.ofNullable(free.getModifiedAt()).ifPresent(findFree::setModifiedAt);
+        Optional.ofNullable(free.getTitle()).ifPresent(findFree::setTitle);
 
         return repository.save(findFree);
 
     }
     //-------------------------------------------DELETE---------------------------------------------------------
 
-    public void deleteFree(long id){
-        repository.deleteById(id);
+    public void deleteFree(long freeId){
+        repository.deleteById(freeId);
     }
 
 }
