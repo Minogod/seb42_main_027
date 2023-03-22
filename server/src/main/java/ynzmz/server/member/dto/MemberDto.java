@@ -1,10 +1,7 @@
 package ynzmz.server.member.dto;
 
 
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 import ynzmz.server.board.review.lecture.dto.LectureReviewDto;
 import ynzmz.server.vote.Vote;
 import ynzmz.server.vote.qna.dto.LoginUserAnswerVoteResponseDto;
@@ -62,8 +59,6 @@ public class MemberDto{
     public static class Patch {
         @NotBlank(message = "휴대폰번호는 필수 입력 값입니다.")
         private String phoneNumber;
-        @NotBlank(message = "패스워드는 필수 입력 값입니다.")
-        private String password;
         @NotBlank(message = "닉네임은 필수 입력 값입니다.")
         private String displayName;
         private String iconImageUrl;
@@ -121,6 +116,18 @@ public class MemberDto{
         private String username;
         private LoginUserLectureReviewVoteResponseDto lectureReviewVoteStatus;
         private List<LoginUserLectureReviewCommentVoteResponseDto> commentVoteStatus = new ArrayList<>();
+
+    }
+
+    @Getter
+    @Setter
+    @NoArgsConstructor @AllArgsConstructor
+    public static class ChangePassword {
+        private String nowPassword;
+        private String newPassword;
+
+        private String confirmPassword;
+
 
     }
 
