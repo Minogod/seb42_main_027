@@ -4,9 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="cd7f39cd-62a8-49cc-a937-2a988b43b751" name="변경" comment="feat: cors해결">
-      <change beforePath="$PROJECT_DIR$/../.idea/shelf/2023_03_17_3_07_PM__________.xml" beforeDir="false" />
+    <list default="true" id="cd7f39cd-62a8-49cc-a937-2a988b43b751" name="변경" comment="feat: 환경변수 테스트">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application-server.yml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application-server.yml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -30,6 +31,17 @@
               <path>
                 <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
                 <item name="server" type="f1a62948:ProjectNode" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="server" type="f1a62948:ProjectNode" />
+                <item name="Tasks" type="e4a08cd1:TasksNode" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="server" type="f1a62948:ProjectNode" />
+                <item name="Tasks" type="e4a08cd1:TasksNode" />
+                <item name="build" type="c8890929:TasksNode$1" />
               </path>
               <path>
                 <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
@@ -121,27 +133,6 @@
       <DebugAllEnabled>false</DebugAllEnabled>
       <method v="2" />
     </configuration>
-    <configuration name="server [bootJar]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
-      <ExternalSystemSettings>
-        <option name="executionName" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$" />
-        <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" />
-        <option name="taskDescriptions">
-          <list />
-        </option>
-        <option name="taskNames">
-          <list>
-            <option value="bootJar" />
-          </list>
-        </option>
-        <option name="vmOptions" />
-      </ExternalSystemSettings>
-      <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
-      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
-      <DebugAllEnabled>false</DebugAllEnabled>
-      <method v="2" />
-    </configuration>
     <configuration name="server [bootRunMainClassName]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
@@ -184,6 +175,27 @@
       <DebugAllEnabled>false</DebugAllEnabled>
       <method v="2" />
     </configuration>
+    <configuration name="server [clean]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value="clean" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <method v="2" />
+    </configuration>
     <configuration name="server [jar]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
@@ -215,10 +227,10 @@
     <recent_temporary>
       <list>
         <item itemvalue="Gradle.server [build]" />
+        <item itemvalue="Gradle.server [clean]" />
         <item itemvalue="Gradle.server [jar]" />
         <item itemvalue="Gradle.server [bootBuildImage]" />
         <item itemvalue="Gradle.server [bootRunMainClassName]" />
-        <item itemvalue="Gradle.server [bootJar]" />
       </list>
     </recent_temporary>
   </component>
@@ -233,7 +245,7 @@
       <workItem from="1678776805817" duration="775000" />
       <workItem from="1678777817541" duration="737000" />
       <workItem from="1678780893661" duration="14359000" />
-      <workItem from="1679860352516" duration="10000" />
+      <workItem from="1679860352516" duration="4222000" />
     </task>
     <task id="LOCAL-00001" summary="feat: 3/14 merge">
       <created>1678776910996</created>
@@ -361,7 +373,14 @@
       <option name="project" value="LOCAL" />
       <updated>1678807214963</updated>
     </task>
-    <option name="localTasksCounter" value="19" />
+    <task id="LOCAL-00019" summary="feat: 환경변수 테스트">
+      <created>1679860666350</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1679860666350</updated>
+    </task>
+    <option name="localTasksCounter" value="20" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -393,6 +412,7 @@
     <MESSAGE value="feat: cors 에러 필터추가" />
     <MESSAGE value="feat: cors 변경" />
     <MESSAGE value="feat: cors해결" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat: cors해결" />
+    <MESSAGE value="feat: 환경변수 테스트" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat: 환경변수 테스트" />
   </component>
 </project>
