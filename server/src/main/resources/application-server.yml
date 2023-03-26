@@ -1,5 +1,9 @@
+jasypt: #패스워드 암호화/복호화 키
+  encryptor:
+    password:  ${pipeline.jasypt_password:${jasypt_password}}
 server:
   port: 8080
+
 spring:
   datasource:
     url: jdbc:mysql://mainproject27team.c16y5acx5nnq.ap-northeast-2.rds.amazonaws.com:3306/mainproject?serverTimezone=Asia/Seoul
@@ -38,7 +42,3 @@ cloud: # AWS 계정 설정
         secret-key: ENC(lbA3Dm/e0/xvi0/M5/WkO1VKrzpKPYRf1+zdc5ocaJNF6icBJdlD2GJwXC7lZDYldorBzT2Z7qU=)
     stack:
       auto: false
-
-jasypt: #패스워드 암호화/복호화 키
-  encryptor:
-    password:  ${pipeline.jasypt_password:${jasypt_password}}
