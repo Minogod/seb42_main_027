@@ -1,7 +1,6 @@
 jasypt: #패스워드 암호화/복호화 키
   encryptor:
     password: ${pipeline.jasypt_password:${jasypt_password}}
-#    password: minomino
 server:
   port: 8080
 
