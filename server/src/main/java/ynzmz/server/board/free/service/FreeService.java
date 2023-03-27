@@ -7,12 +7,10 @@ import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 import ynzmz.server.board.free.repository.FreeRepository;
-import ynzmz.server.board.review.lecture.entity.LectureReview;
-import ynzmz.server.error.exception.BusinessLogicException;
-import ynzmz.server.error.exception.ExceptionCode;
+import ynzmz.server.global.error.exception.BusinessLogicException;
+import ynzmz.server.global.error.exception.ExceptionCode;
 import ynzmz.server.board.free.entity.Free;
 
-import java.awt.print.Pageable;
 import java.util.List;
 import java.util.Optional;
 
@@ -95,4 +93,8 @@ public Page<Free> findFreesByCategoryAndSortAndTitle(int page, String category,S
 //    public Page<Free> findFreesByCategoryAndSort(int page, String category){
 //        return repository.findFreesByCategory(category, PageRequest.of(page,15));
 //    }
+
+    public void getCommentNum(Free free){
+        free.setCommentsListNum(free.getComments().size());
+    }
 }

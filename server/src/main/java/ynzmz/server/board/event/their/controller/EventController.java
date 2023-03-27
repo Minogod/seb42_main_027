@@ -4,15 +4,17 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.data.domain.Page;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.web.bind.annotation.*;
 import ynzmz.server.board.event.their.service.EventService;
-import ynzmz.server.dto.MultiResponseDto;
+import ynzmz.server.global.dto.MultiResponseDto;
 import ynzmz.server.board.event.their.dto.EventDto;
 import ynzmz.server.board.event.their.entity.Event;
 import ynzmz.server.board.event.their.mapper.EventMapper;
 import ynzmz.server.board.event.their.repository.EventRepository;
-import ynzmz.server.dto.SingleResponseDto;
+import ynzmz.server.global.dto.SingleResponseDto;
 
+import java.time.LocalDateTime;
 import java.util.List;
 
 
@@ -20,7 +22,7 @@ import java.util.List;
 @RequestMapping("/boards/events/theirs")
 @RequiredArgsConstructor
 public class EventController {
-    private final EventRepository eventRepository;
+
     private final EventService eventService;
     private final EventMapper eventMapper;
 
@@ -41,4 +43,5 @@ public class EventController {
 
         return new ResponseEntity<>(new MultiResponseDto<>(response,pagedEvent), HttpStatus.OK);
     }
+
 }
