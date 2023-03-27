@@ -5,7 +5,10 @@
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/server.iml" filepath="$PROJECT_DIR$/.idea/modules/server.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/server.main.iml" filepath="$PROJECT_DIR$/.idea/modules/server.main.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/server.test.iml" filepath="$PROJECT_DIR$/.idea/modules/server.test.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/ynzmz.server.iml" filepath="$PROJECT_DIR$/.idea/modules/ynzmz.server.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/ynzmz.server.main.iml" filepath="$PROJECT_DIR$/.idea/modules/ynzmz.server.main.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/ynzmz.server.test.iml" filepath="$PROJECT_DIR$/.idea/modules/ynzmz.server.test.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/ynzmz.server.test~1.iml" filepath="$PROJECT_DIR$/.idea/modules/ynzmz.server.test~1.iml" />
     </modules>
   </component>
 </project>
