@@ -1,12 +1,13 @@
 package ynzmz.server.board.event.their.mapper;
 
 import org.mapstruct.Mapper;
+import org.mapstruct.ReportingPolicy;
 import ynzmz.server.board.event.their.entity.Event;
 import ynzmz.server.board.event.their.dto.EventDto;
 
 import java.util.List;
 
-@Mapper(componentModel = "spring")
+@Mapper(componentModel = "spring", unmappedTargetPolicy = ReportingPolicy.IGNORE)
 public interface EventMapper {
 
     EventDto.Post eventToEventPost(Event event);
