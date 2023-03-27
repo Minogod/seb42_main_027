@@ -4,10 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="21e0b4a1-1309-4891-a3a3-777e2c29c93a" name="변경" comment="merage: 3/28 04:05 배포">
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules/server.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules/server.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules/server.main.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules/server.main.iml" afterDir="false" />
+    <list default="true" id="21e0b4a1-1309-4891-a3a3-777e2c29c93a" name="변경" comment="fix: Table 변경값 반영">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -67,11 +64,11 @@
       </map>
     </option>
   </component>
-  <component name="GitHubPullRequestSearchHistory">{
-  &quot;lastFilter&quot;: {
-    &quot;state&quot;: &quot;OPEN&quot;
+  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
+  "lastFilter": {
+    "state": "OPEN"
   }
-}</component>
+}]]></component>
   <component name="GithubPullRequestsUISettings">
     <option name="selectedUrlAndAccountId">
       <UrlAndAccount>
@@ -81,15 +78,7 @@
     </option>
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.springframework.boot/spring-boot-autoconfigure/2.7.9/627fb7d59e7dabbbc5ff2805ddad07fe7279c6a0/spring-boot-autoconfigure-2.7.9-sources.jar!/org/springframework/boot/autoconfigure/flyway/FlywayAutoConfiguration.java" root0="FORCE_HIGHLIGHTING" />
-    <setting file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.springframework.data/spring-data-commons/2.7.8/3ddb11e0dc6e7c800d27060da290ecd18206c43d/spring-data-commons-2.7.8-sources.jar!/org/springframework/data/domain/Page.java" root0="SKIP_INSPECTION" />
-    <setting file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.springframework.security/spring-security-config/5.7.7/5b69781c2d59535b10cf80e942b0159729214f93/spring-security-config-5.7.7-sources.jar!/org/springframework/security/config/annotation/SecurityConfigurerAdapter.java" root0="SKIP_INSPECTION" />
-    <setting file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.springframework.security/spring-security-config/5.7.7/5b69781c2d59535b10cf80e942b0159729214f93/spring-security-config-5.7.7-sources.jar!/org/springframework/security/config/annotation/web/builders/HttpSecurity.java" root0="SKIP_INSPECTION" />
-    <setting file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.springframework.security/spring-security-core/5.7.7/eee144b2bcb6c0dcc0f03c769bf0db5e9ffe69da/spring-security-core-5.7.7-sources.jar!/org/springframework/security/authentication/UsernamePasswordAuthenticationToken.java" root0="SKIP_INSPECTION" />
-    <setting file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.springframework.security/spring-security-crypto/5.7.7/61b9a2652e97c2f7f00091775f07963ea4ae602a/spring-security-crypto-5.7.7-sources.jar!/org/springframework/security/crypto/password/PasswordEncoder.java" root0="SKIP_INSPECTION" />
-    <setting file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.springframework/spring-core/5.3.25/a1dbd0ee414155d8330405526538e0956c0f9435/spring-core-5.3.25-sources.jar!/org/springframework/util/Assert.java" root0="SKIP_INSPECTION" />
     <setting file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.springframework/spring-web/5.3.25/1c1a05f9e56b8cee98d71c3d610f177f17b3f73d/spring-web-5.3.25-sources.jar!/org/springframework/http/HttpStatus.java" root0="SKIP_INSPECTION" />
-    <setting file="file://$PROJECT_DIR$/server/src/main/java/ynzmz/server/member/controller/MemberController.java" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="JpbToolWindowState">
     <option name="isToolWindowVisible" value="false" />
@@ -98,9 +87,6 @@
     <option name="stateVersion" value="1" />
   </component>
   <component name="ProjectId" id="2NSm3Gto32UGm4dIxmnkMWsrsLq" />
-  <component name="ProjectLevelVcsManager">
-    <ConfirmationsSetting value="2" id="Add" />
-  </component>
   <component name="ProjectViewState">
     <option name="compactDirectories" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -347,14 +333,21 @@
       <option name="project" value="LOCAL" />
       <updated>1679940993597</updated>
     </task>
-    <task id="LOCAL-00019" summary="merage: 3/28 04:05 배포">
-      <created>1679943915809</created>
+    <task id="LOCAL-00019" summary="feat: Teacher,Answer S3파일 동기화 코드추가">
+      <created>1679943023845</created>
       <option name="number" value="00019" />
       <option name="presentableId" value="LOCAL-00019" />
       <option name="project" value="LOCAL" />
-      <updated>1679943915809</updated>
+      <updated>1679943023845</updated>
     </task>
-    <option name="localTasksCounter" value="20" />
+    <task id="LOCAL-00020" summary="fix: Table 변경값 반영">
+      <created>1679943274705</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1679943274705</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -401,8 +394,9 @@
     <MESSAGE value="fix: Table 변경사항 전체 flyway 반영후 초기화" />
     <MESSAGE value="merge: 민호+석준 병합" />
     <MESSAGE value="feat: LectureReview S3파일 동기화 설정(등록,수정,삭제)" />
-    <MESSAGE value="merage: 3/28 04:05 배포" />
-    <option name="LAST_COMMIT_MESSAGE" value="merage: 3/28 04:05 배포" />
+    <MESSAGE value="feat: Teacher,Answer S3파일 동기화 코드추가" />
+    <MESSAGE value="fix: Table 변경값 반영" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix: Table 변경값 반영" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
