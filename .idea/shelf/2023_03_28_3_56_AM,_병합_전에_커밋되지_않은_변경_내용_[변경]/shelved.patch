@@ -1,0 +1,1619 @@
+Index: server/src/main/resources/db/migration/V1__init_table.sql
+===================================================================
+diff --git a/server/src/main/resources/db/migration/V1__init_table.sql b/server/src/main/resources/db/migration/V1__init_table.sql
+deleted file mode 100644
+--- a/server/src/main/resources/db/migration/V1__init_table.sql	(revision fc0a8642a1ec0504052d119f77e9d64420544327)
++++ /dev/null	(revision fc0a8642a1ec0504052d119f77e9d64420544327)
+@@ -1,507 +0,0 @@
+-create table answer (
+-                        answer_id bigint not null auto_increment,
+-                        adopt_status varchar(255),
+-                        content varchar(255),
+-                        created_at varchar(255),
+-                        modified_at varchar(255),
+-                        vote_count bigint default 0,
+-                        member_id bigint,
+-                        question_id bigint,
+-                        primary key (answer_id)
+-) engine=InnoDB;
+-
+-create table event (
+-                       event_id bigint not null,
+-                       date varchar(255),
+-                       hyper_link varchar(255),
+-                       image_url varchar(255),
+-                       source varchar(255),
+-                       title varchar(255),
+-                       primary key (event_id)
+-) engine=InnoDB;
+-
+-create table free (
+-                      free_id bigint not null,
+-                      category varchar(255),
+-                      comments_list_num integer not null,
+-                      content text(65535),
+-                      created_at varchar(255),
+-                      modified_at varchar(255),
+-                      title varchar(255),
+-                      view_count bigint not null,
+-                      vote_count bigint not null,
+-                      member_id bigint,
+-                      primary key (free_id)
+-) engine=InnoDB;
+-
+-create table free_comment (
+-                              free_comment_id bigint not null auto_increment,
+-                              content text(65535),
+-                              created_at varchar(255),
+-                              member_sim bit default false,
+-                              modified_at varchar(255),
+-                              vote_count bigint default 0,
+-                              free_id bigint,
+-                              member_id bigint,
+-                              primary key (free_comment_id)
+-) engine=InnoDB;
+-
+-create table free_re_comment (
+-                                 free_re_comment_id bigint not null auto_increment,
+-                                 content text(65535),
+-                                 created_at varchar(255),
+-                                 member_sim bit default false,
+-                                 modified_at varchar(255),
+-                                 vote_count bigint default 0,
+-                                 free_comment_id bigint,
+-                                 member_id bigint,
+-                                 primary key (free_re_comment_id)
+-) engine=InnoDB;
+-
+-create table grade_tag (
+-                           grade_tag_id bigint not null auto_increment,
+-                           grade varchar(255),
+-                           primary key (grade_tag_id)
+-) engine=InnoDB;
+-
+-create table hibernate_sequence (
+-    next_val bigint
+-) engine=InnoDB;
+-
+-insert into hibernate_sequence values ( 1 );
+-
+-create table lecture (
+-                         lecture_id bigint not null auto_increment,
+-                         introduction varchar(255),
+-                         star_point_average double precision not null,
+-                         status varchar(255),
+-                         title varchar(255),
+-                         total_review_count bigint not null,
+-                         teacher_id bigint,
+-                         primary key (lecture_id)
+-) engine=InnoDB;
+-
+-create table lecture_grade_tag (
+-                                   lecture_grade_tag_id bigint not null auto_increment,
+-                                   grade_tag_id bigint,
+-                                   lecture_id bigint,
+-                                   primary key (lecture_grade_tag_id)
+-) engine=InnoDB;
+-
+-create table lecture_platform_tag (
+-                                      lecture_platform_tag_id bigint not null auto_increment,
+-                                      lecture_id bigint,
+-                                      platform_tag_id bigint,
+-                                      primary key (lecture_platform_tag_id)
+-) engine=InnoDB;
+-
+-create table lecture_review (
+-                                lecture_review_id bigint not null auto_increment,
+-                                content text(65535),
+-                                created_at varchar(255),
+-                                modified_at varchar(255),
+-                                star_point integer not null,
+-                                title varchar(255),
+-                                total_comment_count bigint not null,
+-                                view_count bigint not null,
+-                                vote_count bigint default 0,
+-                                lecture_id bigint,
+-                                member_id bigint,
+-                                primary key (lecture_review_id)
+-) engine=InnoDB;
+-
+-create table lecture_review_comment (
+-                                        lecture_review_comment_id bigint not null auto_increment,
+-                                        content text(65535),
+-                                        created_at varchar(255),
+-                                        modified_at varchar(255),
+-                                        vote_count bigint not null,
+-                                        lecture_review_id bigint,
+-                                        member_id bigint,
+-                                        primary key (lecture_review_comment_id)
+-) engine=InnoDB;
+-
+-create table lecture_subject_tag (
+-                                     lecture_subject_tag_id bigint not null auto_increment,
+-                                     lecture_id bigint,
+-                                     subject_tag_id bigint,
+-                                     primary key (lecture_subject_tag_id)
+-) engine=InnoDB;
+-
+-create table member (
+-                        member_id bigint not null auto_increment,
+-                        created_at varchar(255),
+-                        display_name varchar(255),
+-                        email varchar(255),
+-                        icon_image_url varchar(255),
+-                        member_status varchar(255) not null,
+-                        password varchar(255),
+-                        phone_number varchar(255),
+-                        state varchar(255) not null,
+-                        username varchar(255),
+-                        primary key (member_id)
+-) engine=InnoDB;
+-
+-create table member_roles (
+-                              member_member_id bigint not null,
+-                              roles varchar(255)
+-) engine=InnoDB;
+-
+-create table our (
+-                     event_id bigint not null,
+-                     content text(65535),
+-                     date varchar(255),
+-                     image_url varchar(255),
+-                     title varchar(255),
+-                     primary key (event_id)
+-) engine=InnoDB;
+-
+-create table platform_tag (
+-                              platform_tag_id bigint not null auto_increment,
+-                              platform varchar(255),
+-                              primary key (platform_tag_id)
+-) engine=InnoDB;
+-
+-create table qna_comment (
+-                             qna_comment_id bigint not null auto_increment,
+-                             content text(65535),
+-                             created_at varchar(255),
+-                             modified_at varchar(255),
+-                             target integer,
+-                             vote_count bigint not null,
+-                             answer_id bigint,
+-                             member_id bigint,
+-                             question_id bigint,
+-                             primary key (qna_comment_id)
+-) engine=InnoDB;
+-
+-create table qna_re_comment (
+-                                qna_re_comment_id bigint not null auto_increment,
+-                                content text(65535),
+-                                created_at varchar(255),
+-                                modified_at varchar(255),
+-                                vote_count bigint not null,
+-                                member_id bigint,
+-                                qna_comment_id bigint,
+-                                primary key (qna_re_comment_id)
+-) engine=InnoDB;
+-
+-create table qna_vote (
+-                          qna_vote_id bigint not null auto_increment,
+-                          target varchar(255),
+-                          vote_status varchar(255),
+-                          answer_id bigint,
+-                          member_id bigint,
+-                          qna_comment_id bigint,
+-                          qna_re_comment_id bigint,
+-                          question_id bigint,
+-                          primary key (qna_vote_id)
+-) engine=InnoDB;
+-
+-create table question (
+-                          question_id bigint not null auto_increment,
+-                          adopt_answer_id bigint not null,
+-                          answer_count bigint not null,
+-                          content text(65535),
+-                          created_at varchar(255),
+-                          modified_at varchar(255),
+-                          title varchar(255),
+-                          view_count bigint not null,
+-                          vote_count bigint not null,
+-                          member_id bigint,
+-                          primary key (question_id)
+-) engine=InnoDB;
+-
+-create table question_subject_tag (
+-                                      question_subject_tag_id bigint not null auto_increment,
+-                                      question_id bigint,
+-                                      subject_tag_id bigint,
+-                                      primary key (question_subject_tag_id)
+-) engine=InnoDB;
+-
+-create table review_vote (
+-                             review_vote_id bigint not null auto_increment,
+-                             status varchar(255),
+-                             target varchar(255),
+-                             lecture_review_id bigint,
+-                             lecture_review_comment_id bigint,
+-                             member_id bigint,
+-                             primary key (review_vote_id)
+-) engine=InnoDB;
+-
+-create table subject_tag (
+-                             subject_tag_id bigint not null auto_increment,
+-                             subject varchar(255),
+-                             primary key (subject_tag_id)
+-) engine=InnoDB;
+-
+-create table teacher (
+-                         teacher_id bigint not null auto_increment,
+-                         image_url varchar(255),
+-                         introduction varchar(255),
+-                         name varchar(255),
+-                         star_point_average double precision not null,
+-                         total_review_count bigint not null,
+-                         primary key (teacher_id)
+-) engine=InnoDB;
+-
+-create table teacher_analects (
+-                                  teacher_teacher_id bigint not null,
+-                                  analects varchar(255)
+-) engine=InnoDB;
+-
+-create table teacher_profile (
+-                                 teacher_teacher_id bigint not null,
+-                                 profile varchar(255)
+-) engine=InnoDB;
+-
+-create table teacher_grade_tag (
+-                                   teacher_grade_tag_id bigint not null auto_increment,
+-                                   grade_tag_id bigint,
+-                                   teacher_id bigint,
+-                                   primary key (teacher_grade_tag_id)
+-) engine=InnoDB;
+-
+-create table teacher_platform_tag (
+-                                      teacher_platform_tag_id bigint not null auto_increment,
+-                                      platform_tag_id bigint,
+-                                      teacher_id bigint,
+-                                      primary key (teacher_platform_tag_id)
+-) engine=InnoDB;
+-
+-create table teacher_subject_tag (
+-                                     teacher_subject_tag_id bigint not null auto_increment,
+-                                     subject_tag_id bigint,
+-                                     teacher_id bigint,
+-                                     primary key (teacher_subject_tag_id)
+-) engine=InnoDB;
+-
+-alter table grade_tag
+-    add constraint UK_87dymc8wlju3ftfhwp0ce8ptk unique (grade);
+-
+-alter table member
+-    add constraint UK_k3kf09s6pp3ntqfis89la08gq unique (display_name);
+-
+-alter table member
+-    add constraint UK_mbmcqelty0fbrvxp1q58dn57t unique (email);
+-
+-alter table platform_tag
+-    add constraint UK_e9wl32ojt9klm2v16xncxl4a9 unique (platform);
+-
+-alter table subject_tag
+-    add constraint UK_q7itho7r0absk5o8mgbg52ttr unique (subject);
+-
+-alter table answer
+-    add constraint FKn2sp5pa6h0u2kixjl2r4vfluf
+-        foreign key (member_id)
+-            references member (member_id);
+-
+-alter table answer
+-    add constraint FK8frr4bcabmmeyyu60qt7iiblo
+-        foreign key (question_id)
+-            references question (question_id);
+-
+-alter table free
+-    add constraint FK9pgx4ljmyc3l7nf47w7h4trjb
+-        foreign key (member_id)
+-            references member (member_id);
+-
+-alter table free_comment
+-    add constraint FK3ngeid4vrb20y78bmreldamph
+-        foreign key (free_id)
+-            references free (free_id);
+-
+-alter table free_comment
+-    add constraint FK3jpy0evxe4ugliv4okkfqln7e
+-        foreign key (member_id)
+-            references member (member_id);
+-
+-alter table free_re_comment
+-    add constraint FKhipi5fw52l6opnhy6w0yxx0gg
+-        foreign key (free_comment_id)
+-            references free_comment (free_comment_id);
+-
+-alter table free_re_comment
+-    add constraint FK2pljld682yaequyw7q88xc73p
+-        foreign key (member_id)
+-            references member (member_id);
+-
+-alter table lecture
+-    add constraint FK2ea1ueblrv09ngwf3i0lf0h2o
+-        foreign key (teacher_id)
+-            references teacher (teacher_id);
+-
+-alter table lecture_grade_tag
+-    add constraint FK1fo0un7rh17rtlylkh134iem7
+-        foreign key (grade_tag_id)
+-            references grade_tag (grade_tag_id);
+-
+-alter table lecture_grade_tag
+-    add constraint FKjw4b2xx94ydi26rtlbn0g6x2r
+-        foreign key (lecture_id)
+-            references lecture (lecture_id);
+-
+-alter table lecture_platform_tag
+-    add constraint FKk5qlpydfn413wjv1ugam9e1ql
+-        foreign key (lecture_id)
+-            references lecture (lecture_id);
+-
+-alter table lecture_platform_tag
+-    add constraint FKgrqaivf6fa38lex9sf34cxisx
+-        foreign key (platform_tag_id)
+-            references platform_tag (platform_tag_id);
+-
+-alter table lecture_review
+-    add constraint FKiohdf2u9g51xgwxkfxbhcrr6t
+-        foreign key (lecture_id)
+-            references lecture (lecture_id);
+-
+-alter table lecture_review
+-    add constraint FKnvktpu0k0pa9usjdftct1telu
+-        foreign key (member_id)
+-            references member (member_id);
+-
+-alter table lecture_review_comment
+-    add constraint FKjkuk0jh3302chb3q3fqd2g9c6
+-        foreign key (lecture_review_id)
+-            references lecture_review (lecture_review_id);
+-
+-alter table lecture_review_comment
+-    add constraint FK5jlqhbu9a4w615v1mbwhrsxpd
+-        foreign key (member_id)
+-            references member (member_id);
+-
+-alter table lecture_subject_tag
+-    add constraint FKb99j4bhax49wvh2pf68vivytn
+-        foreign key (lecture_id)
+-            references lecture (lecture_id);
+-
+-alter table lecture_subject_tag
+-    add constraint FKpom9m3j76k8l4jno9fpg9ddam
+-        foreign key (subject_tag_id)
+-            references subject_tag (subject_tag_id);
+-
+-alter table member_roles
+-    add constraint FKruptm2dtwl95mfks4bnhv828k
+-        foreign key (member_member_id)
+-            references member (member_id);
+-
+-alter table qna_comment
+-    add constraint FKfiv00r13npuo2xnsfx1nxd1pm
+-        foreign key (answer_id)
+-            references answer (answer_id);
+-
+-alter table qna_comment
+-    add constraint FKmh8skisep9wumqmcj01latgsk
+-        foreign key (member_id)
+-            references member (member_id);
+-
+-alter table qna_comment
+-    add constraint FK10yxo6np2o3qwwujk1i9k14i6
+-        foreign key (question_id)
+-            references question (question_id);
+-
+-alter table qna_re_comment
+-    add constraint FKrsv3d7bxaikumnaoe7ssn1y5q
+-        foreign key (member_id)
+-            references member (member_id);
+-
+-alter table qna_re_comment
+-    add constraint FKnpjlk243u809ettnssb32na7h
+-        foreign key (qna_comment_id)
+-            references qna_comment (qna_comment_id);
+-
+-alter table qna_vote
+-    add constraint FK7evwwp62ou2f9wj98egt1bo1q
+-        foreign key (answer_id)
+-            references answer (answer_id);
+-
+-alter table qna_vote
+-    add constraint FKrpmimvnpgo5doxs4dbcy30spd
+-        foreign key (member_id)
+-            references member (member_id);
+-
+-alter table qna_vote
+-    add constraint FK38dqbwe5jm3hudmw0cxh8mwc3
+-        foreign key (qna_comment_id)
+-            references qna_comment (qna_comment_id);
+-
+-alter table qna_vote
+-    add constraint FKlaq5p6a6sp1e37uc139b6h5li
+-        foreign key (qna_re_comment_id)
+-            references qna_re_comment (qna_re_comment_id);
+-
+-alter table qna_vote
+-    add constraint FKd21g0wq4w92fgofhm0warpmw7
+-        foreign key (question_id)
+-            references question (question_id);
+-
+-alter table question
+-    add constraint FK1nuuke7olg7b9fkyp2ba9d5bx
+-        foreign key (member_id)
+-            references member (member_id);
+-
+-alter table question_subject_tag
+-    add constraint FKmfnilj6jov274u0dk7xy3yyss
+-        foreign key (question_id)
+-            references question (question_id);
+-
+-alter table question_subject_tag
+-    add constraint FK3tmtgdgdueltccrs0uia7ik10
+-        foreign key (subject_tag_id)
+-            references subject_tag (subject_tag_id);
+-
+-alter table review_vote
+-    add constraint FKtb9sejb61jktvk0grw2hksq70
+-        foreign key (lecture_review_id)
+-            references lecture_review (lecture_review_id);
+-
+-alter table review_vote
+-    add constraint FKhftohgagv69lifyl231plnaq6
+-        foreign key (lecture_review_comment_id)
+-            references lecture_review_comment (lecture_review_comment_id);
+-
+-alter table review_vote
+-    add constraint FKms5u6o0ina2x1chjovstrgsf6
+-        foreign key (member_id)
+-            references member (member_id);
+-
+-alter table teacher_analects
+-    add constraint FKq19eufmdg3sfrfu3by0v66hth
+-        foreign key (teacher_teacher_id)
+-            references teacher (teacher_id);
+-
+-alter table teacher_profile
+-    add constraint FK85ltsys67q7vsykl6j4edbyk4
+-        foreign key (teacher_teacher_id)
+-            references teacher (teacher_id);
+-
+-alter table teacher_grade_tag
+-    add constraint FKaa2217x5kvrfspusnfq85j87j
+-        foreign key (grade_tag_id)
+-            references grade_tag (grade_tag_id);
+-
+-alter table teacher_grade_tag
+-    add constraint FKsct36cei3vb6vmk9dldx1e343
+-        foreign key (teacher_id)
+-            references teacher (teacher_id);
+-
+-alter table teacher_platform_tag
+-    add constraint FKg491oct5ihn2ba9886o4cecnb
+-        foreign key (platform_tag_id)
+-            references platform_tag (platform_tag_id);
+-
+-alter table teacher_platform_tag
+-    add constraint FKkplxnk4yuo8okestn2tjpdoy1
+-        foreign key (teacher_id)
+-            references teacher (teacher_id);
+-
+-alter table teacher_subject_tag
+-    add constraint FKtpabkb5phw2sbs6vocdxiy82r
+-        foreign key (subject_tag_id)
+-            references subject_tag (subject_tag_id);
+-
+-alter table teacher_subject_tag
+-    add constraint FK2tym783ro5l3fjusbw3e6hnu
+-        foreign key (teacher_id)
+-            references teacher (teacher_id)
+\ No newline at end of file
+Index: .idea/shelf/2023_03_20_10_06_AM__________.xml
+===================================================================
+diff --git a/.idea/shelf/2023_03_20_10_06_AM__________.xml b/.idea/shelf/2023_03_20_10_06_AM__________.xml
+deleted file mode 100644
+--- a/.idea/shelf/2023_03_20_10_06_AM__________.xml	(revision fc0a8642a1ec0504052d119f77e9d64420544327)
++++ /dev/null	(revision fc0a8642a1ec0504052d119f77e9d64420544327)
+@@ -1,4 +0,0 @@
+-<changelist name="2023_03_20_10_06_AM,_체크아웃_전에_커밋되지_않은_변경_내용_[변경]" date="1679274379750" recycled="true" deleted="true">
+-  <option name="PATH" value="$PROJECT_DIR$/.idea/shelf/2023_03_20_10_06_AM,_체크아웃_전에_커밋되지_않은_변경_내용_[변경]/shelved.patch" />
+-  <option name="DESCRIPTION" value="2023/03/20 10:06 AM, 체크아웃 전에 커밋되지 않은 변경 내용 [변경]" />
+-</changelist>
+\ No newline at end of file
+Index: .idea/shelf/2023_03_20_10_06_AM,_체크아웃_전에_커밋되지_않은_변경_내용_[변경]/shelved.patch
+===================================================================
+diff --git a/.idea/shelf/2023_03_20_10_06_AM,_체크아웃_전에_커밋되지_않은_변경_내용_[변경]/shelved.patch b/.idea/shelf/2023_03_20_10_06_AM,_체크아웃_전에_커밋되지_않은_변경_내용_[변경]/shelved.patch
+deleted file mode 100644
+--- a/.idea/shelf/2023_03_20_10_06_AM,_체크아웃_전에_커밋되지_않은_변경_내용_[변경]/shelved.patch	(revision fc0a8642a1ec0504052d119f77e9d64420544327)
++++ /dev/null	(revision fc0a8642a1ec0504052d119f77e9d64420544327)
+@@ -1,35 +0,0 @@
+-Index: .idea/compiler.xml
+-IDEA additional info:
+-Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+-<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<project version=\"4\">\n  <component name=\"CompilerConfiguration\">\n    <annotationProcessing>\n      <profile name=\"Gradle Imported\" enabled=\"true\">\n        <outputRelativeToContentRoot value=\"true\" />\n        <processorPath useClasspath=\"false\">\n          <entry name=\"$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.projectlombok/lombok/1.18.20/18bcea7d5df4d49227b4a0743a536208ce4825bb/lombok-1.18.20.jar\" />\n        </processorPath>\n        <module name=\"server.main\" />\n      </profile>\n    </annotationProcessing>\n  </component>\n</project>
+-Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+-<+>UTF-8
+-===================================================================
+-diff --git a/.idea/compiler.xml b/.idea/compiler.xml
+---- a/.idea/compiler.xml	(revision 10b8d2597797409c550974f257ed268b5099c814)
+-+++ b/.idea/compiler.xml	(date 1679274361881)
+-@@ -2,6 +2,7 @@
+- <project version="4">
+-   <component name="CompilerConfiguration">
+-     <annotationProcessing>
+-+      <profile default="true" name="Default" enabled="true" />
+-       <profile name="Gradle Imported" enabled="true">
+-         <outputRelativeToContentRoot value="true" />
+-         <processorPath useClasspath="false">
+-Index: .idea/gradle.xml
+-IDEA additional info:
+-Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+-<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<project version=\"4\">\n  <component name=\"GradleSettings\">\n    <option name=\"linkedExternalProjectsSettings\">\n      <GradleProjectSettings>\n        <option name=\"distributionType\" value=\"DEFAULT_WRAPPED\" />\n        <option name=\"externalProjectPath\" value=\"$PROJECT_DIR$/server\" />\n        <option name=\"gradleJvm\" value=\"11\" />\n        <option name=\"modules\">\n          <set>\n            <option value=\"$PROJECT_DIR$/server\" />\n          </set>\n        </option>\n      </GradleProjectSettings>\n    </option>\n  </component>\n</project>
+-Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+-<+>UTF-8
+-===================================================================
+-diff --git a/.idea/gradle.xml b/.idea/gradle.xml
+---- a/.idea/gradle.xml	(revision 10b8d2597797409c550974f257ed268b5099c814)
+-+++ b/.idea/gradle.xml	(date 1679274355296)
+-@@ -1,5 +1,6 @@
+- <?xml version="1.0" encoding="UTF-8"?>
+- <project version="4">
+-+  <component name="GradleMigrationSettings" migrationVersion="1" />
+-   <component name="GradleSettings">
+-     <option name="linkedExternalProjectsSettings">
+-       <GradleProjectSettings>
+Index: server/src/main/resources/db/migration/sV1__init_table.sql
+===================================================================
+diff --git a/server/src/main/resources/db/migration/sV1__init_table.sql b/server/src/main/resources/db/migration/sV1__init_table.sql
+deleted file mode 100644
+--- a/server/src/main/resources/db/migration/sV1__init_table.sql	(revision fc0a8642a1ec0504052d119f77e9d64420544327)
++++ /dev/null	(revision fc0a8642a1ec0504052d119f77e9d64420544327)
+@@ -1,508 +0,0 @@
+-
+-create table answer (
+-                        answer_id bigint not null auto_increment,
+-                        adopt_status varchar(255),
+-                        content TEXT(65535),
+-                        created_at varchar(255),
+-                        modified_at varchar(255),
+-                        vote_count bigint default 0,
+-                        member_id bigint,
+-                        question_id bigint,
+-                        primary key (answer_id)
+-) engine=InnoDB;
+-
+-create table event (
+-                       event_id bigint not null,
+-                       date varchar(255),
+-                       hyper_link varchar(255),
+-                       image_url varchar(255),
+-                       source varchar(255),
+-                       title varchar(255),
+-                       primary key (event_id)
+-) engine=InnoDB;
+-
+-create table free (
+-                      free_id bigint not null,
+-                      category varchar(255),
+-                      comments_list_num integer not null,
+-                      content varchar(255),
+-                      created_at varchar(255),
+-                      modified_at varchar(255),
+-                      title varchar(255),
+-                      view_count bigint not null,
+-                      vote_count bigint not null,
+-                      member_id bigint,
+-                      primary key (free_id)
+-) engine=InnoDB;
+-
+-create table free_comment (
+-                              free_comment_id bigint not null auto_increment,
+-                              content varchar(255),
+-                              created_at varchar(255),
+-                              member_sim bit default false,
+-                              modified_at varchar(255),
+-                              vote_count bigint default 0,
+-                              free_id bigint,
+-                              member_id bigint,
+-                              primary key (free_comment_id)
+-) engine=InnoDB;
+-
+-create table free_re_comment (
+-                                 free_re_comment_id bigint not null auto_increment,
+-                                 content varchar(255),
+-                                 created_at varchar(255),
+-                                 member_sim bit default false,
+-                                 modified_at varchar(255),
+-                                 vote_count bigint default 0,
+-                                 free_comment_id bigint,
+-                                 member_id bigint,
+-                                 primary key (free_re_comment_id)
+-) engine=InnoDB;
+-
+-create table grade_tag (
+-                           grade_tag_id bigint not null auto_increment,
+-                           grade varchar(255),
+-                           primary key (grade_tag_id)
+-) engine=InnoDB;
+-
+-create table hibernate_sequence (
+-    next_val bigint
+-) engine=InnoDB;
+-
+-insert into hibernate_sequence values ( 1 );
+-
+-create table lecture (
+-                         lecture_id bigint not null auto_increment,
+-                         introduction varchar(255),
+-                         star_point_average double precision not null,
+-                         status varchar(255),
+-                         title varchar(255),
+-                         total_review_count bigint not null,
+-                         teacher_id bigint,
+-                         primary key (lecture_id)
+-) engine=InnoDB;
+-
+-create table lecture_grade_tag (
+-                                   lecture_grade_tag_id bigint not null auto_increment,
+-                                   grade_tag_id bigint,
+-                                   lecture_id bigint,
+-                                   primary key (lecture_grade_tag_id)
+-) engine=InnoDB;
+-
+-create table lecture_platform_tag (
+-                                      lecture_platform_tag_id bigint not null auto_increment,
+-                                      lecture_id bigint,
+-                                      platform_tag_id bigint,
+-                                      primary key (lecture_platform_tag_id)
+-) engine=InnoDB;
+-
+-create table lecture_review (
+-                                lecture_review_id bigint not null auto_increment,
+-                                content varchar(255),
+-                                created_at varchar(255),
+-                                modified_at varchar(255),
+-                                star_point integer not null,
+-                                title varchar(255),
+-                                total_comment_count bigint not null,
+-                                view_count bigint not null,
+-                                vote_count bigint default 0,
+-                                lecture_id bigint,
+-                                member_id bigint,
+-                                primary key (lecture_review_id)
+-) engine=InnoDB;
+-
+-create table lecture_review_comment (
+-                                        lecture_review_comment_id bigint not null auto_increment,
+-                                        content varchar(255),
+-                                        created_at varchar(255),
+-                                        modified_at varchar(255),
+-                                        vote_count bigint not null,
+-                                        lecture_review_id bigint,
+-                                        member_id bigint,
+-                                        primary key (lecture_review_comment_id)
+-) engine=InnoDB;
+-
+-create table lecture_subject_tag (
+-                                     lecture_subject_tag_id bigint not null auto_increment,
+-                                     lecture_id bigint,
+-                                     subject_tag_id bigint,
+-                                     primary key (lecture_subject_tag_id)
+-) engine=InnoDB;
+-
+-create table member (
+-                        member_id bigint not null auto_increment,
+-                        created_at varchar(255),
+-                        display_name varchar(255),
+-                        email varchar(255),
+-                        icon_image_url varchar(255),
+-                        member_status varchar(255) not null,
+-                        password varchar(255),
+-                        phone_number varchar(255),
+-                        state varchar(255) not null,
+-                        username varchar(255),
+-                        primary key (member_id)
+-) engine=InnoDB;
+-
+-create table member_roles (
+-                              member_member_id bigint not null,
+-                              roles varchar(255)
+-) engine=InnoDB;
+-
+-create table our (
+-                     event_id bigint not null,
+-                     content varchar(255),
+-                     date varchar(255),
+-                     image_url varchar(255),
+-                     title varchar(255),
+-                     primary key (event_id)
+-) engine=InnoDB;
+-
+-create table platform_tag (
+-                              platform_tag_id bigint not null auto_increment,
+-                              platform varchar(255),
+-                              primary key (platform_tag_id)
+-) engine=InnoDB;
+-
+-create table qna_comment (
+-                             qna_comment_id bigint not null auto_increment,
+-                             content varchar(255),
+-                             created_at varchar(255),
+-                             modified_at varchar(255),
+-                             target integer,
+-                             vote_count bigint not null,
+-                             answer_id bigint,
+-                             member_id bigint,
+-                             question_id bigint,
+-                             primary key (qna_comment_id)
+-) engine=InnoDB;
+-
+-create table qna_re_comment (
+-                                qna_re_comment_id bigint not null auto_increment,
+-                                content varchar(255),
+-                                created_at varchar(255),
+-                                modified_at varchar(255),
+-                                vote_count bigint not null,
+-                                member_id bigint,
+-                                qna_comment_id bigint,
+-                                primary key (qna_re_comment_id)
+-) engine=InnoDB;
+-
+-create table qna_vote (
+-                          qna_vote_id bigint not null auto_increment,
+-                          target varchar(255),
+-                          vote_status varchar(255),
+-                          answer_id bigint,
+-                          member_id bigint,
+-                          qna_comment_id bigint,
+-                          qna_re_comment_id bigint,
+-                          question_id bigint,
+-                          primary key (qna_vote_id)
+-) engine=InnoDB;
+-
+-create table question (
+-                          question_id bigint not null auto_increment,
+-                          adopt_answer_id bigint not null,
+-                          answer_count bigint not null,
+-                          content varchar(255),
+-                          created_at varchar(255),
+-                          modified_at varchar(255),
+-                          title varchar(255),
+-                          view_count bigint not null,
+-                          vote_count bigint not null,
+-                          member_id bigint,
+-                          primary key (question_id)
+-) engine=InnoDB;
+-
+-create table question_subject_tag (
+-                                      question_subject_tag_id bigint not null auto_increment,
+-                                      question_id bigint,
+-                                      subject_tag_id bigint,
+-                                      primary key (question_subject_tag_id)
+-) engine=InnoDB;
+-
+-create table review_vote (
+-                             review_vote_id bigint not null auto_increment,
+-                             status varchar(255),
+-                             target varchar(255),
+-                             lecture_review_id bigint,
+-                             lecture_review_comment_id bigint,
+-                             member_id bigint,
+-                             primary key (review_vote_id)
+-) engine=InnoDB;
+-
+-create table subject_tag (
+-                             subject_tag_id bigint not null auto_increment,
+-                             subject varchar(255),
+-                             primary key (subject_tag_id)
+-) engine=InnoDB;
+-
+-create table teacher (
+-                         teacher_id bigint not null auto_increment,
+-                         image_url varchar(255),
+-                         introduction varchar(255),
+-                         name varchar(255),
+-                         star_point_average double precision not null,
+-                         total_review_count bigint not null,
+-                         primary key (teacher_id)
+-) engine=InnoDB;
+-
+-create table teacher_analects (
+-                                  teacher_teacher_id bigint not null,
+-                                  analects varchar(255)
+-) engine=InnoDB;
+-
+-create table teacher_profile (
+-                                 teacher_teacher_id bigint not null,
+-                                 profile varchar(255)
+-) engine=InnoDB;
+-
+-create table teacher_grade_tag (
+-                                   teacher_grade_tag_id bigint not null auto_increment,
+-                                   grade_tag_id bigint,
+-                                   teacher_id bigint,
+-                                   primary key (teacher_grade_tag_id)
+-) engine=InnoDB;
+-
+-create table teacher_platform_tag (
+-                                      teacher_platform_tag_id bigint not null auto_increment,
+-                                      platform_tag_id bigint,
+-                                      teacher_id bigint,
+-                                      primary key (teacher_platform_tag_id)
+-) engine=InnoDB;
+-
+-create table teacher_subject_tag (
+-                                     teacher_subject_tag_id bigint not null auto_increment,
+-                                     subject_tag_id bigint,
+-                                     teacher_id bigint,
+-                                     primary key (teacher_subject_tag_id)
+-) engine=InnoDB;
+-
+-alter table grade_tag
+-    add constraint UK_87dymc8wlju3ftfhwp0ce8ptk unique (grade);
+-
+-alter table member
+-    add constraint UK_k3kf09s6pp3ntqfis89la08gq unique (display_name);
+-
+-alter table member
+-    add constraint UK_mbmcqelty0fbrvxp1q58dn57t unique (email);
+-
+-alter table platform_tag
+-    add constraint UK_e9wl32ojt9klm2v16xncxl4a9 unique (platform);
+-
+-alter table subject_tag
+-    add constraint UK_q7itho7r0absk5o8mgbg52ttr unique (subject);
+-
+-alter table answer
+-    add constraint FKn2sp5pa6h0u2kixjl2r4vfluf
+-        foreign key (member_id)
+-            references member (member_id);
+-
+-alter table answer
+-    add constraint FK8frr4bcabmmeyyu60qt7iiblo
+-        foreign key (question_id)
+-            references question (question_id);
+-
+-alter table free
+-    add constraint FK9pgx4ljmyc3l7nf47w7h4trjb
+-        foreign key (member_id)
+-            references member (member_id);
+-
+-alter table free_comment
+-    add constraint FK3ngeid4vrb20y78bmreldamph
+-        foreign key (free_id)
+-            references free (free_id);
+-
+-alter table free_comment
+-    add constraint FK3jpy0evxe4ugliv4okkfqln7e
+-        foreign key (member_id)
+-            references member (member_id);
+-
+-alter table free_re_comment
+-    add constraint FKhipi5fw52l6opnhy6w0yxx0gg
+-        foreign key (free_comment_id)
+-            references free_comment (free_comment_id);
+-
+-alter table free_re_comment
+-    add constraint FK2pljld682yaequyw7q88xc73p
+-        foreign key (member_id)
+-            references member (member_id);
+-
+-alter table lecture
+-    add constraint FK2ea1ueblrv09ngwf3i0lf0h2o
+-        foreign key (teacher_id)
+-            references teacher (teacher_id);
+-
+-alter table lecture_grade_tag
+-    add constraint FK1fo0un7rh17rtlylkh134iem7
+-        foreign key (grade_tag_id)
+-            references grade_tag (grade_tag_id);
+-
+-alter table lecture_grade_tag
+-    add constraint FKjw4b2xx94ydi26rtlbn0g6x2r
+-        foreign key (lecture_id)
+-            references lecture (lecture_id);
+-
+-alter table lecture_platform_tag
+-    add constraint FKk5qlpydfn413wjv1ugam9e1ql
+-        foreign key (lecture_id)
+-            references lecture (lecture_id);
+-
+-alter table lecture_platform_tag
+-    add constraint FKgrqaivf6fa38lex9sf34cxisx
+-        foreign key (platform_tag_id)
+-            references platform_tag (platform_tag_id);
+-
+-alter table lecture_review
+-    add constraint FKiohdf2u9g51xgwxkfxbhcrr6t
+-        foreign key (lecture_id)
+-            references lecture (lecture_id);
+-
+-alter table lecture_review
+-    add constraint FKnvktpu0k0pa9usjdftct1telu
+-        foreign key (member_id)
+-            references member (member_id);
+-
+-alter table lecture_review_comment
+-    add constraint FKjkuk0jh3302chb3q3fqd2g9c6
+-        foreign key (lecture_review_id)
+-            references lecture_review (lecture_review_id);
+-
+-alter table lecture_review_comment
+-    add constraint FK5jlqhbu9a4w615v1mbwhrsxpd
+-        foreign key (member_id)
+-            references member (member_id);
+-
+-alter table lecture_subject_tag
+-    add constraint FKb99j4bhax49wvh2pf68vivytn
+-        foreign key (lecture_id)
+-            references lecture (lecture_id);
+-
+-alter table lecture_subject_tag
+-    add constraint FKpom9m3j76k8l4jno9fpg9ddam
+-        foreign key (subject_tag_id)
+-            references subject_tag (subject_tag_id);
+-
+-alter table member_roles
+-    add constraint FKruptm2dtwl95mfks4bnhv828k
+-        foreign key (member_member_id)
+-            references member (member_id);
+-
+-alter table qna_comment
+-    add constraint FKfiv00r13npuo2xnsfx1nxd1pm
+-        foreign key (answer_id)
+-            references answer (answer_id);
+-
+-alter table qna_comment
+-    add constraint FKmh8skisep9wumqmcj01latgsk
+-        foreign key (member_id)
+-            references member (member_id);
+-
+-alter table qna_comment
+-    add constraint FK10yxo6np2o3qwwujk1i9k14i6
+-        foreign key (question_id)
+-            references question (question_id);
+-
+-alter table qna_re_comment
+-    add constraint FKrsv3d7bxaikumnaoe7ssn1y5q
+-        foreign key (member_id)
+-            references member (member_id);
+-
+-alter table qna_re_comment
+-    add constraint FKnpjlk243u809ettnssb32na7h
+-        foreign key (qna_comment_id)
+-            references qna_comment (qna_comment_id);
+-
+-alter table qna_vote
+-    add constraint FK7evwwp62ou2f9wj98egt1bo1q
+-        foreign key (answer_id)
+-            references answer (answer_id);
+-
+-alter table qna_vote
+-    add constraint FKrpmimvnpgo5doxs4dbcy30spd
+-        foreign key (member_id)
+-            references member (member_id);
+-
+-alter table qna_vote
+-    add constraint FK38dqbwe5jm3hudmw0cxh8mwc3
+-        foreign key (qna_comment_id)
+-            references qna_comment (qna_comment_id);
+-
+-alter table qna_vote
+-    add constraint FKlaq5p6a6sp1e37uc139b6h5li
+-        foreign key (qna_re_comment_id)
+-            references qna_re_comment (qna_re_comment_id);
+-
+-alter table qna_vote
+-    add constraint FKd21g0wq4w92fgofhm0warpmw7
+-        foreign key (question_id)
+-            references question (question_id);
+-
+-alter table question
+-    add constraint FK1nuuke7olg7b9fkyp2ba9d5bx
+-        foreign key (member_id)
+-            references member (member_id);
+-
+-alter table question_subject_tag
+-    add constraint FKmfnilj6jov274u0dk7xy3yyss
+-        foreign key (question_id)
+-            references question (question_id);
+-
+-alter table question_subject_tag
+-    add constraint FK3tmtgdgdueltccrs0uia7ik10
+-        foreign key (subject_tag_id)
+-            references subject_tag (subject_tag_id);
+-
+-alter table review_vote
+-    add constraint FKtb9sejb61jktvk0grw2hksq70
+-        foreign key (lecture_review_id)
+-            references lecture_review (lecture_review_id);
+-
+-alter table review_vote
+-    add constraint FKhftohgagv69lifyl231plnaq6
+-        foreign key (lecture_review_comment_id)
+-            references lecture_review_comment (lecture_review_comment_id);
+-
+-alter table review_vote
+-    add constraint FKms5u6o0ina2x1chjovstrgsf6
+-        foreign key (member_id)
+-            references member (member_id);
+-
+-alter table teacher_analects
+-    add constraint FKq19eufmdg3sfrfu3by0v66hth
+-        foreign key (teacher_teacher_id)
+-            references teacher (teacher_id);
+-
+-alter table teacher_profile
+-    add constraint FK85ltsys67q7vsykl6j4edbyk4
+-        foreign key (teacher_teacher_id)
+-            references teacher (teacher_id);
+-
+-alter table teacher_grade_tag
+-    add constraint FKaa2217x5kvrfspusnfq85j87j
+-        foreign key (grade_tag_id)
+-            references grade_tag (grade_tag_id);
+-
+-alter table teacher_grade_tag
+-    add constraint FKsct36cei3vb6vmk9dldx1e343
+-        foreign key (teacher_id)
+-            references teacher (teacher_id);
+-
+-alter table teacher_platform_tag
+-    add constraint FKg491oct5ihn2ba9886o4cecnb
+-        foreign key (platform_tag_id)
+-            references platform_tag (platform_tag_id);
+-
+-alter table teacher_platform_tag
+-    add constraint FKkplxnk4yuo8okestn2tjpdoy1
+-        foreign key (teacher_id)
+-            references teacher (teacher_id);
+-
+-alter table teacher_subject_tag
+-    add constraint FKtpabkb5phw2sbs6vocdxiy82r
+-        foreign key (subject_tag_id)
+-            references subject_tag (subject_tag_id);
+-
+-alter table teacher_subject_tag
+-    add constraint FK2tym783ro5l3fjusbw3e6hnu
+-        foreign key (teacher_id)
+-            references teacher (teacher_id);
+\ No newline at end of file
+Index: .idea/compiler.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<project version=\"4\">\n  <component name=\"CompilerConfiguration\">\n    <annotationProcessing>\n      <profile default=\"true\" name=\"Default\" enabled=\"true\" />\n      <profile name=\"Gradle Imported\" enabled=\"true\">\n        <outputRelativeToContentRoot value=\"true\" />\n        <processorPath useClasspath=\"false\">\n          <entry name=\"$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.projectlombok/lombok/1.18.26/8f8cf0372abf564913e9796623aac4c8ea44025a/lombok-1.18.26.jar\" />\n        </processorPath>\n        <module name=\"ynzmz.server.test\" />\n      </profile>\n      <profile name=\"Gradle Imported\" enabled=\"true\">\n        <outputRelativeToContentRoot value=\"true\" />\n        <processorPath useClasspath=\"false\">\n          <entry name=\"$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.projectlombok/lombok/1.18.26/8f8cf0372abf564913e9796623aac4c8ea44025a/lombok-1.18.26.jar\" />\n          <entry name=\"$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.mapstruct/mapstruct-processor/1.5.2.Final/74a21679400fceb1f98987926cea1786c0e39e77/mapstruct-processor-1.5.2.Final.jar\" />\n        </processorPath>\n        <module name=\"server.main\" />\n      </profile>\n    </annotationProcessing>\n    <bytecodeTargetLevel target=\"11\" />\n  </component>\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/compiler.xml b/.idea/compiler.xml
+--- a/.idea/compiler.xml	(revision fc0a8642a1ec0504052d119f77e9d64420544327)
++++ b/.idea/compiler.xml	(date 1679943308389)
+@@ -8,7 +8,7 @@
+         <processorPath useClasspath="false">
+           <entry name="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.projectlombok/lombok/1.18.26/8f8cf0372abf564913e9796623aac4c8ea44025a/lombok-1.18.26.jar" />
+         </processorPath>
+-        <module name="ynzmz.server.test" />
++        <module name="ynzmz.server.test~1" />
+       </profile>
+       <profile name="Gradle Imported" enabled="true">
+         <outputRelativeToContentRoot value="true" />
+@@ -16,7 +16,7 @@
+           <entry name="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.projectlombok/lombok/1.18.26/8f8cf0372abf564913e9796623aac4c8ea44025a/lombok-1.18.26.jar" />
+           <entry name="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.mapstruct/mapstruct-processor/1.5.2.Final/74a21679400fceb1f98987926cea1786c0e39e77/mapstruct-processor-1.5.2.Final.jar" />
+         </processorPath>
+-        <module name="server.main" />
++        <module name="ynzmz.server.main" />
+       </profile>
+     </annotationProcessing>
+     <bytecodeTargetLevel target="11" />
+Index: .idea/libraries/Gradle__org_jasypt_jasypt_1_9_3.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/libraries/Gradle__org_jasypt_jasypt_1_9_3.xml b/.idea/libraries/Gradle__org_jasypt_jasypt_1_9_3.xml
+new file mode 100644
+--- /dev/null	(date 1679943308387)
++++ b/.idea/libraries/Gradle__org_jasypt_jasypt_1_9_3.xml	(date 1679943308387)
+@@ -0,0 +1,11 @@
++<component name="libraryTable">
++  <library name="Gradle: org.jasypt:jasypt:1.9.3">
++    <CLASSES>
++      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.jasypt/jasypt/1.9.3/d99ef9540f51c617f2a293b460f025d2ee563dd/jasypt-1.9.3.jar!/" />
++    </CLASSES>
++    <JAVADOC />
++    <SOURCES>
++      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.jasypt/jasypt/1.9.3/9fe5c909addd00e1f3c27af8b64e22ee98922dcc/jasypt-1.9.3-sources.jar!/" />
++    </SOURCES>
++  </library>
++</component>
+\ No newline at end of file
+Index: .idea/libraries/Gradle__com_github_ulisesbocchio_jasypt_spring_boot_starter_3_0_3.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/libraries/Gradle__com_github_ulisesbocchio_jasypt_spring_boot_starter_3_0_3.xml b/.idea/libraries/Gradle__com_github_ulisesbocchio_jasypt_spring_boot_starter_3_0_3.xml
+new file mode 100644
+--- /dev/null	(date 1679943308384)
++++ b/.idea/libraries/Gradle__com_github_ulisesbocchio_jasypt_spring_boot_starter_3_0_3.xml	(date 1679943308384)
+@@ -0,0 +1,11 @@
++<component name="libraryTable">
++  <library name="Gradle: com.github.ulisesbocchio:jasypt-spring-boot-starter:3.0.3">
++    <CLASSES>
++      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.github.ulisesbocchio/jasypt-spring-boot-starter/3.0.3/471e2f8d8edc585ee0b971555b63fec8ccc3f793/jasypt-spring-boot-starter-3.0.3.jar!/" />
++    </CLASSES>
++    <JAVADOC />
++    <SOURCES>
++      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.github.ulisesbocchio/jasypt-spring-boot-starter/3.0.3/171fda098e4228fd1c161e8f598ccd2a68ac22cd/jasypt-spring-boot-starter-3.0.3-sources.jar!/" />
++    </SOURCES>
++  </library>
++</component>
+\ No newline at end of file
+Index: .idea/modules/ynzmz.server.iml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/modules/ynzmz.server.iml b/.idea/modules/ynzmz.server.iml
+new file mode 100644
+--- /dev/null	(date 1679943308370)
++++ b/.idea/modules/ynzmz.server.iml	(date 1679943308370)
+@@ -0,0 +1,12 @@
++<?xml version="1.0" encoding="UTF-8"?>
++<module external.linked.project.id="server" external.linked.project.path="$MODULE_DIR$/../../server" external.root.project.path="$MODULE_DIR$/../../server" external.system.id="GRADLE" external.system.module.group="ynzmz" external.system.module.version="0.0.1-SNAPSHOT" type="JAVA_MODULE" version="4">
++  <component name="NewModuleRootManager" inherit-compiler-output="true">
++    <exclude-output />
++    <content url="file://$MODULE_DIR$/../../server">
++      <excludeFolder url="file://$MODULE_DIR$/../../server/.gradle" />
++      <excludeFolder url="file://$MODULE_DIR$/../../server/build" />
++    </content>
++    <orderEntry type="inheritedJdk" />
++    <orderEntry type="sourceFolder" forTests="false" />
++  </component>
++</module>
+\ No newline at end of file
+Index: server/.idea/workspace.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<project version=\"4\">\n  <component name=\"AutoImportSettings\">\n    <option name=\"autoReloadType\" value=\"SELECTIVE\" />\n  </component>\n  <component name=\"ChangeListManager\">\n    <list default=\"true\" id=\"cd7f39cd-62a8-49cc-a937-2a988b43b751\" name=\"변경\" comment=\"feat: jasypt 환경변수 테스트 (위치이동)\">\n      <change beforePath=\"$PROJECT_DIR$/src/main/resources/application-server.yml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/main/resources/application-server.yml\" afterDir=\"false\" />\n    </list>\n    <option name=\"SHOW_DIALOG\" value=\"false\" />\n    <option name=\"HIGHLIGHT_CONFLICTS\" value=\"true\" />\n    <option name=\"HIGHLIGHT_NON_ACTIVE_CHANGELIST\" value=\"false\" />\n    <option name=\"LAST_RESOLUTION\" value=\"IGNORE\" />\n  </component>\n  <component name=\"ExternalProjectsData\">\n    <projectState path=\"$PROJECT_DIR$\">\n      <ProjectState />\n    </projectState>\n  </component>\n  <component name=\"ExternalProjectsManager\">\n    <system id=\"GRADLE\">\n      <state>\n        <task path=\"$PROJECT_DIR$\">\n          <activation />\n        </task>\n        <projects_view>\n          <tree_state>\n            <expand>\n              <path>\n                <item name=\"\" type=\"6a2764b6:ExternalProjectsStructure$RootNode\" />\n                <item name=\"server\" type=\"f1a62948:ProjectNode\" />\n              </path>\n              <path>\n                <item name=\"\" type=\"6a2764b6:ExternalProjectsStructure$RootNode\" />\n                <item name=\"server\" type=\"f1a62948:ProjectNode\" />\n                <item name=\"Tasks\" type=\"e4a08cd1:TasksNode\" />\n              </path>\n              <path>\n                <item name=\"\" type=\"6a2764b6:ExternalProjectsStructure$RootNode\" />\n                <item name=\"server\" type=\"f1a62948:ProjectNode\" />\n                <item name=\"Tasks\" type=\"e4a08cd1:TasksNode\" />\n                <item name=\"build\" type=\"c8890929:TasksNode$1\" />\n              </path>\n              <path>\n                <item name=\"\" type=\"6a2764b6:ExternalProjectsStructure$RootNode\" />\n                <item name=\"server\" type=\"f1a62948:ProjectNode\" />\n                <item name=\"실행 구성\" type=\"7b0102dc:RunConfigurationsNode\" />\n              </path>\n            </expand>\n            <select />\n          </tree_state>\n        </projects_view>\n      </state>\n    </system>\n  </component>\n  <component name=\"FileTemplateManagerImpl\">\n    <option name=\"RECENT_TEMPLATES\">\n      <list>\n        <option value=\"Class\" />\n      </list>\n    </option>\n  </component>\n  <component name=\"HighlightingSettingsPerFile\">\n    <setting file=\"jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.apache.tomcat.embed/tomcat-embed-core/9.0.71/2ec6df0f12a3b51d0d7b21dc9a0be5ced9945f5b/tomcat-embed-core-9.0.71-sources.jar!/org/apache/catalina/filters/CorsFilter.java\" root0=\"SKIP_INSPECTION\" />\n  </component>\n  <component name=\"JpbToolWindowState\">\n    <option name=\"isToolWindowVisible\" value=\"false\" />\n  </component>\n  <component name=\"MarkdownSettingsMigration\">\n    <option name=\"stateVersion\" value=\"1\" />\n  </component>\n  <component name=\"ProjectId\" id=\"2MziRYsBd5E1Dcm6AJNpHfLQNCi\" />\n  <component name=\"ProjectLevelVcsManager\">\n    <ConfirmationsSetting value=\"2\" id=\"Add\" />\n  </component>\n  <component name=\"ProjectViewState\">\n    <option name=\"compactDirectories\" value=\"true\" />\n    <option name=\"hideEmptyMiddlePackages\" value=\"true\" />\n    <option name=\"showLibraryContents\" value=\"true\" />\n    <option name=\"showScratchesAndConsoles\" value=\"false\" />\n    <option name=\"showVisibilityIcons\" value=\"true\" />\n    <option name=\"sortByType\" value=\"true\" />\n  </component>\n  <component name=\"PropertiesComponent\">{\n  &quot;keyToString&quot;: {\n    &quot;Git.Branch.Popup.ShowAllRemotes&quot;: &quot;true&quot;,\n    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,\n    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,\n    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,\n    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,\n    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,\n    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,\n    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,\n    &quot;last_opened_file_path&quot;: &quot;/Users/mino/codestates/fork_seb42_main_027/server&quot;,\n    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,\n    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,\n    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,\n    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,\n    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,\n    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,\n    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,\n    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,\n    &quot;spring.configuration.checksum&quot;: &quot;f388e2a0991e057a0316947c380806f0&quot;,\n    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;\n  }\n}</component>\n  <component name=\"RecentsManager\">\n    <key name=\"CopyClassDialog.RECENTS_KEY\">\n      <recent name=\"ynzmz.server.security.config\" />\n    </key>\n  </component>\n  <component name=\"RunManager\" selected=\"Spring Boot.ServerApplication\">\n    <configuration name=\"server [bootBuildImage]\" type=\"GradleRunConfiguration\" factoryName=\"Gradle\" temporary=\"true\">\n      <ExternalSystemSettings>\n        <option name=\"executionName\" />\n        <option name=\"externalProjectPath\" value=\"$PROJECT_DIR$\" />\n        <option name=\"externalSystemIdString\" value=\"GRADLE\" />\n        <option name=\"scriptParameters\" />\n        <option name=\"taskDescriptions\">\n          <list />\n        </option>\n        <option name=\"taskNames\">\n          <list>\n            <option value=\"bootBuildImage\" />\n          </list>\n        </option>\n        <option name=\"vmOptions\" />\n      </ExternalSystemSettings>\n      <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>\n      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>\n      <DebugAllEnabled>false</DebugAllEnabled>\n      <method v=\"2\" />\n    </configuration>\n    <configuration name=\"server [bootRunMainClassName]\" type=\"GradleRunConfiguration\" factoryName=\"Gradle\" temporary=\"true\">\n      <ExternalSystemSettings>\n        <option name=\"executionName\" />\n        <option name=\"externalProjectPath\" value=\"$PROJECT_DIR$\" />\n        <option name=\"externalSystemIdString\" value=\"GRADLE\" />\n        <option name=\"scriptParameters\" />\n        <option name=\"taskDescriptions\">\n          <list />\n        </option>\n        <option name=\"taskNames\">\n          <list>\n            <option value=\"bootRunMainClassName\" />\n          </list>\n        </option>\n        <option name=\"vmOptions\" />\n      </ExternalSystemSettings>\n      <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>\n      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>\n      <DebugAllEnabled>false</DebugAllEnabled>\n      <method v=\"2\" />\n    </configuration>\n    <configuration name=\"server [build]\" type=\"GradleRunConfiguration\" factoryName=\"Gradle\" temporary=\"true\">\n      <ExternalSystemSettings>\n        <option name=\"executionName\" />\n        <option name=\"externalProjectPath\" value=\"$PROJECT_DIR$\" />\n        <option name=\"externalSystemIdString\" value=\"GRADLE\" />\n        <option name=\"scriptParameters\" />\n        <option name=\"taskDescriptions\">\n          <list />\n        </option>\n        <option name=\"taskNames\">\n          <list>\n            <option value=\"build\" />\n          </list>\n        </option>\n        <option name=\"vmOptions\" />\n      </ExternalSystemSettings>\n      <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>\n      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>\n      <DebugAllEnabled>false</DebugAllEnabled>\n      <method v=\"2\" />\n    </configuration>\n    <configuration name=\"server [clean]\" type=\"GradleRunConfiguration\" factoryName=\"Gradle\" temporary=\"true\">\n      <ExternalSystemSettings>\n        <option name=\"executionName\" />\n        <option name=\"externalProjectPath\" value=\"$PROJECT_DIR$\" />\n        <option name=\"externalSystemIdString\" value=\"GRADLE\" />\n        <option name=\"scriptParameters\" />\n        <option name=\"taskDescriptions\">\n          <list />\n        </option>\n        <option name=\"taskNames\">\n          <list>\n            <option value=\"clean\" />\n          </list>\n        </option>\n        <option name=\"vmOptions\" />\n      </ExternalSystemSettings>\n      <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>\n      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>\n      <DebugAllEnabled>false</DebugAllEnabled>\n      <method v=\"2\" />\n    </configuration>\n    <configuration name=\"server [jar]\" type=\"GradleRunConfiguration\" factoryName=\"Gradle\" temporary=\"true\">\n      <ExternalSystemSettings>\n        <option name=\"executionName\" />\n        <option name=\"externalProjectPath\" value=\"$PROJECT_DIR$\" />\n        <option name=\"externalSystemIdString\" value=\"GRADLE\" />\n        <option name=\"scriptParameters\" />\n        <option name=\"taskDescriptions\">\n          <list />\n        </option>\n        <option name=\"taskNames\">\n          <list>\n            <option value=\"jar\" />\n          </list>\n        </option>\n        <option name=\"vmOptions\" />\n      </ExternalSystemSettings>\n      <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>\n      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>\n      <DebugAllEnabled>false</DebugAllEnabled>\n      <method v=\"2\" />\n    </configuration>\n    <configuration name=\"ServerApplication\" type=\"SpringBootApplicationConfigurationType\" factoryName=\"Spring Boot\" nameIsGenerated=\"true\">\n      <module name=\"server.main\" />\n      <option name=\"SPRING_BOOT_MAIN_CLASS\" value=\"ynzmz.server.ServerApplication\" />\n      <method v=\"2\">\n        <option name=\"Make\" enabled=\"true\" />\n      </method>\n    </configuration>\n    <recent_temporary>\n      <list>\n        <item itemvalue=\"Gradle.server [build]\" />\n        <item itemvalue=\"Gradle.server [clean]\" />\n        <item itemvalue=\"Gradle.server [jar]\" />\n        <item itemvalue=\"Gradle.server [bootBuildImage]\" />\n        <item itemvalue=\"Gradle.server [bootRunMainClassName]\" />\n      </list>\n    </recent_temporary>\n  </component>\n  <component name=\"SpellCheckerSettings\" RuntimeDictionaries=\"0\" Folders=\"0\" CustomDictionaries=\"0\" DefaultDictionary=\"애플리케이션 수준\" UseSingleDictionary=\"true\" transferred=\"true\" />\n  <component name=\"TaskManager\">\n    <task active=\"true\" id=\"Default\" summary=\"디폴트 작업\">\n      <changelist id=\"cd7f39cd-62a8-49cc-a937-2a988b43b751\" name=\"변경\" comment=\"\" />\n      <created>1678776804262</created>\n      <option name=\"number\" value=\"Default\" />\n      <option name=\"presentableId\" value=\"Default\" />\n      <updated>1678776804262</updated>\n      <workItem from=\"1678776805817\" duration=\"775000\" />\n      <workItem from=\"1678777817541\" duration=\"737000\" />\n      <workItem from=\"1678780893661\" duration=\"14359000\" />\n      <workItem from=\"1679860352516\" duration=\"4222000\" />\n    </task>\n    <task id=\"LOCAL-00001\" summary=\"feat: 3/14 merge\">\n      <created>1678776910996</created>\n      <option name=\"number\" value=\"00001\" />\n      <option name=\"presentableId\" value=\"LOCAL-00001\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1678776910996</updated>\n    </task>\n    <task id=\"LOCAL-00002\" summary=\"feat: Member.java 삭제\">\n      <created>1678777937021</created>\n      <option name=\"number\" value=\"00002\" />\n      <option name=\"presentableId\" value=\"LOCAL-00002\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1678777937021</updated>\n    </task>\n    <task id=\"LOCAL-00003\" summary=\"feat: cors 설정\">\n      <created>1678781009970</created>\n      <option name=\"number\" value=\"00003\" />\n      <option name=\"presentableId\" value=\"LOCAL-00003\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1678781009970</updated>\n    </task>\n    <task id=\"LOCAL-00004\" summary=\"feat: TeacherListPage 역순/정순 기능추가\">\n      <created>1678784447178</created>\n      <option name=\"number\" value=\"00004\" />\n      <option name=\"presentableId\" value=\"LOCAL-00004\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1678784447178</updated>\n    </task>\n    <task id=\"LOCAL-00005\" summary=\"feat: TeacherListPage 역순/정순 기능추가\">\n      <created>1678784469702</created>\n      <option name=\"number\" value=\"00005\" />\n      <option name=\"presentableId\" value=\"LOCAL-00005\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1678784469702</updated>\n    </task>\n    <task id=\"LOCAL-00006\" summary=\"feat: 버전없는파일 추가\">\n      <created>1678800826607</created>\n      <option name=\"number\" value=\"00006\" />\n      <option name=\"presentableId\" value=\"LOCAL-00006\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1678800826607</updated>\n    </task>\n    <task id=\"LOCAL-00007\" summary=\"feat: 합친거\">\n      <created>1678802771589</created>\n      <option name=\"number\" value=\"00007\" />\n      <option name=\"presentableId\" value=\"LOCAL-00007\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1678802771589</updated>\n    </task>\n    <task id=\"LOCAL-00008\" summary=\"feat: board table이름수정\">\n      <created>1678803243513</created>\n      <option name=\"number\" value=\"00008\" />\n      <option name=\"presentableId\" value=\"LOCAL-00008\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1678803243513</updated>\n    </task>\n    <task id=\"LOCAL-00009\" summary=\"feat: board package 수정\">\n      <created>1678803521544</created>\n      <option name=\"number\" value=\"00009\" />\n      <option name=\"presentableId\" value=\"LOCAL-00009\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1678803521544</updated>\n    </task>\n    <task id=\"LOCAL-00010\" summary=\"feat: board package 수정\">\n      <created>1678803543750</created>\n      <option name=\"number\" value=\"00010\" />\n      <option name=\"presentableId\" value=\"LOCAL-00010\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1678803543750</updated>\n    </task>\n    <task id=\"LOCAL-00011\" summary=\"feat: 다시\">\n      <created>1678803971466</created>\n      <option name=\"number\" value=\"00011\" />\n      <option name=\"presentableId\" value=\"LOCAL-00011\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1678803971467</updated>\n    </task>\n    <task id=\"LOCAL-00012\" summary=\"feat: 다시?\">\n      <created>1678804322284</created>\n      <option name=\"number\" value=\"00012\" />\n      <option name=\"presentableId\" value=\"LOCAL-00012\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1678804322284</updated>\n    </task>\n    <task id=\"LOCAL-00013\" summary=\"feat: 다시?\">\n      <created>1678804408768</created>\n      <option name=\"number\" value=\"00013\" />\n      <option name=\"presentableId\" value=\"LOCAL-00013\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1678804408768</updated>\n    </task>\n    <task id=\"LOCAL-00014\" summary=\"feat: cors 에러 해결추가\">\n      <created>1678804727351</created>\n      <option name=\"number\" value=\"00014\" />\n      <option name=\"presentableId\" value=\"LOCAL-00014\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1678804727351</updated>\n    </task>\n    <task id=\"LOCAL-00015\" summary=\"feat: cors 에러 필터추가\">\n      <created>1678804854939</created>\n      <option name=\"number\" value=\"00015\" />\n      <option name=\"presentableId\" value=\"LOCAL-00015\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1678804854939</updated>\n    </task>\n    <task id=\"LOCAL-00016\" summary=\"feat: cors 변경\">\n      <created>1678806040910</created>\n      <option name=\"number\" value=\"00016\" />\n      <option name=\"presentableId\" value=\"LOCAL-00016\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1678806040910</updated>\n    </task>\n    <task id=\"LOCAL-00017\" summary=\"feat: cors해결\">\n      <created>1678807157275</created>\n      <option name=\"number\" value=\"00017\" />\n      <option name=\"presentableId\" value=\"LOCAL-00017\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1678807157275</updated>\n    </task>\n    <task id=\"LOCAL-00018\" summary=\"feat: cors해결\">\n      <created>1678807214963</created>\n      <option name=\"number\" value=\"00018\" />\n      <option name=\"presentableId\" value=\"LOCAL-00018\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1678807214963</updated>\n    </task>\n    <task id=\"LOCAL-00019\" summary=\"feat: 환경변수 테스트\">\n      <created>1679860666350</created>\n      <option name=\"number\" value=\"00019\" />\n      <option name=\"presentableId\" value=\"LOCAL-00019\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1679860666350</updated>\n    </task>\n    <option name=\"localTasksCounter\" value=\"20\" />\n    <servers />\n  </component>\n  <component name=\"TypeScriptGeneratedFilesManager\">\n    <option name=\"version\" value=\"3\" />\n  </component>\n  <component name=\"Vcs.Log.Tabs.Properties\">\n    <option name=\"TAB_STATES\">\n      <map>\n        <entry key=\"MAIN\">\n          <value>\n            <State />\n          </value>\n        </entry>\n      </map>\n    </option>\n  </component>\n  <component name=\"VcsManagerConfiguration\">\n    <MESSAGE value=\"feat: 3/14 merge\" />\n    <MESSAGE value=\"feat: Member.java 삭제\" />\n    <MESSAGE value=\"feat: cors 설정\" />\n    <MESSAGE value=\"feat: TeacherListPage 역순/정순 기능추가\" />\n    <MESSAGE value=\"feat: 버전없는파일 추가\" />\n    <MESSAGE value=\"feat: 합친거\" />\n    <MESSAGE value=\"feat: board table이름수정\" />\n    <MESSAGE value=\"feat: board package 수정\" />\n    <MESSAGE value=\"feat: 다시\" />\n    <MESSAGE value=\"feat: 다시?\" />\n    <MESSAGE value=\"feat: cors 에러 해결추가\" />\n    <MESSAGE value=\"feat: cors 에러 필터추가\" />\n    <MESSAGE value=\"feat: cors 변경\" />\n    <MESSAGE value=\"feat: cors해결\" />\n    <MESSAGE value=\"feat: 환경변수 테스트\" />\n    <option name=\"LAST_COMMIT_MESSAGE\" value=\"feat: 환경변수 테스트\" />\n  </component>\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/server/.idea/workspace.xml b/server/.idea/workspace.xml
+--- a/server/.idea/workspace.xml	(revision fc0a8642a1ec0504052d119f77e9d64420544327)
++++ b/server/.idea/workspace.xml	(date 1679885690354)
+@@ -4,8 +4,9 @@
+     <option name="autoReloadType" value="SELECTIVE" />
+   </component>
+   <component name="ChangeListManager">
+-    <list default="true" id="cd7f39cd-62a8-49cc-a937-2a988b43b751" name="변경" comment="feat: jasypt 환경변수 테스트 (위치이동)">
+-      <change beforePath="$PROJECT_DIR$/src/main/resources/application-server.yml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application-server.yml" afterDir="false" />
++    <list default="true" id="cd7f39cd-62a8-49cc-a937-2a988b43b751" name="변경" comment="feat: jasypt 환경변수 테스트 설정값추가">
++      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/src/main/resources/db/migration/V1__init_table.sql" beforeDir="false" />
+     </list>
+     <option name="SHOW_DIALOG" value="false" />
+     <option name="HIGHLIGHT_CONFLICTS" value="true" />
+@@ -216,6 +217,9 @@
+       <method v="2" />
+     </configuration>
+     <configuration name="ServerApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
++      <envs>
++        <env name="jasypt_password" value="minomino" />
++      </envs>
+       <module name="server.main" />
+       <option name="SPRING_BOOT_MAIN_CLASS" value="ynzmz.server.ServerApplication" />
+       <method v="2">
+@@ -378,7 +382,21 @@
+       <option name="project" value="LOCAL" />
+       <updated>1679860666350</updated>
+     </task>
+-    <option name="localTasksCounter" value="20" />
++    <task id="LOCAL-00020" summary="feat: jasypt 환경변수 테스트 설정값추가">
++      <created>1679867873812</created>
++      <option name="number" value="00020" />
++      <option name="presentableId" value="LOCAL-00020" />
++      <option name="project" value="LOCAL" />
++      <updated>1679867873812</updated>
++    </task>
++    <task id="LOCAL-00021" summary="feat: jasypt 환경변수 테스트 설정값추가">
++      <created>1679867900724</created>
++      <option name="number" value="00021" />
++      <option name="presentableId" value="LOCAL-00021" />
++      <option name="project" value="LOCAL" />
++      <updated>1679867900724</updated>
++    </task>
++    <option name="localTasksCounter" value="22" />
+     <servers />
+   </component>
+   <component name="TypeScriptGeneratedFilesManager">
+@@ -411,6 +429,7 @@
+     <MESSAGE value="feat: cors 변경" />
+     <MESSAGE value="feat: cors해결" />
+     <MESSAGE value="feat: 환경변수 테스트" />
+-    <option name="LAST_COMMIT_MESSAGE" value="feat: 환경변수 테스트" />
++    <MESSAGE value="feat: jasypt 환경변수 테스트 설정값추가" />
++    <option name="LAST_COMMIT_MESSAGE" value="feat: jasypt 환경변수 테스트 설정값추가" />
+   </component>
+ </project>
+\ No newline at end of file
+Index: .idea/libraries/Gradle__com_github_ulisesbocchio_jasypt_spring_boot_3_0_3.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/libraries/Gradle__com_github_ulisesbocchio_jasypt_spring_boot_3_0_3.xml b/.idea/libraries/Gradle__com_github_ulisesbocchio_jasypt_spring_boot_3_0_3.xml
+new file mode 100644
+--- /dev/null	(date 1679943308381)
++++ b/.idea/libraries/Gradle__com_github_ulisesbocchio_jasypt_spring_boot_3_0_3.xml	(date 1679943308381)
+@@ -0,0 +1,11 @@
++<component name="libraryTable">
++  <library name="Gradle: com.github.ulisesbocchio:jasypt-spring-boot:3.0.3">
++    <CLASSES>
++      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.github.ulisesbocchio/jasypt-spring-boot/3.0.3/b841a2e9adb4a6590aef28fe2fd8f7c52288d190/jasypt-spring-boot-3.0.3.jar!/" />
++    </CLASSES>
++    <JAVADOC />
++    <SOURCES>
++      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.github.ulisesbocchio/jasypt-spring-boot/3.0.3/e73ccef7d9aa183bc8adfc9fe7f87a412dc42f67/jasypt-spring-boot-3.0.3-sources.jar!/" />
++    </SOURCES>
++  </library>
++</component>
+\ No newline at end of file
+Index: server/.idea/modules/server.main.iml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/server/.idea/modules/server.main.iml b/server/.idea/modules/server.main.iml
+new file mode 100644
+--- /dev/null	(date 1679860684043)
++++ b/server/.idea/modules/server.main.iml	(date 1679860684043)
+@@ -0,0 +1,8 @@
++<?xml version="1.0" encoding="UTF-8"?>
++<module version="4">
++  <component name="NewModuleRootManager">
++    <content url="file://$MODULE_DIR$/../../build/generated/sources/annotationProcessor/java/main">
++      <sourceFolder url="file://$MODULE_DIR$/../../build/generated/sources/annotationProcessor/java/main" isTestSource="false" generated="true" />
++    </content>
++  </component>
++</module>
+\ No newline at end of file
+Index: .idea/modules.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<project version=\"4\">\n  <component name=\"ProjectModuleManager\">\n    <modules>\n      <module fileurl=\"file://$PROJECT_DIR$/.idea/modules/server.iml\" filepath=\"$PROJECT_DIR$/.idea/modules/server.iml\" />\n      <module fileurl=\"file://$PROJECT_DIR$/.idea/modules/server.main.iml\" filepath=\"$PROJECT_DIR$/.idea/modules/server.main.iml\" />\n      <module fileurl=\"file://$PROJECT_DIR$/.idea/modules/server.test.iml\" filepath=\"$PROJECT_DIR$/.idea/modules/server.test.iml\" />\n      <module fileurl=\"file://$PROJECT_DIR$/.idea/modules/ynzmz.server.test.iml\" filepath=\"$PROJECT_DIR$/.idea/modules/ynzmz.server.test.iml\" />\n    </modules>\n  </component>\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/modules.xml b/.idea/modules.xml
+--- a/.idea/modules.xml	(revision fc0a8642a1ec0504052d119f77e9d64420544327)
++++ b/.idea/modules.xml	(date 1679943308378)
+@@ -5,7 +5,10 @@
+       <module fileurl="file://$PROJECT_DIR$/.idea/modules/server.iml" filepath="$PROJECT_DIR$/.idea/modules/server.iml" />
+       <module fileurl="file://$PROJECT_DIR$/.idea/modules/server.main.iml" filepath="$PROJECT_DIR$/.idea/modules/server.main.iml" />
+       <module fileurl="file://$PROJECT_DIR$/.idea/modules/server.test.iml" filepath="$PROJECT_DIR$/.idea/modules/server.test.iml" />
++      <module fileurl="file://$PROJECT_DIR$/.idea/modules/ynzmz.server.iml" filepath="$PROJECT_DIR$/.idea/modules/ynzmz.server.iml" />
++      <module fileurl="file://$PROJECT_DIR$/.idea/modules/ynzmz.server.main.iml" filepath="$PROJECT_DIR$/.idea/modules/ynzmz.server.main.iml" />
+       <module fileurl="file://$PROJECT_DIR$/.idea/modules/ynzmz.server.test.iml" filepath="$PROJECT_DIR$/.idea/modules/ynzmz.server.test.iml" />
++      <module fileurl="file://$PROJECT_DIR$/.idea/modules/ynzmz.server.test~1.iml" filepath="$PROJECT_DIR$/.idea/modules/ynzmz.server.test~1.iml" />
+     </modules>
+   </component>
+ </project>
+\ No newline at end of file
+Index: .idea/modules/ynzmz.server.main.iml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/modules/ynzmz.server.main.iml b/.idea/modules/ynzmz.server.main.iml
+new file mode 100644
+--- /dev/null	(date 1679943308377)
++++ b/.idea/modules/ynzmz.server.main.iml	(date 1679943308377)
+@@ -0,0 +1,133 @@
++<?xml version="1.0" encoding="UTF-8"?>
++<module external.linked.project.id="server:main" external.linked.project.path="$MODULE_DIR$/../../server" external.root.project.path="$MODULE_DIR$/../../server" external.system.id="GRADLE" external.system.module.group="ynzmz" external.system.module.type="sourceSet" external.system.module.version="0.0.1-SNAPSHOT" type="JAVA_MODULE" version="4">
++  <component name="FacetManager">
++    <facet type="web" name="Web">
++      <configuration>
++        <webroots />
++      </configuration>
++    </facet>
++    <facet type="jpa" name="JPA">
++      <configuration>
++        <setting name="validation-enabled" value="true" />
++        <setting name="provider-name" value="Hibernate" />
++        <datasource-mapping />
++        <naming-strategy-map />
++      </configuration>
++    </facet>
++    <facet type="Spring" name="Spring">
++      <configuration />
++    </facet>
++  </component>
++  <component name="NewModuleRootManager">
++    <output url="file://$MODULE_DIR$/../../server/build/classes/java/main" />
++    <exclude-output />
++    <content url="file://$MODULE_DIR$/../../server/build/generated/sources/annotationProcessor/java/main">
++      <sourceFolder url="file://$MODULE_DIR$/../../server/build/generated/sources/annotationProcessor/java/main" isTestSource="false" generated="true" />
++    </content>
++    <content url="file://$MODULE_DIR$/../../server/src/main">
++      <sourceFolder url="file://$MODULE_DIR$/../../server/src/main/java" isTestSource="false" />
++      <sourceFolder url="file://$MODULE_DIR$/../../server/src/main/resources" type="java-resource" />
++    </content>
++    <orderEntry type="inheritedJdk" />
++    <orderEntry type="sourceFolder" forTests="false" />
++    <orderEntry type="library" scope="PROVIDED" name="Gradle: org.projectlombok:lombok:1.18.26" level="project" />
++    <orderEntry type="library" scope="PROVIDED" name="Gradle: org.mapstruct:mapstruct-processor:1.5.2.Final" level="project" />
++    <orderEntry type="library" scope="PROVIDED" name="Gradle: org.flywaydb:flyway-mysql:8.5.13" level="project" />
++    <orderEntry type="library" name="Gradle: org.springframework.cloud:spring-cloud-starter-aws:2.2.6.RELEASE" level="project" />
++    <orderEntry type="library" name="Gradle: org.mapstruct:mapstruct:1.5.2.Final" level="project" />
++    <orderEntry type="library" name="Gradle: org.springframework.boot:spring-boot-starter-data-jpa:2.7.9" level="project" />
++    <orderEntry type="library" name="Gradle: org.springframework.boot:spring-boot-starter-web:2.7.9" level="project" />
++    <orderEntry type="library" name="Gradle: org.springframework.boot:spring-boot-starter-security:2.7.9" level="project" />
++    <orderEntry type="library" name="Gradle: com.github.ulisesbocchio:jasypt-spring-boot-starter:3.0.3" level="project" />
++    <orderEntry type="library" name="Gradle: org.springframework.boot:spring-boot-starter-validation:2.7.9" level="project" />
++    <orderEntry type="library" name="Gradle: org.springframework.boot:spring-boot-starter-mail:2.7.9" level="project" />
++    <orderEntry type="library" name="Gradle: io.jsonwebtoken:jjwt-api:0.11.5" level="project" />
++    <orderEntry type="library" name="Gradle: com.google.code.gson:gson:2.9.1" level="project" />
++    <orderEntry type="library" name="Gradle: org.jsoup:jsoup:1.15.4" level="project" />
++    <orderEntry type="library" scope="PROVIDED" name="Gradle: org.flywaydb:flyway-core:8.5.13" level="project" />
++    <orderEntry type="library" name="Gradle: org.springframework.cloud:spring-cloud-aws-autoconfigure:2.2.6.RELEASE" level="project" />
++    <orderEntry type="library" name="Gradle: org.springframework.cloud:spring-cloud-aws-context:2.2.6.RELEASE" level="project" />
++    <orderEntry type="library" name="Gradle: org.slf4j:slf4j-api:1.7.36" level="project" />
++    <orderEntry type="library" name="Gradle: org.springframework.data:spring-data-jpa:2.7.8" level="project" />
++    <orderEntry type="library" name="Gradle: org.springframework.boot:spring-boot-starter-jdbc:2.7.9" level="project" />
++    <orderEntry type="library" name="Gradle: org.springframework.boot:spring-boot-starter-aop:2.7.9" level="project" />
++    <orderEntry type="library" name="Gradle: jakarta.transaction:jakarta.transaction-api:1.3.3" level="project" />
++    <orderEntry type="library" name="Gradle: jakarta.persistence:jakarta.persistence-api:2.2.3" level="project" />
++    <orderEntry type="library" name="Gradle: org.hibernate:hibernate-core:5.6.15.Final" level="project" />
++    <orderEntry type="library" name="Gradle: org.springframework:spring-aspects:5.3.25" level="project" />
++    <orderEntry type="library" name="Gradle: org.springframework.boot:spring-boot-starter-json:2.7.9" level="project" />
++    <orderEntry type="library" name="Gradle: org.springframework.boot:spring-boot-starter:2.7.9" level="project" />
++    <orderEntry type="library" name="Gradle: org.springframework.boot:spring-boot-starter-tomcat:2.7.9" level="project" />
++    <orderEntry type="library" name="Gradle: org.springframework:spring-webmvc:5.3.25" level="project" />
++    <orderEntry type="library" name="Gradle: org.springframework:spring-web:5.3.25" level="project" />
++    <orderEntry type="library" name="Gradle: org.springframework.security:spring-security-web:5.7.7" level="project" />
++    <orderEntry type="library" name="Gradle: org.springframework.security:spring-security-config:5.7.7" level="project" />
++    <orderEntry type="library" name="Gradle: org.springframework:spring-aop:5.3.25" level="project" />
++    <orderEntry type="library" name="Gradle: com.github.ulisesbocchio:jasypt-spring-boot:3.0.3" level="project" />
++    <orderEntry type="library" name="Gradle: org.apache.tomcat.embed:tomcat-embed-el:9.0.71" level="project" />
++    <orderEntry type="library" name="Gradle: org.hibernate.validator:hibernate-validator:6.2.5.Final" level="project" />
++    <orderEntry type="library" name="Gradle: org.springframework:spring-context-support:5.3.25" level="project" />
++    <orderEntry type="library" name="Gradle: com.sun.mail:jakarta.mail:1.6.7" level="project" />
++    <orderEntry type="library" name="Gradle: org.springframework.boot:spring-boot-autoconfigure:2.7.9" level="project" />
++    <orderEntry type="library" name="Gradle: org.springframework.cloud:spring-cloud-aws-core:2.2.6.RELEASE" level="project" />
++    <orderEntry type="library" name="Gradle: org.springframework:spring-context:5.3.25" level="project" />
++    <orderEntry type="library" name="Gradle: org.springframework.data:spring-data-commons:2.7.8" level="project" />
++    <orderEntry type="library" name="Gradle: org.springframework:spring-orm:5.3.25" level="project" />
++    <orderEntry type="library" name="Gradle: org.springframework:spring-tx:5.3.25" level="project" />
++    <orderEntry type="library" name="Gradle: org.springframework:spring-beans:5.3.25" level="project" />
++    <orderEntry type="library" name="Gradle: org.springframework:spring-core:5.3.25" level="project" />
++    <orderEntry type="library" name="Gradle: com.zaxxer:HikariCP:4.0.3" level="project" />
++    <orderEntry type="library" name="Gradle: org.springframework:spring-jdbc:5.3.25" level="project" />
++    <orderEntry type="library" name="Gradle: org.aspectj:aspectjweaver:1.9.7" level="project" />
++    <orderEntry type="library" name="Gradle: org.hibernate.common:hibernate-commons-annotations:5.1.2.Final" level="project" />
++    <orderEntry type="library" name="Gradle: org.jboss.logging:jboss-logging:3.4.3.Final" level="project" />
++    <orderEntry type="library" name="Gradle: net.bytebuddy:byte-buddy:1.12.23" level="project" />
++    <orderEntry type="library" name="Gradle: antlr:antlr:2.7.7" level="project" />
++    <orderEntry type="library" name="Gradle: org.jboss:jandex:2.4.2.Final" level="project" />
++    <orderEntry type="library" name="Gradle: com.fasterxml:classmate:1.5.1" level="project" />
++    <orderEntry type="library" name="Gradle: org.glassfish.jaxb:jaxb-runtime:2.3.8" level="project" />
++    <orderEntry type="library" name="Gradle: com.fasterxml.jackson.datatype:jackson-datatype-jsr310:2.13.5" level="project" />
++    <orderEntry type="library" name="Gradle: com.fasterxml.jackson.module:jackson-module-parameter-names:2.13.5" level="project" />
++    <orderEntry type="library" name="Gradle: com.fasterxml.jackson.datatype:jackson-datatype-jdk8:2.13.5" level="project" />
++    <orderEntry type="library" name="Gradle: com.fasterxml.jackson.core:jackson-databind:2.13.5" level="project" />
++    <orderEntry type="library" name="Gradle: org.springframework.boot:spring-boot-starter-logging:2.7.9" level="project" />
++    <orderEntry type="library" name="Gradle: org.springframework.boot:spring-boot:2.7.9" level="project" />
++    <orderEntry type="library" name="Gradle: jakarta.annotation:jakarta.annotation-api:1.3.5" level="project" />
++    <orderEntry type="library" name="Gradle: org.yaml:snakeyaml:1.30" level="project" />
++    <orderEntry type="library" name="Gradle: org.apache.tomcat.embed:tomcat-embed-websocket:9.0.71" level="project" />
++    <orderEntry type="library" name="Gradle: org.apache.tomcat.embed:tomcat-embed-core:9.0.71" level="project" />
++    <orderEntry type="library" name="Gradle: org.springframework:spring-expression:5.3.25" level="project" />
++    <orderEntry type="library" name="Gradle: org.springframework.security:spring-security-core:5.7.7" level="project" />
++    <orderEntry type="library" name="Gradle: org.jasypt:jasypt:1.9.3" level="project" />
++    <orderEntry type="library" name="Gradle: jakarta.validation:jakarta.validation-api:2.0.2" level="project" />
++    <orderEntry type="library" name="Gradle: com.sun.activation:jakarta.activation:1.2.2" level="project" />
++    <orderEntry type="library" name="Gradle: com.amazonaws:aws-java-sdk-s3:1.11.792" level="project" />
++    <orderEntry type="library" name="Gradle: com.amazonaws:aws-java-sdk-ec2:1.11.792" level="project" />
++    <orderEntry type="library" name="Gradle: com.amazonaws:aws-java-sdk-cloudformation:1.11.792" level="project" />
++    <orderEntry type="library" name="Gradle: com.amazonaws:aws-java-sdk-core:1.11.792" level="project" />
++    <orderEntry type="library" name="Gradle: org.springframework:spring-jcl:5.3.25" level="project" />
++    <orderEntry type="library" name="Gradle: jakarta.xml.bind:jakarta.xml.bind-api:2.3.3" level="project" />
++    <orderEntry type="library" name="Gradle: org.glassfish.jaxb:txw2:2.3.8" level="project" />
++    <orderEntry type="library" name="Gradle: com.sun.istack:istack-commons-runtime:3.0.12" level="project" />
++    <orderEntry type="library" name="Gradle: com.fasterxml.jackson.core:jackson-annotations:2.13.5" level="project" />
++    <orderEntry type="library" name="Gradle: com.fasterxml.jackson.core:jackson-core:2.13.5" level="project" />
++    <orderEntry type="library" name="Gradle: ch.qos.logback:logback-classic:1.2.11" level="project" />
++    <orderEntry type="library" name="Gradle: org.apache.logging.log4j:log4j-to-slf4j:2.17.2" level="project" />
++    <orderEntry type="library" name="Gradle: org.slf4j:jul-to-slf4j:1.7.36" level="project" />
++    <orderEntry type="library" name="Gradle: org.springframework.security:spring-security-crypto:5.7.7" level="project" />
++    <orderEntry type="library" name="Gradle: com.amazonaws:aws-java-sdk-kms:1.11.792" level="project" />
++    <orderEntry type="library" name="Gradle: com.amazonaws:jmespath-java:1.11.792" level="project" />
++    <orderEntry type="library" name="Gradle: com.fasterxml.jackson.dataformat:jackson-dataformat-cbor:2.13.5" level="project" />
++    <orderEntry type="library" name="Gradle: org.apache.httpcomponents:httpclient:4.5.14" level="project" />
++    <orderEntry type="library" name="Gradle: software.amazon.ion:ion-java:1.0.2" level="project" />
++    <orderEntry type="library" name="Gradle: joda-time:joda-time:2.8.1" level="project" />
++    <orderEntry type="library" name="Gradle: ch.qos.logback:logback-core:1.2.11" level="project" />
++    <orderEntry type="library" name="Gradle: org.apache.logging.log4j:log4j-api:2.17.2" level="project" />
++    <orderEntry type="library" name="Gradle: org.apache.httpcomponents:httpcore:4.4.16" level="project" />
++    <orderEntry type="library" name="Gradle: commons-codec:commons-codec:1.15" level="project" />
++    <orderEntry type="library" scope="RUNTIME" name="Gradle: io.jsonwebtoken:jjwt-impl:0.11.5" level="project" />
++    <orderEntry type="library" scope="RUNTIME" name="Gradle: io.jsonwebtoken:jjwt-jackson:0.11.5" level="project" />
++    <orderEntry type="library" scope="RUNTIME" name="Gradle: com.h2database:h2:2.1.214" level="project" />
++    <orderEntry type="library" scope="RUNTIME" name="Gradle: com.mysql:mysql-connector-j:8.0.32" level="project" />
++  </component>
++</module>
+\ No newline at end of file
+Index: .idea/modules/ynzmz.server.test~1.iml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/modules/ynzmz.server.test~1.iml b/.idea/modules/ynzmz.server.test~1.iml
+new file mode 100644
+--- /dev/null	(date 1679943308374)
++++ b/.idea/modules/ynzmz.server.test~1.iml	(date 1679943308374)
+@@ -0,0 +1,156 @@
++<?xml version="1.0" encoding="UTF-8"?>
++<module external.linked.project.id="server:test" external.linked.project.path="$MODULE_DIR$/../../server" external.root.project.path="$MODULE_DIR$/../../server" external.system.id="GRADLE" external.system.module.group="ynzmz" external.system.module.type="sourceSet" external.system.module.version="0.0.1-SNAPSHOT" type="JAVA_MODULE" version="4">
++  <component name="FacetManager">
++    <facet type="web" name="Web">
++      <configuration>
++        <webroots />
++        <sourceRoots />
++      </configuration>
++    </facet>
++    <facet type="jpa" name="JPA">
++      <configuration>
++        <setting name="validation-enabled" value="true" />
++        <setting name="provider-name" value="Hibernate" />
++        <datasource-mapping />
++        <naming-strategy-map />
++      </configuration>
++    </facet>
++    <facet type="Spring" name="Spring">
++      <configuration />
++    </facet>
++  </component>
++  <component name="NewModuleRootManager">
++    <output-test url="file://$MODULE_DIR$/../../server/build/classes/java/test" />
++    <exclude-output />
++    <content url="file://$MODULE_DIR$/../../server/src/test">
++      <sourceFolder url="file://$MODULE_DIR$/../../server/src/test/java" isTestSource="true" />
++    </content>
++    <orderEntry type="inheritedJdk" />
++    <orderEntry type="sourceFolder" forTests="false" />
++    <orderEntry type="module" module-name="ynzmz.server.main" />
++    <orderEntry type="library" name="Gradle: org.springframework.cloud:spring-cloud-starter-aws:2.2.6.RELEASE" level="project" />
++    <orderEntry type="library" name="Gradle: org.mapstruct:mapstruct:1.5.2.Final" level="project" />
++    <orderEntry type="library" name="Gradle: org.springframework.boot:spring-boot-starter-data-jpa:2.7.9" level="project" />
++    <orderEntry type="library" name="Gradle: org.springframework.boot:spring-boot-starter-web:2.7.9" level="project" />
++    <orderEntry type="library" name="Gradle: org.springframework.boot:spring-boot-starter-security:2.7.9" level="project" />
++    <orderEntry type="library" name="Gradle: com.github.ulisesbocchio:jasypt-spring-boot-starter:3.0.3" level="project" />
++    <orderEntry type="library" name="Gradle: org.springframework.boot:spring-boot-starter-validation:2.7.9" level="project" />
++    <orderEntry type="library" name="Gradle: org.springframework.boot:spring-boot-starter-mail:2.7.9" level="project" />
++    <orderEntry type="library" name="Gradle: io.jsonwebtoken:jjwt-api:0.11.5" level="project" />
++    <orderEntry type="library" name="Gradle: com.google.code.gson:gson:2.9.1" level="project" />
++    <orderEntry type="library" name="Gradle: org.jsoup:jsoup:1.15.4" level="project" />
++    <orderEntry type="library" scope="PROVIDED" name="Gradle: org.projectlombok:lombok:1.18.26" level="project" />
++    <orderEntry type="library" name="Gradle: org.springframework.boot:spring-boot-starter-test:2.7.9" level="project" />
++    <orderEntry type="library" name="Gradle: org.springframework.security:spring-security-test:5.7.7" level="project" />
++    <orderEntry type="library" name="Gradle: org.springframework.cloud:spring-cloud-aws-autoconfigure:2.2.6.RELEASE" level="project" />
++    <orderEntry type="library" name="Gradle: org.springframework.cloud:spring-cloud-aws-context:2.2.6.RELEASE" level="project" />
++    <orderEntry type="library" name="Gradle: org.slf4j:slf4j-api:1.7.36" level="project" />
++    <orderEntry type="library" name="Gradle: org.springframework.data:spring-data-jpa:2.7.8" level="project" />
++    <orderEntry type="library" name="Gradle: org.springframework.boot:spring-boot-starter-jdbc:2.7.9" level="project" />
++    <orderEntry type="library" name="Gradle: org.springframework.boot:spring-boot-starter-aop:2.7.9" level="project" />
++    <orderEntry type="library" name="Gradle: jakarta.transaction:jakarta.transaction-api:1.3.3" level="project" />
++    <orderEntry type="library" name="Gradle: jakarta.persistence:jakarta.persistence-api:2.2.3" level="project" />
++    <orderEntry type="library" name="Gradle: org.hibernate:hibernate-core:5.6.15.Final" level="project" />
++    <orderEntry type="library" name="Gradle: org.springframework:spring-aspects:5.3.25" level="project" />
++    <orderEntry type="library" name="Gradle: org.springframework.boot:spring-boot-starter-json:2.7.9" level="project" />
++    <orderEntry type="library" name="Gradle: org.springframework.boot:spring-boot-starter:2.7.9" level="project" />
++    <orderEntry type="library" name="Gradle: org.springframework.boot:spring-boot-starter-tomcat:2.7.9" level="project" />
++    <orderEntry type="library" name="Gradle: org.springframework:spring-webmvc:5.3.25" level="project" />
++    <orderEntry type="library" name="Gradle: org.springframework:spring-web:5.3.25" level="project" />
++    <orderEntry type="library" name="Gradle: org.springframework.security:spring-security-web:5.7.7" level="project" />
++    <orderEntry type="library" name="Gradle: org.springframework.security:spring-security-config:5.7.7" level="project" />
++    <orderEntry type="library" name="Gradle: org.springframework:spring-aop:5.3.25" level="project" />
++    <orderEntry type="library" name="Gradle: com.github.ulisesbocchio:jasypt-spring-boot:3.0.3" level="project" />
++    <orderEntry type="library" name="Gradle: org.apache.tomcat.embed:tomcat-embed-el:9.0.71" level="project" />
++    <orderEntry type="library" name="Gradle: org.hibernate.validator:hibernate-validator:6.2.5.Final" level="project" />
++    <orderEntry type="library" name="Gradle: org.springframework:spring-context-support:5.3.25" level="project" />
++    <orderEntry type="library" name="Gradle: com.sun.mail:jakarta.mail:1.6.7" level="project" />
++    <orderEntry type="library" name="Gradle: com.jayway.jsonpath:json-path:2.7.0" level="project" />
++    <orderEntry type="library" name="Gradle: org.springframework.boot:spring-boot-test-autoconfigure:2.7.9" level="project" />
++    <orderEntry type="library" name="Gradle: org.springframework.boot:spring-boot-test:2.7.9" level="project" />
++    <orderEntry type="library" name="Gradle: jakarta.xml.bind:jakarta.xml.bind-api:2.3.3" level="project" />
++    <orderEntry type="library" name="Gradle: org.assertj:assertj-core:3.22.0" level="project" />
++    <orderEntry type="library" name="Gradle: org.hamcrest:hamcrest:2.2" level="project" />
++    <orderEntry type="library" name="Gradle: org.junit.jupiter:junit-jupiter:5.8.2" level="project" />
++    <orderEntry type="library" name="Gradle: org.mockito:mockito-junit-jupiter:4.5.1" level="project" />
++    <orderEntry type="library" name="Gradle: org.mockito:mockito-core:4.5.1" level="project" />
++    <orderEntry type="library" name="Gradle: org.skyscreamer:jsonassert:1.5.1" level="project" />
++    <orderEntry type="library" name="Gradle: org.springframework:spring-test:5.3.25" level="project" />
++    <orderEntry type="library" name="Gradle: org.springframework:spring-core:5.3.25" level="project" />
++    <orderEntry type="library" name="Gradle: org.xmlunit:xmlunit-core:2.9.1" level="project" />
++    <orderEntry type="library" name="Gradle: org.springframework.security:spring-security-core:5.7.7" level="project" />
++    <orderEntry type="library" name="Gradle: org.springframework.boot:spring-boot-autoconfigure:2.7.9" level="project" />
++    <orderEntry type="library" name="Gradle: org.springframework.cloud:spring-cloud-aws-core:2.2.6.RELEASE" level="project" />
++    <orderEntry type="library" name="Gradle: org.springframework:spring-context:5.3.25" level="project" />
++    <orderEntry type="library" name="Gradle: org.springframework.data:spring-data-commons:2.7.8" level="project" />
++    <orderEntry type="library" name="Gradle: org.springframework:spring-orm:5.3.25" level="project" />
++    <orderEntry type="library" name="Gradle: org.springframework:spring-tx:5.3.25" level="project" />
++    <orderEntry type="library" name="Gradle: org.springframework:spring-beans:5.3.25" level="project" />
++    <orderEntry type="library" name="Gradle: com.zaxxer:HikariCP:4.0.3" level="project" />
++    <orderEntry type="library" name="Gradle: org.springframework:spring-jdbc:5.3.25" level="project" />
++    <orderEntry type="library" name="Gradle: org.aspectj:aspectjweaver:1.9.7" level="project" />
++    <orderEntry type="library" name="Gradle: org.glassfish.jaxb:jaxb-runtime:2.3.8" level="project" />
++    <orderEntry type="library" name="Gradle: org.hibernate.common:hibernate-commons-annotations:5.1.2.Final" level="project" />
++    <orderEntry type="library" name="Gradle: org.jboss.logging:jboss-logging:3.4.3.Final" level="project" />
++    <orderEntry type="library" name="Gradle: net.bytebuddy:byte-buddy:1.12.23" level="project" />
++    <orderEntry type="library" name="Gradle: antlr:antlr:2.7.7" level="project" />
++    <orderEntry type="library" name="Gradle: org.jboss:jandex:2.4.2.Final" level="project" />
++    <orderEntry type="library" name="Gradle: com.fasterxml:classmate:1.5.1" level="project" />
++    <orderEntry type="library" name="Gradle: com.fasterxml.jackson.datatype:jackson-datatype-jsr310:2.13.5" level="project" />
++    <orderEntry type="library" name="Gradle: com.fasterxml.jackson.module:jackson-module-parameter-names:2.13.5" level="project" />
++    <orderEntry type="library" name="Gradle: com.fasterxml.jackson.datatype:jackson-datatype-jdk8:2.13.5" level="project" />
++    <orderEntry type="library" name="Gradle: com.fasterxml.jackson.core:jackson-databind:2.13.5" level="project" />
++    <orderEntry type="library" name="Gradle: org.springframework.boot:spring-boot-starter-logging:2.7.9" level="project" />
++    <orderEntry type="library" name="Gradle: org.springframework.boot:spring-boot:2.7.9" level="project" />
++    <orderEntry type="library" name="Gradle: jakarta.annotation:jakarta.annotation-api:1.3.5" level="project" />
++    <orderEntry type="library" name="Gradle: org.yaml:snakeyaml:1.30" level="project" />
++    <orderEntry type="library" name="Gradle: org.apache.tomcat.embed:tomcat-embed-websocket:9.0.71" level="project" />
++    <orderEntry type="library" name="Gradle: org.apache.tomcat.embed:tomcat-embed-core:9.0.71" level="project" />
++    <orderEntry type="library" name="Gradle: org.springframework:spring-expression:5.3.25" level="project" />
++    <orderEntry type="library" name="Gradle: org.jasypt:jasypt:1.9.3" level="project" />
++    <orderEntry type="library" name="Gradle: jakarta.validation:jakarta.validation-api:2.0.2" level="project" />
++    <orderEntry type="library" name="Gradle: com.sun.activation:jakarta.activation:1.2.2" level="project" />
++    <orderEntry type="library" name="Gradle: net.minidev:json-smart:2.4.8" level="project" />
++    <orderEntry type="library" name="Gradle: jakarta.activation:jakarta.activation-api:1.2.2" level="project" />
++    <orderEntry type="library" name="Gradle: org.junit.jupiter:junit-jupiter-params:5.8.2" level="project" />
++    <orderEntry type="library" name="Gradle: org.junit.jupiter:junit-jupiter-api:5.8.2" level="project" />
++    <orderEntry type="library" name="Gradle: net.bytebuddy:byte-buddy-agent:1.12.23" level="project" />
++    <orderEntry type="library" name="Gradle: com.vaadin.external.google:android-json:0.0.20131108.vaadin1" level="project" />
++    <orderEntry type="library" name="Gradle: org.springframework:spring-jcl:5.3.25" level="project" />
++    <orderEntry type="library" name="Gradle: org.springframework.security:spring-security-crypto:5.7.7" level="project" />
++    <orderEntry type="library" name="Gradle: com.amazonaws:aws-java-sdk-s3:1.11.792" level="project" />
++    <orderEntry type="library" name="Gradle: com.amazonaws:aws-java-sdk-ec2:1.11.792" level="project" />
++    <orderEntry type="library" name="Gradle: com.amazonaws:aws-java-sdk-cloudformation:1.11.792" level="project" />
++    <orderEntry type="library" name="Gradle: com.amazonaws:aws-java-sdk-core:1.11.792" level="project" />
++    <orderEntry type="library" name="Gradle: org.glassfish.jaxb:txw2:2.3.8" level="project" />
++    <orderEntry type="library" name="Gradle: com.sun.istack:istack-commons-runtime:3.0.12" level="project" />
++    <orderEntry type="library" name="Gradle: com.fasterxml.jackson.core:jackson-annotations:2.13.5" level="project" />
++    <orderEntry type="library" name="Gradle: com.fasterxml.jackson.core:jackson-core:2.13.5" level="project" />
++    <orderEntry type="library" name="Gradle: ch.qos.logback:logback-classic:1.2.11" level="project" />
++    <orderEntry type="library" name="Gradle: org.apache.logging.log4j:log4j-to-slf4j:2.17.2" level="project" />
++    <orderEntry type="library" name="Gradle: org.slf4j:jul-to-slf4j:1.7.36" level="project" />
++    <orderEntry type="library" name="Gradle: net.minidev:accessors-smart:2.4.8" level="project" />
++    <orderEntry type="library" scope="PROVIDED" name="Gradle: org.apiguardian:apiguardian-api:1.1.2" level="project" />
++    <orderEntry type="library" name="Gradle: org.junit.platform:junit-platform-commons:1.8.2" level="project" />
++    <orderEntry type="library" name="Gradle: org.opentest4j:opentest4j:1.2.0" level="project" />
++    <orderEntry type="library" name="Gradle: com.amazonaws:aws-java-sdk-kms:1.11.792" level="project" />
++    <orderEntry type="library" name="Gradle: com.amazonaws:jmespath-java:1.11.792" level="project" />
++    <orderEntry type="library" name="Gradle: com.fasterxml.jackson.dataformat:jackson-dataformat-cbor:2.13.5" level="project" />
++    <orderEntry type="library" name="Gradle: org.apache.httpcomponents:httpclient:4.5.14" level="project" />
++    <orderEntry type="library" name="Gradle: software.amazon.ion:ion-java:1.0.2" level="project" />
++    <orderEntry type="library" name="Gradle: joda-time:joda-time:2.8.1" level="project" />
++    <orderEntry type="library" name="Gradle: ch.qos.logback:logback-core:1.2.11" level="project" />
++    <orderEntry type="library" name="Gradle: org.apache.logging.log4j:log4j-api:2.17.2" level="project" />
++    <orderEntry type="library" name="Gradle: org.ow2.asm:asm:9.1" level="project" />
++    <orderEntry type="library" name="Gradle: org.apache.httpcomponents:httpcore:4.4.16" level="project" />
++    <orderEntry type="library" name="Gradle: commons-codec:commons-codec:1.15" level="project" />
++    <orderEntry type="library" scope="RUNTIME" name="Gradle: io.jsonwebtoken:jjwt-impl:0.11.5" level="project" />
++    <orderEntry type="library" scope="RUNTIME" name="Gradle: io.jsonwebtoken:jjwt-jackson:0.11.5" level="project" />
++    <orderEntry type="library" scope="RUNTIME" name="Gradle: com.h2database:h2:2.1.214" level="project" />
++    <orderEntry type="library" scope="RUNTIME" name="Gradle: com.mysql:mysql-connector-j:8.0.32" level="project" />
++    <orderEntry type="library" scope="RUNTIME" name="Gradle: org.junit.jupiter:junit-jupiter-engine:5.8.2" level="project" />
++    <orderEntry type="library" scope="RUNTIME" name="Gradle: org.objenesis:objenesis:3.2" level="project" />
++    <orderEntry type="library" scope="RUNTIME" name="Gradle: org.junit.platform:junit-platform-engine:1.8.2" level="project" />
++  </component>
++  <component name="TestModuleProperties" production-module="server.main" />
++</module>
+\ No newline at end of file
