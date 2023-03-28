@@ -44,11 +44,18 @@ public class AnswerDto {
         private Long answerId;
         private String content;
         private long voteCount;
+        private long commentCount;
         private String createdAt;
         private String modifiedAt;
         private Answer.AdoptStatus adoptStatus;
         private MemberDto.SimpleInfoResponse member;
         private List<QnaCommentDto.Response> comments;
 
+    }
+
+    @Getter @Setter
+    public static class SimpleResponse{
+        private Long answerId;
+        private String content;
     }
 }

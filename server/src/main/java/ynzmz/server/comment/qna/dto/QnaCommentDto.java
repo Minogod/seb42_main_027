@@ -1,9 +1,6 @@
 package ynzmz.server.comment.qna.dto;
 
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 import ynzmz.server.board.qna.answer.dto.AnswerDto;
 import ynzmz.server.board.qna.question.dto.QuestionDto;
 import ynzmz.server.member.dto.MemberDto;
@@ -35,7 +32,19 @@ public class QnaCommentDto {
         private String createdAt;
         private String modifiedAt;
         private long voteCount;
+        private long reCommentCount;
         private MemberDto.SimpleInfoResponse member;
         private List<QnaReCommentDto.Response> qnaReComments;
+    }
+    @Getter @Setter
+    @AllArgsConstructor
+    public static class SimpleResponse{
+        private Long qnaCommentId;
+        private String content;
+        private String createdAt;
+        private String modifiedAt;
+        private long voteCount;
+        private QuestionDto.SimpleResponse question;
+        private AnswerDto.SimpleResponse answer;
     }
 }

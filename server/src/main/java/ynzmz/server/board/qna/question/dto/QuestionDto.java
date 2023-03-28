@@ -72,6 +72,7 @@ public class QuestionDto {
         private String modifiedAt;
         private long viewCount;
         private long voteCount;
+        private long commentCount;
         private long answerCount;
         private List<AnswerDto.Response> answers;
         private List<QnaCommentDto.Response> comments;
@@ -90,5 +91,11 @@ public class QuestionDto {
         private long voteCount;
         private Long adoptAnswerId;
         private MemberDto.SimpleInfoResponse member;
+    }
+
+    @Getter @Setter
+    public static class SimpleResponse{
+        private Long questionId;
+        private String title;
     }
 }

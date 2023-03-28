@@ -1,5 +1,6 @@
 package ynzmz.server.security.config;
 
+import lombok.RequiredArgsConstructor;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.authentication.AuthenticationManager;
@@ -11,30 +12,28 @@ import org.springframework.security.crypto.factory.PasswordEncoderFactories;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.SecurityFilterChain;
 import org.springframework.web.filter.CorsFilter;
-import ynzmz.server.member.service.MemberService;
+import ynzmz.server.member.repository.MemberRepository;
 import ynzmz.server.security.auths.filter.JwtAuthenticationFilter;
 import ynzmz.server.security.auths.filter.JwtVerificationFilter;
+import ynzmz.server.security.auths.handler.MemberAccessDeniedHandler;
+import ynzmz.server.security.auths.handler.MemberAuthenticationEntryPoint;
 import ynzmz.server.security.auths.handler.MemberAuthenticationFailureHandler;
 import ynzmz.server.security.auths.handler.MemberAuthenticationSuccessHandler;
 import ynzmz.server.security.auths.jwt.JwtTokenizer;
 import ynzmz.server.security.auths.utils.CustomAuthorityUtils;
-
 import static org.springframework.security.config.Customizer.withDefaults;
 
 @Configuration
 @EnableWebSecurity
+@RequiredArgsConstructor
+//@EnableGlobalMethodSecurity(prePostEnabled = true) //특정주소로 접근하면 권한및 인증을 미리 체크
 public class SecurityConfiguration {
+
 
     private final JwtTokenizer jwtTokenizer;
     private final CustomAuthorityUtils authorityUtils;
-
     private final CorsFilter corsFilter;
-
-    public SecurityConfiguration(JwtTokenizer jwtTokenizer, CustomAuthorityUtils authorityUtils, CorsFilter corsFilter){
-        this.jwtTokenizer = jwtTokenizer;
-        this.authorityUtils = authorityUtils;
-        this.corsFilter = corsFilter;
-    }
+    private final MemberRepository memberRepository;
 
 
 
@@ -49,10 +48,16 @@ public class SecurityConfiguration {
                 .and()
                 .formLogin().disable()
                 .httpBasic().disable()
+                .exceptionHandling()
+                .authenticationEntryPoint(new MemberAuthenticationEntryPoint())
+                .accessDeniedHandler(new MemberAccessDeniedHandler())
+                .and()
                 .apply(new CustomFilterConfigurer())
                 .and()
-                .authorizeRequests(authorize -> authorize
+                    .authorizeRequests(authorize -> authorize
                         .anyRequest().permitAll());
+
+
 
         return http.build();
     }
@@ -61,6 +66,7 @@ public class SecurityConfiguration {
     public PasswordEncoder passwordEncoder() {
         return PasswordEncoderFactories.createDelegatingPasswordEncoder();
     }
+
 
     public class CustomFilterConfigurer extends AbstractHttpConfigurer<CustomFilterConfigurer, HttpSecurity>{
         @Override //configure() 메서드를 오버라이드 Configuration을 커스터마이징.
@@ -76,9 +82,35 @@ public class SecurityConfiguration {
 
             builder
                     .addFilter(corsFilter)
-                    .addFilter(jwtAuthenticationFilter) //Authentication 이후에 verification 동작.
+                    .addFilter(jwtAuthenticationFilter)//Authentication 이후에 verification 동작.
                     .addFilterAfter(jwtVerificationFilter, JwtAuthenticationFilter.class);
 
         }
     }
+
+//    @Bean
+//    public ClientRegistrationRepository clientRegistrationRepository(){
+//        var googleClientRegistration = clientRegistration();
+//        return new InMemoryClientRegistrationRepository(googleClientRegistration);
+//    }
+//
+//    private ClientRegistration clientRegistration() {
+//        System.out.println("Client Registration");
+//        return ClientRegistration.withRegistrationId("google")
+//                .clientId(googleClientId)
+//                .clientSecret(googleClientSecret)
+//                .clientAuthenticationMethod(ClientAuthenticationMethod.CLIENT_SECRET_BASIC)
+//                .authorizationGrantType(AuthorizationGrantType.AUTHORIZATION_CODE)
+//                .redirectUri("http://localhost:8080/login/oauth2/code/google")
+//                .scope("profile","email")
+//                .authorizationUri("https://accounts.google.com/o/oauth2/auth")
+//                .tokenUri("https://oauth2.googleapis.com/token")
+//                .userInfoUri("https://www.googleapis.com/oauth2/v3/userinfo")
+//                .userNameAttributeName(IdTokenClaimNames.SUB)
+//                .jwkSetUri("https://www.googleapis.com/oauth2/v1/certs")
+//                .clientName("Google")
+//                .build();
+//    }
+
+
 }
