@@ -20,6 +20,7 @@ public class FreeComment implements Vote {
     private String content;
     private String createdAt;
     private String modifiedAt;
+    private String freeEmoticonUrl;
     @Column
     @ColumnDefault("0")
     private long voteCount;
