@@ -159,14 +159,15 @@ public class TeacherController {
     public ResponseEntity<?> deleteTeacher(@PathVariable("teacher-id") long teacherId){
         Teacher teacher = teacherService.findTeacherById(teacherId);
 
-        s3UpLoadService.deleteFileByFileUrl(teacher.getProfileImageUrl());
-        s3UpLoadService.deleteFileByFileUrl(teacher.getRealImageUrl());
-        s3FileInfoService.deleteS3FileInfo(s3FileInfoService.findS3FileInfoByFileUrl(teacher.getProfileImageUrl()));
-        s3FileInfoService.deleteS3FileInfo(s3FileInfoService.findS3FileInfoByFileUrl(teacher.getRealImageUrl()));
 
         teacherService.deleteTeacher(teacherId);
         Optional<Teacher> deletedTeacher = teacherService.findOptionalTeacherById(teacherId);
-
+        if(deletedTeacher.isEmpty()) {
+            s3UpLoadService.deleteFileByFileUrl(teacher.getProfileImageUrl());
+            s3UpLoadService.deleteFileByFileUrl(teacher.getRealImageUrl());
+            s3FileInfoService.deleteS3FileInfo(s3FileInfoService.findS3FileInfoByFileUrl(teacher.getProfileImageUrl()));
+            s3FileInfoService.deleteS3FileInfo(s3FileInfoService.findS3FileInfoByFileUrl(teacher.getRealImageUrl()));
+        }
         return deletedTeacher.isEmpty() ? new ResponseEntity<>("삭제완료",HttpStatus.OK) : new ResponseEntity<>("삭제실패",HttpStatus.INTERNAL_SERVER_ERROR);
     }
 }
