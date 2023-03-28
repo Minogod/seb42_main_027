@@ -3,6 +3,7 @@ package ynzmz.server.member.service;
 
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ApplicationEventPublisher;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
@@ -56,6 +57,7 @@ public class MemberService {
     private final CustomAuthorityUtils authorityUtils;
     private AuthenticationManager authenticationManager;
     private MemberDetailsService memberDetailsService;
+    @Autowired
     private JavaMailSender javaMailSender;
 
 
@@ -336,7 +338,8 @@ public class MemberService {
     //랜덤으로 비밀번호 구문 만들기
     public String getPassword(){
         char[] charSet = new char[] {'0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'A', 'B', 'C', 'D', 'E', 'F',
-                'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'};
+                'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z',
+                '!','@','#','$','%','^','&','*','(',')','-','_','=','+',',','.','/','?'};
         String str = "";
 
         //문자 길이의 값을 랜덤으로 10개 뽑아서 만듦.
@@ -356,6 +359,7 @@ public class MemberService {
         Long memberId = OptionalMember.get().getMemberId();
         updatePassword(memberId, memberPassword);
     }
+
 
     //메일보내기
     public void mailSend(MailDto mailDto){
