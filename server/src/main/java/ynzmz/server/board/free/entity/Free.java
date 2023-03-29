@@ -11,6 +11,7 @@ import ynzmz.server.comment.free.entity.FreeComment;
 import ynzmz.server.comment.review.lecture.entity.LectureReviewComment;
 import ynzmz.server.member.entity.Member;
 import ynzmz.server.vote.Vote;
+import ynzmz.server.vote.free.entity.FreeVote;
 import ynzmz.server.vote.review.lecture.entity.ReviewVote;
 
 import javax.persistence.*;
@@ -68,9 +69,9 @@ public class Free implements Vote  {
     private int commentsListNum = comments.size();
 
 
-    @OneToMany(mappedBy = "lectureReview", cascade = CascadeType.REMOVE)
+    @OneToMany(mappedBy = "free", cascade = CascadeType.REMOVE)
     @JsonManagedReference
-    private List<ReviewVote> reviewVotes = new ArrayList<>();
+    private List<FreeVote> freeVotes = new ArrayList<>();
 
 
 }

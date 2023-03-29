@@ -2,12 +2,16 @@ package ynzmz.server.board.event.their.seedcrawler;
 
 import lombok.AllArgsConstructor;
 import lombok.NoArgsConstructor;
+import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import org.jsoup.Connection;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
+import org.springframework.context.annotation.Bean;
 import org.springframework.lang.Nullable;
+import org.springframework.stereotype.Service;
 import ynzmz.server.board.event.their.entity.Event;
 import ynzmz.server.board.event.their.service.EventService;
 
@@ -15,7 +19,9 @@ import javax.annotation.PostConstruct;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
-@AllArgsConstructor
+@Service
+@RequiredArgsConstructor
+@Slf4j
 public class Megaseed {
     private final EventService eventService;
 
@@ -45,7 +51,7 @@ public class Megaseed {
                 Elements megaeventsLink = document.getElementsByClass("event_list").select(" h4 > a");
                 Elements dateList = document.select("div.date > span > strong");
                 Elements dateList2 = new Elements();
-                List<String> dateListString = new ArrayList<>();
+
 
                 for (Element e : dateList) {
                     if (e.text().equals("이벤트 기간")) {
@@ -153,9 +159,9 @@ public class Megaseed {
                     String[] href1 = href.get(i).attr("href").substring(19).split("'");
                     event.setHyperLink(href1[0]);
                     event.setTitle(titles.get(i).text());
-                    System.out.println("제목: " + event.getTitle());
-                    System.out.println("링크: " + event.getHyperLink());
-                    System.out.println("날짜: " + event.getDate());
+//                    System.out.println("제목: " + event.getTitle());
+//                    System.out.println("링크: " + event.getHyperLink());
+//                    System.out.println("날짜: " + event.getDate());
                     eventService.createEvent(event);
                 }
             }
