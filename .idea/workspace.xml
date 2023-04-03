@@ -4,8 +4,37 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="21e0b4a1-1309-4891-a3a3-777e2c29c93a" name="변경" comment="merage: 3/31 14:00 배포">
+    <list default="true" id="21e0b4a1-1309-4891-a3a3-777e2c29c93a" name="변경" comment="fix: 강의리뷰 컬럼타입 변경 (사진업로드 오류)">
+      <change afterPath="$PROJECT_DIR$/server/build/generated/sources/annotationProcessor/java/main/ynzmz/server/board/event/our/mapper/OurMapperImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/build/generated/sources/annotationProcessor/java/main/ynzmz/server/board/event/their/mapper/EventMapperImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/build/generated/sources/annotationProcessor/java/main/ynzmz/server/board/free/mapper/FreeMapperImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/build/generated/sources/annotationProcessor/java/main/ynzmz/server/board/lecture/mapper/LectureMapperImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/build/generated/sources/annotationProcessor/java/main/ynzmz/server/board/qna/answer/mapper/AnswerMapperImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/build/generated/sources/annotationProcessor/java/main/ynzmz/server/board/qna/question/mapper/QuestionMapperImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/build/generated/sources/annotationProcessor/java/main/ynzmz/server/board/review/lecture/mapper/LectureReviewMapperImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/build/generated/sources/annotationProcessor/java/main/ynzmz/server/board/teacher/mapper/TeacherMapperImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/build/generated/sources/annotationProcessor/java/main/ynzmz/server/comment/free/mapper/FreeCommentMapperImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/build/generated/sources/annotationProcessor/java/main/ynzmz/server/comment/qna/mapper/QnaCommentMapperImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/build/generated/sources/annotationProcessor/java/main/ynzmz/server/comment/review/lecture/mapper/LectureReviewCommentMapperImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/build/generated/sources/annotationProcessor/java/main/ynzmz/server/member/mapper/MemberMapperImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/build/generated/sources/annotationProcessor/java/main/ynzmz/server/recomment/free/mapper/ReCommentMapperImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/build/generated/sources/annotationProcessor/java/main/ynzmz/server/recomment/qna/mapper/QnaReCommentMapperImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/build/generated/sources/annotationProcessor/java/main/ynzmz/server/vote/free/mapper/FreeVoteMapperImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/build/generated/sources/annotationProcessor/java/main/ynzmz/server/vote/qna/mapper/QnaVoteMapperImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/build/generated/sources/annotationProcessor/java/main/ynzmz/server/vote/review/lecture/mapper/ReviewVoteMapperImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/.gradle/7.5.1/checksums/checksums.lock" beforeDir="false" afterPath="$PROJECT_DIR$/server/.gradle/7.5.1/checksums/checksums.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/.gradle/7.5.1/dependencies-accessors/dependencies-accessors.lock" beforeDir="false" afterPath="$PROJECT_DIR$/server/.gradle/7.5.1/dependencies-accessors/dependencies-accessors.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/.gradle/7.5.1/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/server/.gradle/7.5.1/executionHistory/executionHistory.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/.gradle/7.5.1/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/server/.gradle/7.5.1/executionHistory/executionHistory.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/.gradle/7.5.1/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/server/.gradle/7.5.1/fileHashes/fileHashes.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/.gradle/7.5.1/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/server/.gradle/7.5.1/fileHashes/fileHashes.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/.gradle/7.5.1/fileHashes/resourceHashesCache.bin" beforeDir="false" afterPath="$PROJECT_DIR$/server/.gradle/7.5.1/fileHashes/resourceHashesCache.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/server/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/main/java/ynzmz/server/board/lecture/service/LectureService.java" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/main/java/ynzmz/server/board/lecture/service/LectureService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/main/java/ynzmz/server/board/review/lecture/controller/LectureReviewController.java" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/main/java/ynzmz/server/board/review/lecture/controller/LectureReviewController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/main/java/ynzmz/server/board/review/lecture/dto/LectureReviewDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/main/java/ynzmz/server/board/review/lecture/dto/LectureReviewDto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/main/java/ynzmz/server/board/teacher/service/TeacherService.java" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/main/java/ynzmz/server/board/teacher/service/TeacherService.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -79,6 +108,7 @@
     </option>
   </component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="jar:///Library/Java/JavaVirtualMachines/zulu-11.jdk/Contents/Home/lib/src.zip!/java.base/java/lang/String.java" root0="SKIP_INSPECTION" />
     <setting file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.springframework.boot/spring-boot-autoconfigure/2.7.9/627fb7d59e7dabbbc5ff2805ddad07fe7279c6a0/spring-boot-autoconfigure-2.7.9-sources.jar!/org/springframework/boot/autoconfigure/flyway/FlywayAutoConfiguration.java" root0="FORCE_HIGHLIGHTING" />
     <setting file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.springframework.data/spring-data-commons/2.7.8/3ddb11e0dc6e7c800d27060da290ecd18206c43d/spring-data-commons-2.7.8-sources.jar!/org/springframework/data/domain/Page.java" root0="SKIP_INSPECTION" />
     <setting file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.springframework.security/spring-security-config/5.7.7/5b69781c2d59535b10cf80e942b0159729214f93/spring-security-config-5.7.7-sources.jar!/org/springframework/security/config/annotation/SecurityConfigurerAdapter.java" root0="SKIP_INSPECTION" />
@@ -87,6 +117,9 @@
     <setting file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.springframework.security/spring-security-crypto/5.7.7/61b9a2652e97c2f7f00091775f07963ea4ae602a/spring-security-crypto-5.7.7-sources.jar!/org/springframework/security/crypto/password/PasswordEncoder.java" root0="SKIP_INSPECTION" />
     <setting file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.springframework/spring-core/5.3.25/a1dbd0ee414155d8330405526538e0956c0f9435/spring-core-5.3.25-sources.jar!/org/springframework/util/Assert.java" root0="SKIP_INSPECTION" />
     <setting file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.springframework/spring-web/5.3.25/1c1a05f9e56b8cee98d71c3d610f177f17b3f73d/spring-web-5.3.25-sources.jar!/org/springframework/http/HttpStatus.java" root0="SKIP_INSPECTION" />
+    <setting file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.springframework/spring-web/5.3.25/1c1a05f9e56b8cee98d71c3d610f177f17b3f73d/spring-web-5.3.25-sources.jar!/org/springframework/web/method/support/InvocableHandlerMethod.java" root0="SKIP_INSPECTION" />
+    <setting file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.springframework/spring-webmvc/5.3.25/315c7bb3f46a09d2b2dc1f6ff8b671b36a122ce8/spring-webmvc-5.3.25-sources.jar!/org/springframework/web/servlet/DispatcherServlet.java" root0="SKIP_INSPECTION" />
+    <setting file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.springframework/spring-webmvc/5.3.25/315c7bb3f46a09d2b2dc1f6ff8b671b36a122ce8/spring-webmvc-5.3.25-sources.jar!/org/springframework/web/servlet/mvc/method/annotation/RequestMappingHandlerAdapter.java" root0="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/server/src/main/java/ynzmz/server/member/controller/MemberController.java" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="JpbToolWindowState">
@@ -109,7 +142,6 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "ASKED_ADD_EXTERNAL_FILES": "true",
-    "Git.Branch.Popup.ShowAllRemotes": "true",
     "RequestMappingsPanelOrder0": "0",
     "RequestMappingsPanelOrder1": "1",
     "RequestMappingsPanelWidth0": "75",
@@ -121,7 +153,7 @@
     "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit5",
     "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5": "",
     "create.test.in.the.same.root": "true",
-    "git-widget-placeholder": "BE__KMH",
+    "git-widget-placeholder": "BeDev",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -196,6 +228,7 @@
       <method v="2" />
     </configuration>
     <configuration name="ServerApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <option name="ACTIVE_PROFILES" value="local" />
       <envs>
         <env name="jasypt_password" value="minomino" />
       </envs>
@@ -224,8 +257,9 @@
       <workItem from="1679848944257" duration="5740000" />
       <workItem from="1679863894462" duration="28088000" />
       <workItem from="1679945116171" duration="294000" />
-      <workItem from="1680084459335" duration="7552000" />
-      <workItem from="1680490316393" duration="4000" />
+      <workItem from="1680084459335" duration="12717000" />
+      <workItem from="1680335673212" duration="77000" />
+      <workItem from="1680335806240" duration="10837000" />
     </task>
     <task id="LOCAL-00001" summary="feat: S3 저장시 경로/이름지정 로직추가">
       <created>1679674868199</created>
@@ -416,7 +450,28 @@
       <option name="project" value="LOCAL" />
       <updated>1680091846551</updated>
     </task>
-    <option name="localTasksCounter" value="28" />
+    <task id="LOCAL-00028" summary="fix: 리뷰게시판 조회수">
+      <created>1680239126064</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1680239126064</updated>
+    </task>
+    <task id="LOCAL-00029" summary="fix: 질문답변 디테일페이지 Response 채택답변 ID 추가">
+      <created>1680252806537</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1680252806537</updated>
+    </task>
+    <task id="LOCAL-00030" summary="fix: 강의리뷰 컬럼타입 변경 (사진업로드 오류)">
+      <created>1680482848844</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL-00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1680482848844</updated>
+    </task>
+    <option name="localTasksCounter" value="31" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -447,9 +502,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="feat: 강사삭제시 이미지 삭제 추가" />
-    <MESSAGE value="feat: 질문삭제시 S3업로드된 파일 삭제코드 추가,&#10;리뷰수정시 본인확인로직 추가&#10;fix: 강사, 강의 패키지이동 및 url 수정(Board 내부),&#10;질문,답변,자유게시판 본문글 타입 varchar -&gt; MEDIUMTEXT 변경,&#10;게시글 본인확인 실패시 Exception 코드 변경 (404-&gt;403), Teacher Entity imageUrl 삭제 및 profileImageUrl,realImageUrl 추가" />
-    <MESSAGE value="fix: 강의리뷰게시판 글,댓글 추천시 response값 변경 (필드명변경 및 불필요한데이터 분리)" />
     <MESSAGE value="fix: Qna게시판 질문글,답변글 리뷰게시판 강의리뷰글 수정,삭제,등록시 본인확인코드 추가 및 코드통일&#10;답변조회 등 불필요한코드 삭제" />
     <MESSAGE value="fix: 강사,강의 삭제 코드통일" />
     <MESSAGE value="fix: 질문글 수정사항변경, qna게시판 댓글,대댓글 삭제 코드통일" />
@@ -472,7 +524,10 @@
     <MESSAGE value="fix: 사진크기제한 1MB -&gt; 10MB 상향 , 자유게시판 정렬 및 추천 수정" />
     <MESSAGE value="fix: S3사진삭제 스케줄러 비활성화" />
     <MESSAGE value="fix: flyway V1 복구" />
-    <option name="LAST_COMMIT_MESSAGE" value="fix: flyway V1 복구" />
+    <MESSAGE value="fix: 리뷰게시판 조회수" />
+    <MESSAGE value="fix: 질문답변 디테일페이지 Response 채택답변 ID 추가" />
+    <MESSAGE value="fix: 강의리뷰 컬럼타입 변경 (사진업로드 오류)" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix: 강의리뷰 컬럼타입 변경 (사진업로드 오류)" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
