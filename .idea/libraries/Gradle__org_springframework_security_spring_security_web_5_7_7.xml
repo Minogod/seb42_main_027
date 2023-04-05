@@ -1,5 +1,6 @@
 <component name="libraryTable">
-  <library name="Gradle: org.springframework.security:spring-security-web:5.7.7" external-system-id="GRADLE">
+  <library name="Gradle: org.springframework.security:spring-security-web:5.7.7" type="java-imported" external-system-id="GRADLE">
+    <properties groupId="org.springframework.security" artifactId="spring-security-web" version="5.7.7" />
     <CLASSES>
       <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.springframework.security/spring-security-web/5.7.7/be60a596a263be507c590710ea6aaf7e5b64cf57/spring-security-web-5.7.7.jar!/" />
     </CLASSES>

@@ -1,5 +1,6 @@
 <component name="libraryTable">
-  <library name="Gradle: org.springframework:spring-core:5.3.25" external-system-id="GRADLE">
+  <library name="Gradle: org.springframework:spring-core:5.3.25" type="java-imported" external-system-id="GRADLE">
+    <properties groupId="org.springframework" artifactId="spring-core" version="5.3.25" />
     <CLASSES>
       <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.springframework/spring-core/5.3.25/85382e86321227506bf7f97ed80e2ab88bce25f0/spring-core-5.3.25.jar!/" />
     </CLASSES>

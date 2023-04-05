@@ -19,7 +19,7 @@ import javax.annotation.PostConstruct;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
-@Service
+//@Service
 @RequiredArgsConstructor
 @Slf4j
 public class Megaseed {
